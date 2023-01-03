@@ -1,0 +1,1217 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unudulmazlar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/unudulmazlar/unudulmazlar.css">
+    <link rel="stylesheet" href="~/css/home/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+</head>
+
+<body>
+
+    <header>
+        
+        <section id="navbar-area">
+            <nav class="navbar navbar-expand-lg navbar-dark  black-nav navbar-desktop">
+                <div class="container">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                            aria-controls="offcanvasNavbar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
+                         aria-labelledby="offcanvasNavbarLabel">
+                        <div class="offcanvas-header">
+                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                    aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <ul class="btn">
+                                <li>
+                                    <a class="nav-a dropdown-btnn" asp-controller="Home" asp-action="Index">ƏSAS SƏHİFƏ</a>
+
+                                </li>
+
+                                <li>
+                                    <a class="nav-a dropdown-btnn" asp-controller="Unudulmazlar" asp-action="Index">UNUDULMAZLAR</a>
+                                    <ul class="submenu shop">
+                                        <li><a asp-controller="Unudulmazlar" asp-action="Index">ŞƏHİDLƏR</a></li>
+                                        <li><a asp-controller="Account" asp-action="Login">GİRİŞ</a></li>
+                                        <li><a asp-controller="Account" asp-action="Register">QEYDİYYAT</a></li>
+                                    </ul>
+                                </li>
+                                <li><a class="nav-a" asp-controller="Product" asp-action="Index">MAĞAZA</a></li>
+                                <li><a class="nav-a" asp-controller="Blog" asp-action="BlogDetails">BLOGLAR</a></li>
+                                <li> <a class="nav-a" asp-controller="About" asp-action="Index">HAQQIMIZDA</a> </li>
+                                <li><a class="nav-a" asp-controller="Contact" asp-action="Index">BİZİMLƏ ƏLAQƏ</a></li>
+                                <li class="admin"><a class="nav-a" href="#">ADMIN PANEL</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </section>
+
+        <section id="scroll-section">
+            <nav class="navbar navbar-expand-lg navbar-dark  black-nav navbar-desktop">
+                <div class="container inActive">
+                    <div class="head">
+                        <img src="~/img/Participant_of_the_Patriotic_War_medal.png" style="width: 60px;" alt="">
+                    </div>
+                    <div class="offcanvas-body scroll-body">
+
+                        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                                aria-controls="offcanvasNavbar">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
+                             aria-labelledby="offcanvasNavbarLabel">
+                            <div class="offcanvas-header">
+                                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                        aria-label="Close"></button>
+                            </div>
+
+                            <ul class="btn">
+                                <li>
+                                    <a class="nav-a dropdown-btnn" asp-controller="Home" asp-action="Index">ƏSAS SƏHİFƏ</a>
+
+                                </li>
+
+                                <li>
+                                    <a class="nav-a dropdown-btnn" asp-controller="Unudulmazlar" asp-action="Index">UNUDULMAZLAR</a>
+                                    <ul class="submenu shop">
+                                        <li><a asp-controller="Unudulmazlar" asp-action="Index">ŞƏHİDLƏR</a></li>
+                                        <li><a asp-controller="Account" asp-action="Login">GİRİŞ</a></li>
+                                        <li><a asp-controller="Account" asp-action="Register">QEYDİYYAT</a></li>
+                                    </ul>
+                                </li>
+                                <li><a class="nav-a" asp-controller="Product" asp-action="Index">MAĞAZA</a></li>
+                                <li><a class="nav-a" asp-controller="Blog" asp-action="BlogDetails">BLOGLAR</a></li>
+                                <li> <a class="nav-a" asp-controller="About" asp-action="Index">HAQQIMIZDA</a> </li>
+                                <li><a class="nav-a" asp-controller="Contact" asp-action="Index">BİZİMLƏ ƏLAQƏ</a></li>
+                                <li class="admin"><a class="nav-a" href="#">ADMIN PANEL</a></li>
+                            </ul>
+                        </div>
+                    </div>
+            </nav>
+        </section>
+    </header>
+
+
+    <main>
+
+        <section id="qehremanlar">
+            <div class="container">
+                <div class="row my-5">
+                    <div class="col-lg-12 col-md-12 col-sm-12 my-3">
+                        <div class="searchOne">
+                            
+
+                            <label>
+                                <form >
+                                <input placeholder="Search" type="text" id="search-input">
+                                 </form>
+                                @*<ul>
+                                    <li s>s</li>
+                                    <li e>e</li>
+                                    <li a>a</li>
+                                    <li r>r</li>
+                                    <li c>c</li>
+                                    <li h>h</li>
+                                </ul>*@
+                               
+                                
+                            </label>
+                            
+                        </div>
+                    </div>
+                    <ul id="searchlist" class="d-block">
+                    </ul>
+                    <div class="col-lg-12 col-md-12 col-sm-12 my-3">
+                        <div class="row">
+                            <h1></h1>
+                            <div class="col-lg-3 col-md-6 col-sm-12">
+                                <div class="cards">
+                                    <div class="cardee">
+                                        <h4 class="card-title">Əkbərov Əmrah</h4>
+                                        <img src="~/img/Əmrah.png" alt="">
+                                        <p class="card-desc">
+                                            Əmrah Əkbərov 1998-ci il fevralın 21-də Lerik rayonunun Livədirqə kəndində anadan olub. 2004-cü ildə Livədirqə kənd orta məktəbinin 1-ci sinifinə gedir. 2005-ci ildə təhsilini Xəzər rayonunda yerləşən 322 saylı tam orta maktəbdə davam etdirir. O, 2013-cü ildə Cəmşid Naxçıvanski adına hərbi liseyə daxil olmuşdur. 2016-cı ildə həmin liseyi bitirmişdir.
+                                            Əmrah Əkbərov 2016-cı ildə Heydər Əliyev adına Azərbaycan Ali Hərbi Məktəbə daxil olmuşdur.2020-ci ildə məktəbi bitirib Azərbaycan Silahlı Qüvvələrinin Xüsusi Təyinatlı Qüvvələrində leytenant rütbəsi alaraq baş kəşfiyyatçı kimi xidmət etməyə başlamışdır.
+
+                                            Azərbaycan Ordusunun Xüsusi Təyinatlı Qüvvələrinin leytenantı olan Əmrah Əkbərov 2020-ci il sentyabrın 27-də Azərbaycan Silahlı Qüvvələri tərəfindən Ermənistan işğalı altında olan ərazilərin azad edilməsi üçün başlanan Vətən müharibəsi zamanı Cəbrayılın, Hadrutun azadlığı uğrunda gedən döyüşlərdə iştirak etmişdir.Əmrah Əkbərov oktyabr 12-də Hadrut döyüşləri zamanı şəhid olmuşdur.
+
+                                            Azərbaycanın ərazi bütövlüyünün təmin edilməsi uğrunda döyüş əməliyyatlarına qatılan və hərbi hissə qarşısında qoyulmuş tapşırıqların icrası zamanı vəzifə borcunu şərəflə yerinə yetirdiyi üçün Azərbaycan Prezidenti İlham Əliyevin 15.12.2020-ci il tarixli Sərəncamına əsasən Əmrah Əkbərov ölümündən sonra "Vətən uğrunda" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Cəbrayıl rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 24.12.2020-ci il tarixli Sərəncamına əsasən Əmrah Əkbərov ölümündən sonra "Cəbrayılın azad olunmasına görə" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Xocavənd rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 29.12.2020-ci il tarixli Sərəncamına əsasən Əmrah Əkbərov ölümündən sonra "Xocavəndin azad olunmasına görə" medalı ilə təltif edildi.
+
+                                            Azərbaycan ərazilərinin işğaldan azad olunması zamanı döyüş tapşırıqlarını və xidməti vəzifələrini yerinə yetirən zaman fərqləndiyinə görə Azərbaycan Prezidenti İlham Əliyevin 30.12.2020-ci il tarixli Sərəncamına əsasən Əmrah Əkbərov ölümündən sonra "Hərbi xidmətlərə görə" medalı ilə təltif edildi
+
+                                            Azərbaycanın ərazi bütövlüyünün bərpa edilməsi uğrunda gedən döyüş əməliyyatlarında iştirak edərək igidlik və mərdlik göstərmiş, hərbi hissə qarşısında qoyulmuş tapşırıqların icrası zamanı vəzifə borcunu şərəflə yerinə yetirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 05.11.2021-ci il tarixli Sərəncamına əsasən Əmrah Əkbərov ölümündən sonra "Azərbaycan Bayrağı" ordeni ilə təltif edildi.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 col-sm-12">
+                                <div class="cards">
+                                    <div class="cardee">
+                                        <h2 class="card-title">Mustafayev Nurlan</h2>
+                                        <img src="~/img/Qəhrəmanlar/Nurlan.png" alt="">
+                                        <p class="card-desc">
+                                            Nurlan Mustafayev 1990-cı il iyulun 22-də Hamlet və Rahilə Mustafayevlərin
+                                            ailəsində anadan olub. 08.03.2020-ci il tarixde Günay xanım Mustafayeva ilə ailə həyatı qurur.
+                                            Evlilikleri cəmi 7 ay çəkir. Şəhid olduqdan 5 ay sonra 09.03.2021-ci il tarixde öz adını daşıyan
+                                            oğul övladı, Mustafayev Nurlan Nurlan oğlu anadan olur.
+                                            1997-2005-ci illərdə Nəsimi rayonunun P. Saleh adına 159 nömrəli tam orta məкtəbində, 2005-2008-ci
+                                            illərdə Cəmşid Naxçıvansкi adına Hərbi Liseydə təhsil alıb. 2008-2012-cu illərdə Heydər Əliyev
+                                            adına Azərbaycan Ali Hərbi Məкtəbində (AAHM), 2010-2013-cü illərdə isə Almaniyada Hərbi Liseydə
+                                            "Motoatıcı" ixtisası üzrə ali hərbi təhsil alıb.
+
+                                            Azərbaycan Ordusunun Xüsusi Təyinatlı Qüvvələrinin kapitanı olan Nurlan Mustafayev 2020-ci il
+                                            sentyabrın 27-də Azərbaycan Silahlı Qüvvələri tərəfindən Ermənistan işğalı altında olan ərazilərin
+                                            azad edilməsi üçün başlanan Vətən müharibəsi zamanı Murovdağın, Füzulinin və Hadrutun azadlığı
+                                            uğrunda gedən döyüşlərdə savaşıb. Nurlan Mustafayev oktyabrın 12-də Hadrut döyüşləri zamanı şəhid
+                                            olub. II Şəhidlər Xiyabanında dəfn olunub.
+
+                                            Azərbaycanın ərazi bütövlüyünün təmin edilməsi uğrunda döyüş əməliyyatlarına qatılan və hərbi
+                                            hissə qarşısında qoyulmuş tapşırıqların icrası zamanı vəzifə borcunu şərəflə yerinə yetirdiyi üçün
+                                            Azərbaycan Prezidenti İlham Əliyevin 15.12.2020-ci il tarixli Sərəncamına əsasən Nurlan Mustafayev
+                                            ölümündən sonra "Vətən uğrunda" medalı ilə təltif edildi.
+
+                                            Azərbaycanın ərazi bütövlüyünün bərpa edilməsi zamanı döyüş əməliyyatlarının rəhbəri olan,
+                                            düşmənin canlı qüvvəsinin məhv edilməsində rəşadət göstərən, vəzifə borcunu ləqayətlə və vicdanla
+                                            yerinə yetirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 15.12.2020-ci il tarixli Sərəncamına
+                                            əsasən Nurlan Mustafayev ölümündən sonra "Azərbaycan Bayrağı" ordeni ilə təltif edildi.
+
+                                            Azərbaycanın Cəbrayıl rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına
+                                            qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin
+                                            24.12.2020-ci il tarixli Sərəncamına əsasən Nurlan Mustafayev ölümündən sonra "Cəbrayılın azad
+                                            olunmasına görə" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Füzuli rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına
+                                            qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin
+                                            24.06.2021-ci il tarixli Sərəncamına əsasən Nurlan Mustafayev ölümündən sonra "Füzulinin azad
+                                            olunmasına görə" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Kəlbəcər rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına
+                                            qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin
+                                            24.06.2021-ci il tarixli Sərəncamına əsasən Nurlan Mustafayev ölümündən sonra "Kəlbəcərin azad
+                                            olunmasına görə" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Xocavənd rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına
+                                            qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin
+                                            05.11.2021-ci il tarixli Sərəncamına əsasən Nurlan Mustafayev ölümündən sonra "Xocavəndin azad
+                                            olunmasına görə" medalı ilə təltif edildi.
+
+                                            Qeyd edək ki, şəhid N.Mustafayevə məxsus materiallar ailəsi tərəfindən muzeyin Vətən müharibəsi
+                                            fonduna təhvil verilmişdir.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 col-sm-12">
+                                <div class="cards">
+                                    <div class="cardee">
+                                        <h4 class="card-title">Sadıqlı Məmmədhəsən</h4>
+                                        <img src="~/img/Qəhrəmanlar/Məmmədhəsən.png" alt="">
+                                        <p class="card-desc">
+                                            Məmmədhəsən Sadıqlı 1992-ci il fevralın 21-də Şərur rayonunun Dəmirçi kəndində
+                                            anadan olub.
+
+                                            1998-ci il şəhid Etibar Əhmədov adına Dəmirçi kənd orta məktəbində təhsil almağa başlayıb,
+                                            məktəbdə təhsil aldığı müddət ərzində Yunan-Roma güləş növü ilə məşğul olub və bir çox yarışlarda
+                                            qalib gəlib.
+                                            2007-ci ildə Naxçıvan şəhərində yerləşən Heydər Əliyev adına Hərbi Liseyə daxil olur, 2010-cu ildə
+                                            isə buranı bitirib Heydər Əliyev adına Azərbaycan Ali Hərbi məktəbinə qəbul olur. 2014-cü ildə
+                                            Leytenant Hərbi rütbəsini alaraq buranı da bitirir, bitirdikdən sonra Silahlı qüvvələrin 2015-ci
+                                            ildə TTM-in zabit ixtisas kursunu bitirib. Bundan sonra leytenant kimi Culfa şəhərinə təyinat
+                                            alır. 3 il Culfa şəhərində xidmət etdikdən sonra 2017-ci ildə baş leytenant rütbəsini alır,
+                                            xidməti ərzində Günnüt döyüşlərində öndə gedənlərdən biri olub. Günnütdə böyük şücaətlər
+                                            görsətdiyi üçün Azərbaycan Respublikasının Prezidentinin adından Azərbaycan Respublikasının
+                                            Müdafiə Nazirliyinin əmri ilə 26 iyun 2018-ci ildə "Hərbi xidmətdə fərqlənməyə görə" 3 cü dərəcəli
+                                            medal və "Azərbaycan Ordusunun 100 illiyi" yubiley medalı ilə təltif olunub.
+
+                                            Sonrakı təyinatı isə Vayxır olub, Burdakı xidməti ərzində 2018-ci ildə Türkiyədə "Komando Temel
+                                            Kursu"-nu Azərbaycan üzrə başarı və 1-ciliklə bitirmiş, daha sonra 2019-cu ildə Əlahiddə Ümumqoşun
+                                            ordu üzrə "Ən yaxşı kəşfiyyat (XT) bölüyü" yarışında yüksək nailiyyətlər əldə etdiyinə görə fəxri
+                                            fərman ilə təltif olunub.
+
+                                            Hərbidə dəfələrlə "Yunan-Roma güləş" yarışlarında iştirak edərək böyük nailiyyətlər əldə edib.
+
+                                            2020-ci il sentyabrın 27-də başlamış "Vətən Müharibəsi"-ndə şəhid olmuş dostlarının və
+                                            silahdaşlarının intiqamını almaq, həmdə döyüşdəki silahdaşlarını tək qoymamaq vətən borcunu yerinə
+                                            yetirmək üçün Naxçıvan XTQ heyəti ilə birlikdə 25 oktyabr 2020-ci ildə Füzuli istiqamətinə yola
+                                            düşür. Yanındakı döyüş yoldaşları ilə birlikdə bir neçə post aldıqdan sonra Şuşa istiqamətində
+                                            hərəkət edən zaman axırıncı Zərdanaşen kəndində gedən qızğın döyüşdə yaralanan əsgəri xilas
+                                            edərkən yaralanır 27 oktyabr 2020-ci ildə şəhid olur.
+
+                                            2014-cü ildə ailə həyatı qurub və Uğur adında bir övladı var .
+                                            Azərbaycan Ordusunun baş leytenantı olan Məmmədhəsən Sadıqlı 2020-ci il sentyabrın 27-də
+                                            Azərbaycan Silahlı Qüvvələri tərəfindən Ermənistan işğalı altında olan ərazilərinin azad edilməsi
+                                            üçün başlanan Vətən müharibəsi zamanı Şuşanın azadlığı uğrunda gedən döyüşlərdə döyüşüb, oktyabrın
+                                            27-də Şuşa döyüşləri zamanı şəhid olub. Şərur şəhərinin Şəhidlər Xiyabanında dəfn olunub.
+
+                                            Azərbaycanın ərazi bütövlüyünün təmin edilməsi uğrunda döyüş əməliyyatlarına qatılan və hərbi
+                                            hissə qarşısında qoyulmuş tapşırıqların icrası zamanı vəzifə borcunu şərəflə yerinə yetirdiyi üçün
+                                            Azərbaycan Prezidenti İlham Əliyevin 15.12.2020-ci il tarixli Sərəncamına əsasən Məhəmmədhəsən
+                                            Sadıqlı ölümündən sonra "Vətən uğrunda" medalı ilə təltif edilib.
+
+                                            Azərbaycan Respublikası Konstitusiyasının 109-cu maddəsinin 23-cü bəndini rəhbər tutaraq qərara
+                                            alan, Azərbaycan Prezidenti İlham Əliyevin 29.12.2020-ci il tarixli Sərəncamına əsasən ölümündən
+                                            sonra "Şuşanın azad olunmasına görə" medalı ilə 30.12.2020-ci il tarixli Sərəncamına əsasən isə
+                                            "Hərbi xidmətlərə görə" medalı ilə təltif edilib.
+
+                                            Xocavəndin işğaldan azad edilməsi uğurunda Azərbaycan Respublikasının Prezidenti İlham Əliyevin
+                                            24.06.2021 tarixli Sərəncamına əsasən "Xocavəndim azad olunmasına görə" medalı ilə təltif edilib.
+
+                                            Azərbaycan Respublikasının ərazi bütövlüyünün bərpa edilməsi uğrunda gedən döyüş əməliyyatlarında
+                                            şəhid olmuş Azərbaycan Respublikası Silahlı Qüvvələrinin hərbi qulluqçularının təltif edilməsi
+                                            haqqında Azərbaycan Prezidenti İlham Əliyevin 05.11.2021-ci il tarixli Sərəncamına əsasən
+                                            Məmmədhəsən Sadıqlı ölümündən sonra "Azərbaycan Bayrağı" ordeni ilə təltif edildi.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 col-sm-12">
+                                <div class="cards">
+                                    <div class="cardee">
+                                        <h2 class="card-title">Alqayev Harun</h2>
+                                        <img src="~/img/Qəhrəmanlar/Harun.png" alt="">
+                                        <p class="card-desc">
+                                            Harun Alqayev 1992-ci il iyulun 14-də Balakən rayonunun Gərəkli kəndində anadan
+                                            olub. 1998-2006-cı illərdə Balakən şəhərində İ. Nəsimi adına 2 nömrəli tam orta məktəbdə,
+                                            2007-2010-cu illərdə isə Heydər Əliyev adına Hərbi Liseydə təhsil alıb. 2010-2014-cü illərdə
+                                            Heydər Əliyev adına Azərbaycan Ali Hərbi Məktəbində (AAHM) ali hərbi təhsil alıb.
+                                            Harun Alqayev 2014-cü ildən Azərbaycan Silahlı Qüvvələrinin "N" saylı hərbi hissəsində xidmət
+                                            edirdi. 2015-2016-cı illərdə Taqım Komandirinin müavini, 2016-cı ildən isə Taqım Komandiri
+                                            vəzifəsində xidmət edib.
+
+                                            Azərbaycan Ordusunun baş leytenantı olan Harun Alqayev 2020-ci il sentyabrın 27-də Azərbaycan
+                                            Silahlı Qüvvələri tərəfindən Ermənistan işğalı altında olan ərazilərin azad edilməsi və
+                                            Azərbaycanın ərazi bütövlüyünün bərpa olunması üçün başlanan Vətən müharibəsi zamanı Murovdağın və
+                                            Füzulinin azadlığı uğrunda gedən döyüşlərdə savaşıb. Harun Alqayev Hadrut döyüşləri zamanı şəhid
+                                            olub. Balakən şəhərinin Şəhidlər Xiyabanında dəfn olunub.
+
+                                            Azərbaycanın ərazi bütövlüyünün təmin edilməsi uğrunda döyüş əməliyyatlarına qatılan və hərbi
+                                            hissə qarşısında qoyulmuş tapşırıqların icrası zamanı vəzifə borcunu şərəflə yerinə yetirdiyi üçün
+                                            Azərbaycan Prezidenti İlham Əliyevin 15.12.2020-ci il tarixli Sərəncamına əsasən Harun Alqayev
+                                            ölümündən sonra "Vətən uğrunda" medalı ilə təltif edildi.
+
+                                            Azərbaycan ərazilərinin işğaldan azad olunması zamanı döyüş tapşırıqlarını yerinə yerinə yetirən
+                                            zaman mərdliyin və igidliyin göstərilməsinə görə Azərbaycan Prezidenti İlham Əliyevin
+                                            18.12.2020-ci il tarixli Sərəncamına əsasən Harun Alqayev ölümündən sonra "İgidliyə görə" medalı
+                                            ilə təltif edildi.
+
+                                            Azərbaycanın Kəlbəcər rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına
+                                            qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin
+                                            29.12.2020-ci il tarixli Sərəncamına əsasən Harun Alqayev ölümündən sonra "Kəlbəcərin azad
+                                            olunmasına görə" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Xocavənd rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına
+                                            qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin
+                                            24.06.2021-ci il tarixli Sərəncamına əsasən Harun Alqayev ölümündən sonra "Xocavəndin azad
+                                            olunmasına görə" medalı ilə təltif edildi.
+
+                                            Azərbaycan Respublikasının ərazi bütövlüyünün bərpa edilməsi uğrunda gedən döyüş əməliyyatlarında
+                                            şəhid olmuş Azərbaycan Respublikası Silahlı Qüvvələrinin hərbi qulluqçularının təltif edilməsi
+                                            haqqında Azərbaycan Prezidenti İlham Əliyevin 05.11.2021-ci il tarixli Sərəncamına əsasən Harun
+                                            Alqayev ölümündən sonra "Azərbaycan Bayrağı" ordeni ilə təltif edildi.
+
+                                            Azərbaycanın Füzuli rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına
+                                            qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin
+                                            05.11.2021-ci il tarixli Sərəncamına əsasən Harun Alqayev ölümündən sonra "Füzulinin azad
+                                            olunmasına görə" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Cəbrayıl rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına
+                                            qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin
+                                            Sərəncamına əsasən Harun Alqayev ölümündən sonra "Cəbrayılın azad olunmasına görə" medalı ilə
+                                            təltif edildi
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 col-sm-12">
+                                <div class="cards">
+                                    <div class="cardee">
+                                        <h2 class="card-title">İsmayılov Aslan</h2>
+                                        <img src="~/img/Qəhrəmanlar/Aslan.png" alt="">
+                                        <p class="card-desc">
+                                            Aslan İsmayılov 1993-cü il iyunun 1-də Salyan rayonunun Sarvan kəndində anadan
+                                            olub.
+
+                                            Azərbaycan Ordusunun baş leytenantı olan Aslan İsmayılov 2020-ci il sentyabrın 27-də Azərbaycan
+                                            Silahlı Qüvvələri tərəfindən Ermənistan işğalı altında olan ərazilərin azad edilməsi üçün başlanan
+                                            Vətən müharibəsi zamanı Cəbrayıl, Füzuli, Hadrut və Murovdağ istiqamətində gedən döyüşlərdə
+                                            savaşıb. Aslan İsmayılov oktyabrın 9-da Füzuli döyüşləri zamanı şəhid olub. Salyan rayonunda dəfn
+                                            olunub.
+
+                                            Azərbaycan Respublikasının ərazi bütövlüyünün bərpa edilməsi uğrunda gedən döyüş əməliyyatlarında
+                                            iştirak edərək igidlik və mərdlik göstərmiş, hərbi hissə qarşısında qoyulmuş tapşırıqların icrası
+                                            zamanı vəzifə borcunu şərəflə yerinə yetirərək şəhid olmuş Aslan İsmayılov “Füzulinin azad
+                                            olunmasına görə”, “Xocavəndin azad olunmasına görə”, “Kəlbəcərin azad olunmasına görə”,
+                                            “Cəbrayılın azad olunmasına görə”, “Vətən uğrunda”, “İgidliyə görə" medalları və 3-cü dərəcəli “
+                                            Rəşadət ordeni” ilə təltif edilib.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 col-sm-12">
+                                <div class="cards">
+                                    <div class="cardee">
+                                        <h2 class="card-title">İbrahimli Adil</h2>
+                                        <img src="~/img/Qəhrəmanlar/Adil.png" alt="">
+                                        <p class="card-desc">
+                                            Adil İbrahimli 9 sentyabr 1992-ci ildə Sumqayıt şəhərində anadan olub.
+                                            1999-2008-ci illərdə Sumqayıt şəhərində 14 nömrəli tam orta məktəbdə, 2008-2011-ci illərdə isə
+                                            Cəmşid Naxçıvanski adına Hərbi Liseydə təhsil alıb. 2011-2015-ci illərdə Heydər Əliyev adına
+                                            Azərbaycan Ali Hərbi Məktəbində (AAHM) ali hərbi təhsil alıb. Ailəli idi. 2 övladı yadigar qaldı.
+
+                                            2021-cilsSentyabrın 27-də - Anım Günündə Bakı şəhərində yürüş təşkil edilib. Müzəffər Ali Baş
+                                            Komandan, Prezident İlham Əliyev, Birinci vitse-prezident Mehriban Əliyeva yürüşdə iştirak
+                                            ediblər. Tədbir zamanı Prezident İlham Əliyevin əlində tutduğu plakatda şəkli əks olunan şəhidimiz
+                                            İbrahimli Adil Asəm oğludur.
+
+                                            Müzəffər Ali Baş Komandan, Prezident İlham Əliyev, Birinci vitse-prezident Mehriban Əliyeva
+                                            yürüşdə iştirak ediblər. Tədbir zamanı Prezident İlham Əliyevin əlində tutduğu plakatda şəkli əks
+                                            olunan şəhidimiz İbrahimli Adil Asəm oğludur.
+                                            Adil İbrahimli 2015-2017-ci illərdə Azərbaycan Silahlı Qüvvələrinin "N" saylı hərbi hissəsində
+                                            xidmət edirdi. 2017-ci ildən isə Xüsusi Təyinatlı Qüvvələrin sıralarında Baş Kəşfiyyatçı, Qrup
+                                            Komandirinin müavini, Qrup Komandiri vəzifələrində xidmət edirdi.
+
+                                            Azərbaycan Ordusunun baş leytenantı olan Adil İbrahimli 2020-ci il sentyabrın 27-də Azərbaycan
+                                            Silahlı Qüvvələri tərəfindən Ermənistan işğalı altında olan ərazilərin azad edilməsi üçün başlanan
+                                            Vətən müharibəsi zamanı Murovdağ döyüşlərində, həmçinin Cəbrayılın, Füzulinin, Xocavəndin və
+                                            Şuşanın azadlığı uğrunda gedən döyüşlərdə savaşıb. Adil İbrahimli noyabrın 7-də Şuşa döyüşləri
+                                            zamanı şəhid olub. II Fəxri Xiyabanda dəfn olunub.
+
+                                            Azərbaycanın ərazi bütövlüyünün bərpa edilməsində xüsusi xidmətlərinə və işğal olunmuş ərazilərin
+                                            azad olunması zamanı düşmənin məhv edilməsi üzrə qarşıya qoyulmuş döyüş tapşırığını yerinə yetirən
+                                            zaman göstərdiyi qəhrəmanlıq nümunəsinə görə, həmçinin hərbi qulluq vəzifəsini yerinə yetirən
+                                            zamanı igidliyin və mərdliyin nümayiş etdirilməsinə görə Azərbaycan Prezidenti İlham Əliyevin
+                                            09.12.2020-ci il tarixli Sərəncamına əsasən Adil İbrahimliyə ölümündən sonra "Vətən Müharibəsi
+                                            Qəhrəmanı" adı verildi.
+
+                                            Azərbaycanın ərazi bütövlüyünün təmin edilməsi uğrunda döyüş əməliyyatlarına qatılan və hərbi
+                                            hissə qarşısında qoyulmuş tapşırıqların icrası zamanı vəzifə borcunu şərəflə yerinə yetirdiyi üçün
+                                            Azərbaycan Prezidenti İlham Əliyevin 15.12.2020-ci il tarixli Sərəncamına əsasən Adil İbrahimli
+                                            ölümündən sonra "Vətən uğrunda" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Şuşa rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına
+                                            qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin
+                                            29.12.2020-ci il tarixli Sərəncamına əsasən Adil İbrahimli ölümündən sonra "Şuşanın azad
+                                            olunmasına görə" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Kəlbəcər rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına
+                                            qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin
+                                            29.12.2020-ci il tarixli Sərəncamına əsasən Adil İbrahimli ölümündən sonra "Kəlbəcərin azad
+                                            olunmasına görə" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Xocavənd rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına
+                                            qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin
+                                            24.06.2021-ci il tarixli Sərəncamına əsasən Adil İbrahimli ölümündən sonra "Xocavəndin azad
+                                            olunmasına görə" medalı ilə təltif edildi.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 col-sm-12">
+                                <div class="cards">
+                                    <div class="cardee">
+                                        <h4 class="card-title">Abbaslı Arif</h4>
+                                        <img src="~/img/Qəhrəmanlar/Arif.png" alt="">
+                                        <p class="card-desc">
+                                            Arif Abbaslı 1993-cü il dekabrın 15-də Şərur rayonunun Qıvraq qəsəbəsində
+                                            anadan olub. 2000-2008-ci illərdə Qıvraq qəsəbə tam orta məktəbində, 2009-2012-ci illərdə isə
+                                            Heydər Əliyev adına Hərbi Liseydə təhsil alıb. 2012-2016-cı illərdə Heydər Əliyev adına Azərbaycan
+                                            Ali Hərbi Məktəbində (AAHM) ali hərbi təhsil alıb. Ailəli idi. Bir yaşlı Ləman adında qızı yadigar
+                                            qaldı.
+                                            Azərbaycan Ordusunun baş leytenantı olan Arif Abbaslı 2020-ci il sentyabrın 27-də Azərbaycan
+                                            Silahlı Qüvvələri tərəfindən Ermənistan işğalı altında olan ərazilərin azad edilməsi və
+                                            Azərbaycanın ərazi bütövlüyünün bərpa olunması üçün başlanan Vətən müharibəsi zamanı Murovdağın,
+                                            Xocavəndin və Füzulinin azadlığı uğrunda gedən döyüşlərdə savaşıb. Arif Abbaslı oktyabrın 12-də
+                                            Füzuli döyüşləri zamanı şəhid olub. II Şəhidlər Xiyabanında dəfn olunub.
+
+                                            Azərbaycanın ərazi bütövlüyünün bərpa edilməsində xüsusi xidmətlərinə və işğal olunmuş ərazilərin
+                                            azad olunması zamanı düşmənin məhv edilməsi üzrə qarşıya qoyulmuş döyüş tapşırığını yerinə yetirən
+                                            zaman göstərdiyi qəhrəmanlıq nümunəsinə görə, həmçinin hərbi qulluq vəzifəsini yerinə yetirən
+                                            zamanı igidliyin və mərdliyin nümayiş etdirilməsinə görə Azərbaycan Prezidenti İlham Əliyevin
+                                            09.12.2020-ci il tarixli Sərəncamına əsasən Arif Abbaslı ölümündən sonra "Qarabağ" ordeni ilə
+                                            təltif edildi.
+
+                                            Azərbaycanın ərazi bütövlüyünün təmin edilməsi uğrunda döyüş əməliyyatlarına qatılan və hərbi
+                                            hissə qarşısında qoyulmuş tapşırıqların icrası zamanı vəzifə borcunu şərəflə yerinə yetirdiyi üçün
+                                            Azərbaycan Prezidenti İlham Əliyevin 15.12.2020-ci il tarixli Sərəncamına əsasən Arif Abbaslı
+                                            ölümündən sonra "Vətən uğrunda" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Kəlbəcər rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına
+                                            qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin
+                                            29.12.2020-ci il tarixli Sərəncamına əsasən Arif Abbaslı ölümündən sonra "Kəlbəcərin azad
+                                            olunmasına görə" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Xocavənd rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına
+                                            qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin
+                                            24.06.2021-ci il tarixli Sərəncamına əsasən Arif Abbaslı ölümündən sonra "Xocavəndin azad
+                                            olunmasına görə" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Füzuli rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına
+                                            qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin
+                                            05.11.2021-ci il tarixli Sərəncamına əsasən Arif Abbaslı ölümündən sonra "Füzulinin azad
+                                            olunmasına görə" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Cəbrayıl rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına
+                                            qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin
+                                            Sərəncamına əsasən Arif Abbaslı ölümündən sonra "Cəbrayılın azad olunmasına görə" medalı ilə
+                                            təltif edildi.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 col-sm-12">
+                                <div class="cards">
+                                    <div class="cardee">
+                                        <h4 class="card-title">Mirzəyev Elmar</h4>
+                                        <img src="~/img/Qəhrəmanlar/Elmar.png" alt="">
+                                        <p class="card-desc">
+                                            Elmar Mirzəyev 1995-ci il mayın 1-də Biləsuvar rayonunun Ağalıkənd kəndində anadan olub.
+
+                                            2012-2016-cı illərdə Heydər Əliyev adına Azərbaycan Ali Hərbi Məktəbində (AAHM) ali hərbi təhsil alaraq "leytenant" hərbi rütbəsi aldı və 2016-cı ildən hərbi xidmətə başladı. Subay idi.
+
+                                            Azərbaycan Ordusunun baş leytenantı olan Elmar Mirzəyev 2020-ci il sentyabrın 27-də Azərbaycan Silahlı Qüvvələri tərəfindən Ermənistan işğalı altında olan ərazilərin azad edilməsi üçün başlanan Vətən müharibəsi zamanı Murovdağ döyüşlərində, həmçinin Füzulinin və Xocavəndin azadlığı uğrunda gedən döyüşlərdə savaşıb. Elmar Mirzəyev oktyabrın 15-də Füzuli döyüşləri zamanı şəhid olub. 16 oktyabr 2020-ci il tarixində Biləsuvar rayonunda dəfn olunub.
+
+                                            Azərbaycanın ərazi bütövlüyünün təmin edilməsi uğrunda döyüş əməliyyatlarına qatılan və hərbi hissə qarşısında qoyulmuş tapşırıqların icrası zamanı vəzifə borcunu şərəflə yerinə yetirdiyi üçün Azərbaycan Prezidenti İlham Əliyevin 15.12.2020-ci il tarixli Sərəncamına əsasən Elmar Mirzəyev ölümündən sonra "Vətən uğrunda" medalı ilə təltif edildi.
+
+                                            Azərbaycan ərazilərinin işğaldan azad olunması zamanı döyüş tapşırıqlarını yerinə yerinə yetirən zaman mərdliyin və igidliyin göstərilməsinə görə Azərbaycan Prezidenti İlham Əliyevin 18.12.2020-ci il tarixli Sərəncamına əsasən Elmar Mirzəyev ölümündən sonra "İgidliyə görə" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Kəlbəcər rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 29.12.2020-ci il tarixli Sərəncamına əsasən Elmar Mirzəyev ölümündən sonra "Kəlbəcərin azad olunmasına görə" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Xocavənd rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 24.06.2021-ci il tarixli Sərəncamına əsasən Elmar Mirzəyev ölümündən sonra "Xocavəndin azad olunmasına görə" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Cəbrayıl rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 24.06.2021-ci il tarixli Sərəncamına əsasən Elmar Mirzəyev ölümündən sonra "Cəbrayılın azad olunmasına görə" medalı ilə təltif edildi.
+
+                                            Azərbaycan Respublikasının ərazi bütövlüyünün bərpa edilməsi uğrunda gedən döyüş əməliyyatlarında şəhid olmuş Azərbaycan Respublikası Silahlı Qüvvələrinin hərbi qulluqçularının təltif edilməsi haqqında Azərbaycan Prezidenti İlham Əliyevin 05.11.2021-ci il tarixli Sərəncamına əsasən Elmar Mirzəyev ölümündən sonra "Azərbaycan Bayrağı" ordeni ilə təltif edildi.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 col-sm-12">
+                                <div class="cards">
+                                    <div class="cardee">
+                                        <h4 class="card-title">Hüseynli Əmrah</h4>
+                                        <img src="~/img/Qəhrəmanlar/ƏmrahH.png" alt="">
+                                        <p class="card-desc">
+                                            Əmrah Hüseynli 1994-cü il oktyabrın 12-də Cəlilabad şəhərində anadan olub. 2013-2017-ci illərdə Heydər Əliyev adına Azərbaycan Ali Hərbi Məktəbində (AAHM) ali hərbi təhsil alıb.2017-ci ildə hərbi məktəbi "Taktiki kəşfiyyat qoşunları komandiri" ixtisası üzrə leytenant hərbi rütbəsində bitirib. Xüsusi Təyinatlı Qüvvələrin təməl komando kurslarını keçmiş və xüsusi təyinatlı qüvvələrdə xidmətə başlamışdır.
+                                            Əmrah Hüseynli 2017-ci ildən Azərbaycan Silahlı Qüvvələrinin sıralarında xidmət edirdi.
+
+                                            Azərbaycan Ordusunun baş leytenantı olan Əmrah Hüseynli 2020-ci il sentyabrın 27-də Azərbaycan Silahlı Qüvvələri tərəfindən Ermənistan işğalı altında olan ərazilərin azad edilməsi və Azərbaycanın ərazi bütövlüyünün bərpa olunması üçün başlanan Vətən müharibəsi zamanı Cəbrayılın, Hadrut qəsəbəsinin, Füzulinin və Xocavəndin azadlığı uğrunda gedən döyüşlərdə savaşıb. Əmrah Hüseynli oktyabrın 26-da Çanaqçı istiqamətində şəhid olub. Cəlilabad şəhərində dəfn olunub.
+
+                                            Azərbaycanın ərazi bütövlüyünün təmin edilməsi uğrunda döyüş əməliyyatlarına qatılan və hərbi hissə qarşısında qoyulmuş tapşırıqların icrası zamanı vəzifə borcunu şərəflə yerinə yetirdiyi üçün Azərbaycan Prezidenti İlham Əliyevin 15.12.2020-ci il tarixli Sərəncamına əsasən Əmrah Hüseynli ölümündən sonra "Vətən uğrunda" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Cəbrayıl rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 24.06.2021-ci il tarixli Sərəncamına əsasən Əmrah Hüseynli ölümündən sonra "Cəbrayılın azad olunmasına görə" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Qubadlı rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 24.06.2021-ci il tarixli Sərəncamına əsasən Əmrah Hüseynli ölümündən sonra "Qubadlının azad olunmasına görə" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Xocavənd rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 24.06..2021-ci il tarixli Sərəncamına əsasən Əmrah Hüseynli ölümündən sonra "Xocavəndin azad olunmasına görə" medalı ilə təltif edildi.
+
+                                            Azərbaycanın ərazi bütövlüyünün təmin edilməsi uğrunda döyüş əməliyyatlarına qatılan və hərbi hissə qarşısında qoyulmuş tapşırıqların icrası zamanı vəzifə borcunu şərəflə yerinə yetirdiyi üçün Azərbaycan Prezidenti İlham Əliyevin 24.06.2021-ci il tarixli Sərəncamına əsasən Əmrah Hüseynli ölümündən sonra "İgidliyə görə" medalı ilə təltif edildi.
+
+                                            Azərbaycan Prezidenti İlham Əliyevin  Sərəncamına əsasən Əmrah Hüseynli ölümündən sonra "3-cü dərəcli Rəşadət" ordeni ilə təltif edildi.
+
+                                            Azərbaycanın Kəlbəcər  rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 24.06.2021-ci il tarixli Sərəncamına əsasən Əmrah Hüseynli ölümündən sonra "Kəlbəcərin azad olunmasına görə" medalı ilə təltif edildi.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 col-sm-12">
+                                <div class="cards">
+                                    <div class="cardee">
+                                        <h4 class="card-title">Əzizov Xəyyam</h4>
+                                        <img src="~/img/Qəhrəmanlar/Xəyyam.png" alt="">
+                                        <p class="card-desc">
+                                            Xəyyam Əzizov 8 noyabr 1995-ci ildə Neftçala şəhərində fəhlə ailəsində anadan olub. 2 qardaş olmaqla ailədə 4 nəfər olublar. Uşaqlıq illərini doğulduğu Neftçala şəhərində keçirib. 2002-ci ildə Neftçala şəhər Mehman Səfərov adına İnteqrasiya təlimli İnternat tipli gimnaziya məktəbinin 1-ci sinfinə daxil olub və 2006-cı ildə ibtidai sinfini başa vurduqdan sonra Neftçala şəhər Humanitar Təmayüllü Muğan liseyində təhsilini davam etdirib. 2010-cu ildə 8-ci sinfi başa vurduqdan sonra Cəmşid Naxçıvanski adına hərbi liseyə qəbul olub. 2013-cü ildə liseyi bitirdikdən sonra isə Heydər Əliyev adına Azərbaycan Ali Hərbi Məktəbinə daxil olub. 2017-ci ildə həmin məktəbi bakalavr diplomlu xüsusi təyinatlı kimi bitirib və "leytenant" hərbi rütbəsi verilib. Xəyyam öz istəyi ilə Xüsusi Təyinatlı Qüvvələrin kursunu keçərək zabit kimi xidmətinə qədəm qoyub. Leytenant Xəyyam xidməti dövründə bir neçə xarici ölkələrdə dağçılıq, xizəkçilik və paraşütçülük kurslarını yüksək göstəricilərlə başa vurur. 2020-ci ildə leytenant Xəyyam Əzizova baş leytenant hərbi rütbəsi verilir. Həmin il Rusiyanın Moskva şəhərində keçirilən qələbə paradında Azərbaycanı layiqincə təmsil edir. 27 sentybar 2020-ci il tarixində başlayan və 44 gün davam edən II Qarabağ müharibəsində Xəyyam bir Xüsusi Təyinatlıların zabiti kimi iştirak edir. Füzuli, Cəbrayıl, Qubadlı və Şuşa uğrunda gedən ağır döyüşlərdə iştirak edir, böyük şücaətlər göstərir, düşmənə sarsıdıcı zərbələr endirir və xeyli sayda canlı qüvvəsini məhv edir. Qəhrəman Xəyyam döyüş yoldaşlarının ruh yüksəkliyini artırmaq üçün onlara şirniyyat paylayır. Ən son döyüş meydanı olan əlçatmaz Şuşa şəhərinin azad olunmasında əsl qəhrəmanlıq göstərir və özünün doğum günündə -08 noyabr 2020-ci il tarixində şəhadət şərbətini içərək Allahın ən uca məqamı olan şəhidlik məqamına ucalır. Şəhidin nəşi doğulub, boya-başa çatdığı Neftçala şəhərinə gətirilir və böyük izdihamla torpağa tapşırılır.
+                                            Azərbaycan Ordusunun baş leytenantı olan Xəyyam Əzizov 2020-ci il sentyabrın 27-də Azərbaycan Silahlı Qüvvələri tərəfindən Ermənistan işğalı altında olan ərazilərin azad edilməsi üçün başlanan Vətən müharibəsi zamanı Cəbrayılın, Füzulinin və Şuşanın azadlığı uğrunda gedən döyüşlərdə savaşıb. Xəyyam Əzizov noyabrın 6 da döyüş tapşırığının yerinə yetirilməsi zamanı ayağından ağır yaralanmış lakin döyüş bölgəsindən təxliyyə edilməsinə razı olmayaraq sona kimi mübarizəni davam etdirmişdir və noyabrın 8-də Şuşa döyüşləri zamanı şəhid olub. Neftçala rayonunda dəfn olunub.
+
+                                            Azərbaycanın ərazi bütövlüyünün təmin edilməsi uğrunda döyüş əməliyyatlarına qatılan və hərbi hissə qarşısında qoyulmuş tapşırıqların icrası zamanı vəzifə borcunu şərəflə yerinə yetirdiyi üçün Azərbaycan Prezidenti İlham Əliyevin 15.12.2020-ci il tarixli Sərəncamına əsasən Xəyyam Əzizov ölümündən sonra "Vətən uğrunda" medalı ilə təltif edildi.
+
+                                            Azərbaycanın ərazi bütövlüyünün bərpa edilməsi zamanı döyüş əməliyyatlarının rəhbəri olan, düşmənin canlı qüvvəsinin və döyüş texnikasının məhv edilməsində rəşadət göstərən, vəzifə borcunu ləqayətlə və vicdanla yerinə yetirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 15.12.2020-ci il tarixli Sərəncamına əsasən Xəyyam Əzizov ölümündən sonra "Azərbaycan Bayrağı" ordeni ilə təltif edildi.
+
+                                            Azərbaycanın Cəbrayıl rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 24.12.2020-ci il tarixli Sərəncamına əsasən Xəyyam Əzizov ölümündən sonra "Cəbrayılın azad olunmasına görə" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Şuşa rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 29.12.2020-ci il tarixli Sərəncamına əsasən Xəyyam Əzizov ölümündən sonra "Şuşanın azad olunmasına görə" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Füzuli rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 24.06.2021-ci il tarixli Sərəncamına əsasən Xəyyam Əzizov ölümündən sonra "Füzulinin azad olunmasına görə" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Xocavənd rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 24.06.2021-ci il tarixli Sərəncamına əsasən Xəyyam Əzizov ​ölümündən sonra "Xocavəndin azad olunmasına görə" medalı ilə təltif edildi
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 col-sm-12">
+                                <div class="cards">
+                                    <div class="cardee">
+                                        <h4 class="card-title">Hüseynov Əfşan</h4>
+                                        <img src="~/img/Qəhrəmanlar/Əfşan.png" alt="">
+                                        <p class="card-desc">
+                                            Əfşan Hüseynov 1996-cı il martın 16-da Tovuz rayonunun Əsrik Cırdaxan kəndində dünyaya göz açıb. 2002–2013-cü illərdə Əsrik Cırdaxan kənd tam orta məktəbində, 2013–2017-ci illərdə Heydər Əliyev adına Azərbaycan Ali Hərbi Məktəbində (AAHM) təhsil alıb.
+                                            Əfşan Hüseynov 2017-ci ildə "leytenant" hərbi rütbəsi altında Azərbaycan Silahlı Qüvvələrinin sıralarında xidmətə başlayıb. Xidməti dövründə "baş leytenant" hərbi rütbəsinə yüksəlib.
+
+                                            Əfşan Hüseynov "Azərbaycan Ordusunun 100 illiyi (1918-2018)" yubiley medalı ilə təltif edilib.
+                                            Azərbaycan Ordusunun baş leytenantı olan Əfşan Hüseynov 2020-ci il sentyabrın 27-dən Azərbaycan Silahlı Qüvvələri tərəfindən Ermənistan işğalı altında olan ərazilərin azad edilməsi üçün başlanan Vətən müharibəsi zamanı Füzulinin, Cəbrayılın, Hadrutun işğaldan azad olunması uğrunda gedən döyüşlərdə savaşıb. Ermənistan Ordusunun bir neçə postunu və texnikasını ələ keçirib. Əfşan Hüseynov oktyabrın 26-da Füzuli döyüşləri zamanı Alxanlı kəndi istiqamətində şəhid olub. Tovuz rayonunun Əsrik Cırdaxan kəndində dəfn edilib.
+
+                                            Azərbaycanın ərazi bütövlüyünün təmin edilməsi uğrunda döyüş əməliyyatlarına qatılan və hərbi hissə qarşısında qoyulmuş tapşırıqların icrası zamanı vəzifə borcunu şərəflə yerinə yetirdiyi üçün Azərbaycan Prezidenti İlham Əliyevin 15.12.2020-ci il tarixli Sərəncamına əsasən Əfşan Hüseynov ölümündən sonra "Vətən uğrunda" medalı ilə təltif edildi.
+
+                                            Azərbaycanın ərazi bütövlüyünün bərpa edilməsi zamanı döyüş əməliyyatlarının rəhbəri olan, düşmənin canlı qüvvəsinin və döyüş texnikasının məhv edilməsində rəşadət göstərən, vəzifə borcunu ləqayətlə və vicdanla yerinə yetirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 15.12.2020-ci il tarixli Sərəncamına əsasən Əfşan Hüseynov ölümündən sonra "Azərbaycan Bayrağı" ordeni ilə təltif edildi.
+
+                                            Azərbaycanın Cəbrayıl rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 24.12.2020-ci il tarixli Sərəncamına əsasən Əfşan Hüseynov ölümündən sonra "Cəbrayılın azad olunmasına görə" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Füzuli rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 25.12.2020-ci il tarixli Sərəncamına əsasən Əfşan Hüseynov ölümündən sonra "Füzulinin azad olunmasına görə" medalı ilə təltif edildi.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 col-sm-12">
+                                <div class="cards">
+                                    <div class="cardee">
+                                        <h4 class="card-title">Qasımlı Muxtar</h4>
+                                        <img src="~/img/Qəhrəmanlar/Muxtar.png" alt="">
+                                        <p class="card-desc">
+                                            Muxtar Qasımlı 23 fevral 1993-cü ildə Bakı şəhərində anadan olub. 1999-cu ildə Bakı şəhəri 318 nömrəli tam orta məktəbə daxil olmuşdur. 2009-cu ildə məktəbi bitirmişdir. 2009–2013-cü illərdə Azərbaycan Dövlət Bədən Tərbiyəsi və İdman Akademiyasının kidboksing fakültəsi üzrə Bakalavr təhsili almışdır. Erkən yaşlarından idmana marağı olub. Dəfələrlə yarışlarda iştirak edib və mükafatlara layiq görülüb. 27 oktyabr 2019-cu ildə fitnes üzrə Azərbaycan çempionu adına layiq görülmüşdür.
+                                            Muxtar Qasımlı 2013-cü ildə Gədəbəy rayonunun Azərbaycan Silahlı Qüvvələrinə müddətli həqiqi hərbi xidmətə çağırılıb. Xidmətini davam etdirərkən Silahlı Qüvvələrin Təlim və Tədris Mərkəzinə zabitlik kursuna yazılır. 2014-cü ildə ordu sıralarından ehtiyata buraxılır.
+                                            Azərbaycan Silahlı Qüvvələrinin baş leytenantı olan Muxtar Qasımlı 2020-ci il sentyabrın 27-də Azərbaycan və Ermənistan arasında başlanan Vətən müharibəsi zamanı Füzuli uğrunda gedən döyüşlərdə savaşıb. Oktyabrın 2-də Füzuli döyüşlərində əsgər yoldaşlarını döyüş meydanından çıxararkən qəhrəmancasına şəhid olmuşdur.  Bakı şəhəri Qala qəbiristanlığında dəfn olunub.
+
+                                            Azərbaycan Respublikasının ərazi bütövlüyünün bərpa edilməsi uğrunda gedən döyüş əməliyyatlarında iştirak edərək igidlik və mərdlik göstərmiş, hərbi hissə qarşısında qoyulmuş tapşırıqların icrası zamanı vəzifə borcunu şərəflə yerinə yetirərək şəhid olmuş  Muxtar Qasımlı Füzulinin azad olunmasına görə, Xocavəndin azad olunmasına görə, İgidliyə görə, Vətən uğrunda medalları ilə   və  3-cü dərəcəli “Vətənə xidmətə görə” ordeni ilə  tətif edilib.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 col-sm-12">
+                                <div class="cards">
+                                    <div class="cardee">
+                                        <h4 class="card-title">Vəliyev Elnur</h4>
+                                        <img src="~/img/Qəhrəmanlar/Elnur.png" alt="">
+                                        <p class="card-desc">
+                                            Elnur Vəliyev 1997-ci il aprelin 14-də Ucar şəhərində anadan olub. Elnur Vəliyev 2018-ci ildən Azərbaycan Silahlı Qüvvələrinin Cəlilabad rayonunda yerləşən "N" saylı hərbi hissəsində xidmət edirdi.
+
+                                            Azərbaycan Ordusunun leytenantı olan Elnur Vəliyev 2020-ci il sentyabrın 27-də Azərbaycan Silahlı Qüvvələri tərəfindən Ermənistan işğalı altında olan ərazilərin azad edilməsi və Azərbaycanın ərazi bütövlüyünün bərpa olunması üçün başlanan Vətən müharibəsi zamanı Xocavəndin azadlığı uğrunda gedən döyüşlərdə savaşıb. Elnur Vəliyev oktyabrın 26-da Xocavənd döyüşləri zamanı şəhid olub. Ucar şəhərinin Şəhidlər Xiyabanında dəfn olunub.
+
+                                            Azərbaycanın ərazi bütövlüyünün təmin edilməsi uğrunda döyüş əməliyyatlarına qatılan və hərbi hissə qarşısında qoyulmuş tapşırıqların icrası zamanı vəzifə borcunu şərəflə yerinə yetirdiyi üçün Azərbaycan Prezidenti İlham Əliyevin 15.12.2020-ci il tarixli Sərəncamına əsasən Elnur Vəliyev ölümündən sonra "Vətən uğrunda" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Xocavənd rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 24.06.2021-ci il tarixli Sərəncamına əsasən Elnur Vəliyev ölümündən sonra "Xocavəndin azad olunmasına görə" medalı ilə təltif edildi.
+
+                                            Azərbaycanın ərazi bütövlüyünün təmin edilməsi uğrunda döyüş əməliyyatlarına qatılan və hərbi hissə qarşısında qoyulmuş tapşırıqların icrası zamanı vəzifə borcunu şərəflə yerinə yetirdiyi üçün Azərbaycan Prezidenti İlham Əliyevin Sərəncamına əsasən Elnur Vəliyev ölümündən sonra "İgidliyə görə" medalı ilə təltif edildi.
+
+                                            Azərbaycanın ərazi bütövlüyünün təmin edilməsi uğrunda döyüş əməliyyatlarına qatılan və hərbi hissə qarşısında qoyulmuş tapşırıqların icrası zamanı vəzifə borcunu şərəflə yerinə yetirdiyi üçün Azərbaycan Prezidenti İlham Əliyevin Sərəncamına əsasən Elnur Vəliyev ölümündən sonra "Kəlbəcərin azad olunmasına görə" medalı ilə təltif edildi.
+
+                                            Azərbaycanın ərazi bütövlüyünün təmin edilməsi uğrunda döyüş əməliyyatlarına qatılan və hərbi hissə qarşısında qoyulmuş tapşırıqların icrası zamanı vəzifə borcunu şərəflə yerinə yetirdiyi üçün Azərbaycan Prezidenti İlham Əliyevin Sərəncamına əsasən Elnur Vəliyev ölümündən sonra "Azərbaycan bayrağı" ordeni ilə təltif edildi.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 col-sm-12">
+                                <div class="cards">
+                                    <div class="cardee">
+                                        <h4 class="card-title">Əsgərov Musa</h4>
+                                        <img src="~/img/Qəhrəmanlar/Musa.png" alt="">
+                                        <p class="card-desc">
+                                            Musa Əsgərov 1997-ci il fevralın 17-də Cəlilabad rayonunun Sabirabad kəndində anadan olub. 2003–2011-ci illərdə N. Məmmədov adına Sabirabad kənd tam orta məktəbində, 2011–2014-cü illərdə isə Cəmşid Naxçıvanski adına hərbi liseydə təhsil alıb. 2014–2018-ci illərdə Heydər Əliyev adına Azərbaycan Ali Hərbi Məktəbində (AAHM)də ali təhsil alıb Subay idi.
+                                            Azərbaycan Ordusunun leytenantı olan Musa Əsgərov 2020-ci il sentyabrın 27-də Azərbaycan Silahlı Qüvvələri tərəfindən Ermənistan işğalı altında olan ərazilərin azad edilməsi üçün başlanan Vətən müharibəsi zamanı Murovdağ döyüşlərində, həmçinin Cəbrayılın azadlığı uğrunda gedən döyüşlərdə döyüşüb. Musa Əsgərov sentyabrın 28-də Cəbrayıl rayonu Cəfərabad kəndində kəşfiyyatta olarkən düşmən tərəfindən pusquya düşürülərək şəhid olub onun nəşi 4 gün düşmənin nəzarət etdiyi ərazidə qalıb 02.10.2020 tarixində Azərbaycan Silahlı Qüvvələrin Cəbrayıl uğrunda gedən döyüşlərdə onun nəşi döyüş meydanından götürülərək ailəsinə təhvil verilib.
+
+                                            Azərbaycanın ərazi bütövlüyünün təmin edilməsi uğrunda döyüş əməliyyatlarına qatılan və hərbi hissə qarşısında qoyulmuş tapşırıqların icrası zamanı vəzifə borcunu şərəflə yerinə yetirdiyi üçün Azərbaycan Prezidenti İlham Əliyevin 15.12.2020-ci il tarixli Sərəncamına əsasən Musa Əsgərov ölümündən sonra "Vətən uğrunda" medalı ilə təltif edildi.
+
+                                            Azərbaycan ərazilərinin işğaldan azad olunması zamanı döyüş tapşırıqlarını yerinə yerinə yetirən zaman mərdliyin və igidliyin göstərilməsinə görə Azərbaycan Prezidenti İlham Əliyevin 18.12.2020-ci il tarixli Sərəncamına əsasən Musa Əsgərov ölümündən sonra "İgidliyə görə" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Kəlbəcər rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 29.12.2020-ci il tarixli Sərəncamına əsasən Musa Əsgərov ölümündən sonra "Kəlbəcərin azad olunmasına görə" medalı ilə təltif edildi.
+
+                                            Azərbaycanın ərazi bütövlüyünün təmin edilməsi uğrunda döyüş əməliyyatlarına qatılan və hərbi hissə qarşısında qoyulmuş tapşırıqların icrası zamanı vəzifə borcunu şərəflə yerinə yetirdiyi üçün Azərbaycan Prezidenti İlham Əliyevin  Sərəncamına əsasən Musa Əsgərov ölümündən sonra "Cəbrayılın azad olunmasına görə" medalı ilə təltif edildi.
+
+                                            Azərbaycan Respublikasının ərazi bütövlüyünün bərpa edilməsi uğrunda gedən döyüş əməliyyatlarında şəhid olmuş Azərbaycan Respublikası Silahlı Qüvvələrinin hərbi qulluqçularının təltif edilməsi haqqında Azərbaycan Prezidenti İlham Əliyevin 05.11.2021-ci il tarixli Sərəncamına əsasən Musa Əsgərov ölümündən sonra "Azərbaycan Bayrağı" ordeni ilə təltif edildi.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 col-sm-12">
+                                <div class="cards">
+                                    <div class="cardee">
+                                        <h4 class="card-title">Məmmədov Kənan</h4>
+                                        <img src="~/img/Qəhrəmanlar/Kənan.png" alt="">
+                                        <p class="card-desc">
+                                            Kənan Məmmədov 1993-cü il oktyabrın 22-də Ucar rayonunun Alpout kəndində anadan olub. 2013-2017-ci illərdə Bakı Dövlət Universitetində (BDU) "Fiologiya" üzrə ali təhsil alıb. Ailəli idi.
+                                            Azərbaycan Ordusunun Xüsusi Təyinatlı Qüvvələrinin leytenantı olan Kənan Məmmədov 2020-ci il sentyabrın 27-də Azərbaycan Silahlı Qüvvələri tərəfindən Ermənistan işğalı altında olan ərazilərin azad edilməsi və Azərbaycanın ərazi bütövlüyünün bərpa olunması üçün başlanan Vətən müharibəsi zamanı Murovdağ istiqamətində gedən döyüşlərdə savaşıb. Kənan Məmmədov sentyabrın 29-da Murovdağ döyüşləri zamanı şəhid olub. Ucar rayonunda dəfn olunub.
+
+                                            Azərbaycanın ərazi bütövlüyünün təmin edilməsi uğrunda döyüş əməliyyatlarına qatılan və hərbi hissə qarşısında qoyulmuş tapşırıqların icrası zamanı vəzifə borcunu şərəflə yerinə yetirdiyi üçün Azərbaycan Prezidenti İlham Əliyevin 15.12.2020-ci il tarixli Sərəncamına əsasən Kənan Məmmədov ölümündən sonra "Vətən uğrunda" medalı ilə təltif edildi.
+                                            Azərbaycan ərazilərinin işğaldan azad olunması zamanı döyüş tapşırıqlarını yerinə yerinə yetirən zaman mərdliyin və igidliyin göstərilməsinə görə Azərbaycan Prezidenti İlham Əliyevin 18.12.2020-ci il tarixli Sərəncamına əsasən Kənan Məmmədov ölümündən sonra "İgidliyə görə" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Kəlbəcər rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 29.12.2020-ci il tarixli Sərəncamına əsasən Kənan Məmmədov ölümündən sonra "Kəlbəcərin azad olunmasına görə" medalı ilə təltif edildi.
+
+                                            Azərbaycan Prezidenti İlham Əliyevin Sərəncamına əsasən Kənan Məmmədov ölümündən sonra 3-cü dərəcəli "Rəşadət" ordeni ilə təltif edildi.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 col-sm-12">
+                                <div class="cards">
+                                    <div class="cardee">
+                                        <h4 class="card-title">İsmayılov Camal</h4>
+                                        <img src="~/img/Qəhrəmanlar/Camal.png" alt="">
+                                        <p class="card-desc">
+                                            Camal İsmayılov 1984-cü il iyulun 7-də Neftçala rayonunun Həsənabad qəsəbəsində anadan olmuşdur. Onun ailədə bir bacısı və bir qardaşı olmuşdur. 1986-cı ildə — Camal İsmayılovun 2 yaşı olanda İsmayılovlar ailəsi Neftçala rayonundan Rusiyanın Krasnoyarsk diyarının İqarka şəhərində yaşamağa başlamışdılar.
+
+                                            Camal İsmayılov 2015-ci il martın 2-dən aprelin 2-nə qədər Konya şəhərinin 3-cü Ana Jet Üs Komutanlığında baş tutan "TURAZ Şahini — 2015" hərbi təlimlərinə qatılmışdır və buna görə diplomla təltif edilmişdir.
+
+                                            Camal İsmayılov 2015-ci il mayın 9-da Faşizm üzərində Qələbənin 70 illiyi münasibətilə Rusiyanın Qızıl meydanında baş tutan parad zamanı mayor Mehdi Mahmudovun rəhbərliyi altında 70 nəfərdən ibarət olan Azərbaycan Silahlı Qüvvələrinin qrupunun heyətində idi.
+
+                                            Daha sonra isə o, 2015-ci il sentyabrın 28-dən oktyabrın 16-na qədər Gürcüstanda baş tutan dağçılıq üzrə hərbi təlimlərə qatılmışdır və buna görə diplomla təltif edilmişdir.
+
+                                            2019-cu ilin 6–24 mayında 5 dövlətin qatıldığı və Kayseri şəhəri yaxınlığında yerləşən Ərciyəs dağında baş tutan "ERCİYES - 2019" hərbi təlimlərinə qatılmışdır, buna görə də diplomlarla təltif edilmişdir.
+
+                                            Camal İsmayılov və 40 nəfərdən ibarət olan qrup oktyabrın 19-da Laçın dəhlizinə nəzarəti ələ almaq üçün ciddi önəmə və strateji əhəmiyyətə sahib olan mövqelər uğrunda döyüşlərə daxil olmuşdular. Döyüşlər əvvəlcə Qubadlı rayonu istiqamətində olan əlverişli mövqelər uğrunda aparılmışdır. Qeyri-bərabər şəraitdə olan döyüşlərdə Ermənistan tərəfdən ~150–200 hərbi qulluqçusu döyüşmüşdür. 7 saatdan çox davam edən ağır döyüşlər nəticəsində Xüsusi Təyinatlı Qüvvələrdə Qrupun şəxsi heyətindən dörd nəfər — baş gizir Camal İsmayılov, baş gizir Sübhan Cəbrayılov, gizir Şəhriyar Quliyev və gizir Elyar Vəliyev şəhid olmuşdur. Ümumi olaraq Camal İsmayılovun mənsub olduğu tabor müharibə zamanı Xüsusi Təyinatlı Qüvvələrin ən çox şəhid verən taborudur. Camal İsmayılovun şəhid olduğu ayın 21-də, anasını doğum günündə təsdiq olunmuşdur. Neftçala şəhərində dəfn olunmuşdur.
+
+                                            Azərbaycanın ərazi bütövlüyünün bərpa edilməsində xüsusi xidmətlərinə və işğal olunmuş ərazilərin azad olunması zamanı düşmənin məhv edilməsi üzrə qarşıya qoyulmuş döyüş tapşırığını yerinə yetirən zaman göstərdiyi qəhrəmanlıq nümunəsinə görə, həmçinin hərbi qulluq vəzifəsini yerinə yetirən zamanı igidliyin və mərdliyin nümayiş etdirilməsinə görə Azərbaycan Prezidenti İlham Əliyevin 09.12.2020-ci il tarixli Sərəncamına əsasən Camal İsmayılova "Vətən Müharibəsi Qəhrəmanı" adı verildi.
+
+                                            Azərbaycanın ərazi bütövlüyünün təmin edilməsi uğrunda döyüş əməliyyatlarına qatılan və hərbi hissə qarşısında qoyulmuş tapşırıqların icrası zamanı vəzifə borcunu şərəflə yerinə yetirdiyi üçün Azərbaycan Prezidenti İlham Əliyevin 15.12.2020-ci il tarixli Sərəncamına əsasən Camal İsmayılov ölümündən sonra "Vətən uğrunda" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Cəbrayıl rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 24.12.2020-ci il tarixli Sərəncamına əsasən Camal İsmayılov ölümündən sonra "Cəbrayılın azad olunmasına görə" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Füzuli rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 24.06.2021-ci il tarixli Sərəncamına əsasən Camal İsmayılov ölümündən sonra "Füzulinin azad olunmasına görə" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Xocavənd rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 24.06.2021-ci il tarixli Sərəncamına əsasən Camal İsmayılov ​ölümündən sonra "Xocavəndin azad olunmasına görə" medalı ilə təltif edildi.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 col-sm-12">
+                                <div class="cards">
+                                    <div class="cardee">
+                                        <h4 class="card-title">Xəlilov Namiq</h4>
+                                        <img src="~/img/Qəhrəmanlar/Namiq.png" alt="">
+                                        <p class="card-desc">
+                                            Namiq Xəlilov 1992-ci il iyunun 15-də Şirvan şəhərində anadan olub. Ailəli idi. 2 övladı yadigar qaldı.
+                                            Azərbaycan Ordusunun giziri olan Namiq Xəlilov 2020-ci il sentyabrın 27-də Azərbaycan Silahlı Qüvvələri tərəfindən Ermənistan işğalı altında olan ərazilərin azad edilməsi və Azərbaycanın ərazi bütövlüyünün bərpa olunması üçün başlanan Vətən müharibəsi zamanı Murovdağ istiqamətində gedən döyüşlərdə, həmçinin Füzulinin azadlığı uğrunda gedən döyüşlərdə savaşıb. Namiq Xəlilov oktyabrın 16-da Murovdağ döyüşləri zamanı şəhid olub.
+
+                                            Azərbaycanın ərazi bütövlüyünün təmin edilməsi uğrunda döyüş əməliyyatlarına qatılan və hərbi hissə qarşısında qoyulmuş tapşırıqların icrası zamanı vəzifə borcunu şərəflə yerinə yetirdiyi üçün Azərbaycan Prezidenti İlham Əliyevin 15.12.2020-ci il tarixli Sərəncamına əsasən Namiq Xəlilov ölümündən sonra "Vətən uğrunda" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Kəlbəcər rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 29.12.2020-ci il tarixli Sərəncamına əsasən Namiq Xəlilov ölümündən sonra "Kəlbəcərin azad olunmasına görə" medalı ilə təltif edildi.
+
+                                            Azərbaycan ərazilərinin işğaldan azad olunması zamanı döyüş tapşırıqlarını və xidməti vəzifələrini yerinə yetirən zaman fərqləndiyinə görə Azərbaycan Prezidenti İlham Əliyevin 30.12.2020-ci il tarixli Sərəncamına əsasən Namiq Xəlilov ölümündən sonra "Hərbi xidmətlərə görə" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Cəbrayıl rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 24.06.2021-ci il tarixli Sərəncamına əsasən Namiq Xəlilov ölümündən sonra "Cəbrayılın azad olunmasına görə" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Xocavənd rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 24.06.2021-ci il tarixli Sərəncamına əsasən Namiq Xəlilov ​ölümündən sonra "Xocavəndin azad olunmasına görə" medalı ilə təltif edildi.
+
+                                            Azərbaycan ərazilərinin işğaldan azad olunması zamanı döyüş tapşırıqlarını və xidməti vəzifələrini yerinə yetirən zaman fərqləndiyinə görə Azərbaycan Prezidenti İlham Əliyevin  Sərəncamına əsasən Namiq Xəlilov ölümündən sonra "Füzulinin azad olunmasına görə" medalı ilə təltif edildi.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 col-sm-12">
+                                <div class="cards">
+                                    <div class="cardee">
+                                        <h4 class="card-title">Mehbalıyev Vasif</h4>
+                                        <img src="~/img/Qəhrəmanlar/Vasif.png" alt="">
+                                        <p class="card-desc">
+                                            Vasif Mehbalıyev 1994-ci il martın 26-da Neftçala rayonunun Aşağı Surra kəndində anadan olub. Əslən Lerik rayonunun Livədirqə kəndindəndir.
+                                            Azərbaycan Ordusunun Xüsusi Təyinatlı Qüvvələrinin giziri olan Vasif Mehbalıyev 2020-ci il sentyabrın 27-də Azərbaycan Silahlı Qüvvələri tərəfindən Ermənistan işğalı altında olan ərazilərin azad edilməsi və Azərbaycanın ərazi bütövlüyünün təmin olunması üçün başlanan Vətən müharibəsi zamanı Cəbrayılın, Hadrutun, Füzuli rayonunun azadlığı uğrunda gedən döyüşlərdə iştirak etmişdir. Vasif Mehbalıyev oktyabrın 16-da Füzuli döyüşləri zamanı şəhid olub.
+
+                                            Azərbaycanın ərazi bütövlüyünün təmin edilməsi uğrunda döyüş əməliyyatlarına qatılan və hərbi hissə qarşısında qoyulmuş tapşırıqların icrası zamanı vəzifə borcunu şərəflə yerinə yetirdiyi üçün Azərbaycan Prezidenti İlham Əliyevin 15.12.2020-ci il tarixli Sərəncamına əsasən Vasif Mehbalıyev ölümündən sonra "Vətən uğrunda" medalı ilə təltif edildi.
+
+                                            Azərbaycanın ərazi bütövlüyünün bərpa edilməsi zamanı döyüş əməliyyatlarının rəhbəri olan, düşmənin canlı qüvvəsinin məhv edilməsində rəşadət göstərən, vəzifə borcunu ləqayətlə və vicdanla yerinə yetirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 15.12.2020-ci il tarixli Sərəncamına əsasən Vasif Mehbalıyev ölümündən sonra "Azərbaycan Bayrağı" ordeni ilə təltif edildi.
+
+                                            Azərbaycanın Xocavənd rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 24.06.2021-ci il tarixli Sərəncamına əsasən Vasif Mehbalıyev ölümündən sonra "Xocavəndin azad olunmasına görə" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Kəlbəcər  rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin  Sərəncamına əsasən Vasif Mehbalıyev ölümündən sonra "Kəlbəcərin azad olunmasına görə" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Füzuli rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 24.06.2021-ci il tarixli Sərəncamına əsasən Vasif Mehbalıyev ölümündən sonra "Füzulinin azad olunmasına görə" medalı ilə təltif edildi.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 col-sm-12">
+                                <div class="cards">
+                                    <div class="cardee">
+                                        <h4 class="card-title">Məmmədov İbrahim</h4>
+                                        <img src="~/img/Qəhrəmanlar/İbrahimM.png" alt="">
+                                        <p class="card-desc">
+                                            İbrahim Məmmədov 1985-ci il aprelin 3-də Şəki şəhərində anadan olub. 1991-2002-ci illərdə Şəki şəhərində 20 nömrəli tam orta məktəbdə təhsil alıb. Ailəli idi. 2 övladı yadigar qaldı.İbrahim Məmmədov 2002-ci ildən Azərbaycan Silahlı Qüvvələrinin sıralarında xidmət edirdi. 2016-cı ilin 2-5 aprelində baş verən Aprel döyüşlərində savaşıb.
+                                            Azərbaycan Ordusunun giziri olan İbrahim Məmmədov 2020-ci il sentyabrın 27-də Azərbaycan Silahlı Qüvvələri tərəfindən Ermənistan işğalı altında olan ərazilərin azad edilməsi və Azərbaycanın ərazi bütövlüyünün bərpa olunması üçün başlanan Vətən müharibəsi zamanı Cəbrayılın, Hadrut qəsəbəsinin, Füzulinin və Laçın dəhlizi istiqamətində gedən döyüşlərdə savaşıb. Oktyabrın 17-də Füzuli şəhərinin azad olunması barədə Azərbaycan Prezidenti İlham Əliyevi məruzəni İbrahim Məmmədov edib. İbrahim Məmmədov oktyabrın 25-də Laçın döyüşləri zamanı şəhid olub. Şəki şəhərinin Şəhidlər Xiyabanında dəfn olunub.
+                                            Azərbaycanın ərazi bütövlüyünün təmin edilməsi uğrunda döyüş əməliyyatlarına qatılan və hərbi hissə qarşısında qoyulmuş tapşırıqların icrası zamanı vəzifə borcunu şərəflə yerinə yetirdiyi üçün Azərbaycan Prezidenti İlham Əliyevin 15.12.2020-ci il tarixli Sərəncamına əsasən İbrahim Məmmədov ölümündən sonra "Vətən uğrunda" medalı ilə təltif edildi.
+                                            Azərbaycan ərazilərinin işğaldan azad olunması zamanı döyüş tapşırıqlarını yerinə yerinə yetirən zaman mərdliyin və igidliyin göstərilməsinə görə Azərbaycan Prezidenti İlham Əliyevin 18.12.2020-ci il tarixli Sərəncamına əsasən İbrahim Məmmədov ölümündən sonra "İgidliyə görə" medalı ilə təltif edildi.
+                                            Azərbaycanın Şuşa rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 29.12.2020-ci il tarixli Sərəncamına əsasən İbrahim Məmmədov ölümündən sonra "Şuşanın azad olunmasına görə" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Kəlbəcər rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 29.12.2020-ci il tarixli Sərəncamına əsasən İbrahim Məmmədov ölümündən sonra "Kəlbəcərin azad olunmasına görə" medalı ilə təltif edildi.
+                                            Azərbaycanın Xocavənd rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 24.06.2021-ci il tarixli Sərəncamına əsasən İbrahim Məmmədov ölümündən sonra "Xocavəndin azad olunmasına görə" medalı ilə təltif edildi.
+                                            Azərbaycanın ərazi bütövlüyünün bərpa edilməsi zamanı döyüş əməliyyatlarının rəhbəri olan, düşmənin canlı qüvvəsinin məhv edilməsində rəşadət göstərən, vəzifə borcunu ləyaqətlə və vicdanla yerinə yetirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 05.11.2021-ci il tarixli sərəncamına əsasən İbrahim Məmmədov ölümündən sonra "Azərbaycan Bayrağı" ordeni ilə təltif edildi.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 col-sm-12">
+                                <div class="cards">
+                                    <div class="cardee">
+                                        <h4 class="card-title">Nağıyev Anar</h4>
+                                        <img src="~/img/Qəhrəmanlar/Anar.png" alt="">
+                                        <p class="card-desc">
+                                            Anar Nağıyev 1989-cu il oktyabrın 30-da Gəncə şəhərində anadan olub. 1996-2000-ci illərdə Samux rayonunda Alıuşağı kənd tam orta məktəbində, 2000-2007-ci illərdə isə Qazax rayonunda S. Nəsirov adına Ürkməzli kənd tam orta məktəbində təhsil alıb. Ailəli idi. 1-ci nigahdan bir qızı və bir oğlu, 2-ci nigahdan isə 25.01.2021-ci il təvəllüdlü Anarə adında bir qızı yadigar qaldı.
+                                            Anar Nağıyev 2008-2009-cu illərdə Azərbaycan Silahlı Qüvvələrinin sıralarında müddətli həqiqi hərbi xidmətdə olub. 2009-cu ildən isə müddətdən artıq həqiqi hərbi xidmət qulluqçusu idi.
+
+                                            Azərbaycan Ordusunun giziri olan Anar Nağıyev 2020-ci il sentyabrın 27-də Azərbaycan Silahlı Qüvvələri tərəfindən Ermənistan işğalı altında olan ərazilərin azad edilməsi və Azərbaycanın ərazi bütövlüyünün bərpa olunması üçün başlanan Vətən müharibəsi zamanı Şuşanın azadlığı uğrunda gedən döyüşlərdə savaşıb. Anar Nağıyev noyabrın 8-də Şuşa döyüşləri zamanı şəhid olub. Qazax rayonunun Ürkməzli kəndində dəfn olunub.
+
+                                            Azərbaycanın ərazi bütövlüyünün bərpa edilməsində xüsusi xidmətlərinə və işğal olunmuş ərazilərin azad olunması zamanı düşmənin məhv edilməsi üzrə qarşıya qoyulmuş döyüş tapşırığını yerinə yetirən zaman göstərdiyi qəhrəmanlıq nümunəsinə görə, həmçinin hərbi qulluq vəzifəsini yerinə yetirən zamanı igidliyin və mərdliyin nümayiş etdirilməsinə görə Azərbaycan Prezidenti İlham Əliyevin 09.12.2020-ci il tarixli Sərəncamına əsasən Anar Nağıyev ölümündən sonra "Qarabağ" ordeni ilə təltif edildi.
+
+                                            Azərbaycanın ərazi bütövlüyünün təmin edilməsi uğrunda döyüş əməliyyatlarına qatılan və hərbi hissə qarşısında qoyulmuş tapşırıqların icrası zamanı vəzifə borcunu şərəflə yerinə yetirdiyi üçün Azərbaycan Prezidenti İlham Əliyevin 15.12.2020-ci il tarixli Sərəncamına əsasən Anar Nağıyev ölümündən sonra "Vətən uğrunda" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Şuşa rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 29.12.2020-ci il tarixli Sərəncamına əsasən Anar Nağıyev ölümündən sonra "Şuşanın azad olunmasına görə" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Kəlbəcər rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 29.12.2020-ci il tarixli Sərəncamına əsasən Anar Nağıyev ölümündən sonra "Kəlbəcərin azad olunmasına görə" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Cəbrayıl rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 24.06.2021-ci il tarixli Sərəncamına əsasən Anar Nağıyev ölümündən sonra "Cəbrayılın azad olunmasına görə" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Xocavənd rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 24.06.2021-ci il tarixli Sərəncamına əsasən Anar Nağıyev ​ölümündən sonra "Xocavəndin azad olunmasına görə" medalı ilə təltif edildi.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 col-sm-12">
+                                <div class="cards">
+                                    <div class="cardee">
+                                        <h4 class="card-title">Haşımov Tərzan</h4>
+                                        <img src="~/img/Qəhrəmanlar/Tarzan.png" alt="">
+                                        <p class="card-desc">
+                                            Tərzan Haşımov 13 aprel 1989-cu ildə Lerik rayonunun Bibihoni kəndində anadan olub.[1]Tərzan Həşimov 2010-cu il mart ayının 6-da Müdafiə Nazirliyinin əmri ilə gizir hərbi rütbəsi almış və Gəncə şəhərində yerləşən  "N" saylı hərbi hissədə motoatıcı tağım komandirinin müavini vəzifəsində xidmət etməyə başlamışdır.
+
+                                            O, 2016-cı ilin 2-5 aprelində baş verən döyüşlərdə iştirak etmişdir və döyüş zamanı yaralanmışdır.O Döyüş Müddətində Xüsusi İradə Göstərmiş Və Neytral Zonadan Döyüş Zamanı Həlak olan Şəhidimizi Çıxarmışdır.
+
+                                            Azərbaycan Ordusunun Xüsusi Təyinatlı Qüvvələrinin giziri olan Tərzan Haşımov 2020-ci il sentyabrın 27-də Azərbaycan Silahlı Qüvvələri tərəfindən Ermənistan işğalı altında olan ərazilərin azad edilməsi və Azərbaycanın ərazi bütövlüyünün təmin olunması üçün başlanan Vətən müharibəsi zamanı Cəbrayıl və Füzuli rayonunun azadlığı uğrunda gedən döyüşlərdə iştirak etmişdir. Tərzan Həşimov Füzuli rayonu uğrunda gedən döyüşlər zamanı şəhid olmuşdur.
+
+                                            Azərbaycanın ərazi bütövlüyünün təmin edilməsi uğrunda döyüş əməliyyatlarına qatılan və hərbi hissə qarşısında qoyulmuş tapşırıqların icrası zamanı vəzifə borcunu şərəflə yerinə yetirdiyi üçün Azərbaycan Prezidenti İlham Əliyevin 15.12.2020-ci il tarixli Sərəncamına əsasən Tərzan Həşimov ölümündən sonra "Vətən uğrunda" medalı ilə təltif edildi.
+
+                                            Azərbaycan ərazilərinin işğaldan azad olunması zamanı döyüş tapşırıqlarını uğurla yerinə yetirdiyinə, düşmənin əsas qruplaşmalarının məhv edilməsi ilə qoşunların döyüş qabiliyyətinin qorunub saxlanılmasında fərqləndiyinə görə Azərbaycan Prezidenti İlham Əliyevin 18.12.2020-ci il tarixli Sərəncamına əsasən Tərzan Haşımov ölümündən sonra "Cəsur döyüşçü" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Cəbrayıl rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 24.12.2020-ci il tarixli Sərəncamına əsasən Tərzan Həşimov ölümündən sonra "Cəbrayılın azad olunmasına görə" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Xocavənd rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 24.06.2021-ci il tarixli Sərəncamına əsasən Tərzan Haşımov ölümündən sonra "Xocavəndin azad olunmasına görə" medalı ilə təltif edildi.
+
+                                            Azərbaycanın ərazi bütövlüyünün təmin edilməsi uğrunda döyüş əməliyyatlarına qatılan və hərbi hissə qarşısında qoyulmuş tapşırıqların icrası zamanı vəzifə borcunu şərəflə yerinə yetirdiyi üçün Azərbaycan Prezidenti İlham Əliyevin Sərəncamına əsasən Tərzan Həşimov ölümündən sonra "Füzulinin azad olunmasına görə" medalı ilə təltif edildi.
+
+                                            Azərbaycanın ərazi bütövlüyünün təmin edilməsi uğrunda döyüş əməliyyatlarına qatılan və hərbi hissə qarşısında qoyulmuş tapşırıqların icrası zamanı vəzifə borcunu şərəflə yerinə yetirdiyi üçün Azərbaycan Prezidenti İlham Əliyevin Sərəncamına əsasən Tərzan Həşimov ölümündən sonra "Azərbaycan bayrağı" ordeni ilə təltif edildi.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 col-sm-12">
+                                <div class="cards">
+                                    <div class="cardee">
+                                        <h4 class="card-title">Sadıqlı İbrahim</h4>
+                                        <img src="~/img/Qəhrəmanlar/İbrahimS.png" alt="">
+                                        <p class="card-desc">
+                                            İbrahim Sadıqlı 1993-cü il iyunun 28-də Bakı şəhərində anadan olub. İbrahim Sadıqlı 2011-2013-cü illərdə Azərbaycan Silahlı Qüvvələrinin sıralarında müddətli həqiqi hərbi xidmətdə olub. 2016-cı ildən isə müddətdən artıq həqiqi hərbi xidmət qulluqçusu idi.
+
+                                            Azərbaycan Ordusunun giziri olan İbrahim Sadıqlı 2020-ci il sentyabrın 27-də Azərbaycan Silahlı Qüvvələri tərəfindən Ermənistan işğalı altında olan ərazilərin azad edilməsi və Azərbaycanın ərazi bütövlüyünün bərpa olunması üçün başlanan Vətən müharibəsi zamanı Murovdağ istiqamətində gedən döyüşlərdə, həmçinin Cəbrayılın və Füzulinin azadlığı uğrunda gedən döyüşlərdə savaşıb. İbrahim Sadıqlı oktyabrın 3-də Füzuli döyüşləri zamanı şəhid olub. II Şəhidlər Xiyabanında dəfn olunub.
+
+                                            Azərbaycanın ərazi bütövlüyünün bərpa edilməsində xüsusi xidmətlərinə və işğal olunmuş ərazilərin azad olunması zamanı düşmənin məhv edilməsi üzrə qarşıya qoyulmuş döyüş tapşırığını yerinə yetirən zaman göstərdiyi qəhrəmanlıq nümunəsinə görə, həmçinin hərbi qulluq vəzifəsini yerinə yetirən zamanı igidliyin və mərdliyin nümayiş etdirilməsinə görə Azərbaycan Prezidenti İlham Əliyevin 09.12.2020-ci il tarixli Sərəncamına əsasən İbrahim Sadıqlı ölümündən sonra "Qarabağ" ordeni ilə təltif edildi.
+
+                                            Azərbaycanın ərazi bütövlüyünün təmin edilməsi uğrunda döyüş əməliyyatlarına qatılan və hərbi hissə qarşısında qoyulmuş tapşırıqların icrası zamanı vəzifə borcunu şərəflə yerinə yetirdiyi üçün Azərbaycan Prezidenti İlham Əliyevin 15.12.2020-ci il tarixli Sərəncamına əsasən İbrahim Sadıqlı ölümündən sonra "Vətən uğrunda" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Cəbrayıl rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 24.12.2020-ci il tarixli Sərəncamına əsasən İbrahim Sadıqlı ölümündən sonra "Cəbrayılın azad olunmasına görə" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Füzuli rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 25.12.2020-ci il tarixli Sərəncamına əsasən İbrahim Sadıqlı ölümündən sonra "Füzulinin azad olunmasına görə" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Kəlbəcər rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 24.06.2021-ci il tarixli Sərəncamına əsasən İbrahim Sadıqlı ​ölümündən sonra "Kəlbəcərin azad olunmasına görə" medalı ilə təltif edildi.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 col-sm-12">
+                                <div class="cards">
+                                    <div class="cardee">
+                                        <h4 class="card-title">İsayev Təbriz</h4>
+                                        <img src="~/img/Qəhrəmanlar/Təbriz.png" alt="">
+                                        <p class="card-desc">
+                                            Təbriz İsayev 1993-cü il martın 12-də Cəlilabad rayonunun Bəcirəvan kəndində anadan olub.
+                                            Azərbaycan Ordusunun kiçik giziri olan Təbriz İsayev 2020-ci il sentyabrın 27-də Azərbaycan Silahlı Qüvvələri tərəfindən Ermənistan işğalı altında olan ərazilərin azad edilməsi və Azərbaycanın ərazi bütövlüyünün bərpa olunması üçün başlanan Vətən müharibəsi zamanı Füzulinin və Hadrut qəsəbəsinin azadlığı uğrunda gedən döyüşlərdə savaşıb. Təbriz İsayev oktyabrın 10-da Hadrut döyüşləri zamanı şəhid olub. Cəlilabad rayonunun Bəcirəvan kəndində dəfn olunub.
+
+                                            Azərbaycanın ərazi bütövlüyünün təmin edilməsi uğrunda döyüş əməliyyatlarına qatılan və hərbi hissə qarşısında qoyulmuş tapşırıqların icrası zamanı vəzifə borcunu şərəflə yerinə yetirdiyi üçün Azərbaycan Prezidenti İlham Əliyevin 15.12.2020-ci il tarixli Sərəncamına əsasən Təbriz İsayev ölümündən sonra "Vətən uğrunda" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Kəlbəcər rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 29.12.2020-ci il tarixli Sərəncamına əsasən Təbriz İsayev ölümündən sonra "Kəlbəcərin azad olunmasına görə" medalı ilə təltif edildi.
+
+                                            Azərbaycan ərazilərinin işğaldan azad olunması zamanı döyüş tapşırıqlarını yerinə yerinə yetirən zaman mərdliyin və igidliyin göstərilməsinə görə Azərbaycan Prezidenti İlham Əliyevin 24.06.2021-ci il tarixli Sərəncamına əsasən Təbriz İsayev ölümündən sonra "İgidliyə görə" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Cəbrayıl rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 24.06.2021-ci il tarixli Sərəncamına əsasən Təbriz İsayev ölümündən sonra "Cəbrayılın azad olunmasına görə" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Xocavənd rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 24.06.2021-ci il tarixli Sərəncamına əsasən Təbriz İsayev ​ölümündən sonra "Xocavəndin azad olunmasına görə" medalı ilə təltif edildi.
+
+                                            Azərbaycanın ərazi bütövlüyünün təmin edilməsi uğrunda döyüş əməliyyatlarına qatılan və hərbi hissə qarşısında qoyulmuş tapşırıqların icrası zamanı vəzifə borcunu şərəflə yerinə yetirdiyi üçün Azərbaycan Prezidenti İlham Əliyevin  Sərəncamına əsasən Təbriz İsayev ölümündən sonra “Azərbaycan bayrağı” ordeni ilə təltif edildi.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 col-sm-12">
+                                <div class="cards">
+                                    <div class="cardee">
+                                        <h4 class="card-title">İbrahimli Elməddin</h4>
+                                        <img src="~/img/Qəhrəmanlar/Elməddin.png" alt="">
+                                        <p class="card-desc">
+                                            Elməddin İbrahimli 1999-cu il noyabrın 19-da Cəlilabad rayonunun Hacıcavadlı kəndində anadan olub.  Subay idi.
+                                            Azərbaycan Ordusunun kiçik giziri olan Elməddin İbrahimli 2020-ci il sentyabrın 27-də Azərbaycan Silahlı Qüvvələri tərəfindən Ermənistan işğalı altında olan ərazilərin azad edilməsi və Azərbaycanın ərazi bütövlüyünün bərpa olunması üçün başlanan Vətən müharibəsi zamanı Murovdağın, Cəbrayılın, Xocavəndin və Füzulinin azadlığı uğrunda gedən döyüşlərdə savaşıb. Elməddin İbrahimli oktyabrın 17-də Füzuli döyüşləri zamanı şəhid olub. Cəlilabad rayonunun Hacıcavadlı kəndində dəfn olunub.
+
+                                            Azərbaycanın ərazi bütövlüyünün təmin edilməsi uğrunda döyüş əməliyyatlarına qatılan və hərbi hissə qarşısında qoyulmuş tapşırıqların icrası zamanı vəzifə borcunu şərəflə yerinə yetirdiyi üçün Azərbaycan Prezidenti İlham Əliyevin 15.12.2020-ci il tarixli Sərəncamına əsasən Elməddin İbrahimli ölümündən sonra "Vətən uğrunda" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Kəlbəcər rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 29.12.2020-ci il tarixli Sərəncamına əsasən Elməddin İbrahimli ölümündən sonra "Kəlbəcərin azad olunmasına görə" medalı ilə təltif edildi.
+
+                                            Azərbaycan ərazilərinin işğaldan azad olunması zamanı döyüş tapşırıqlarını yerinə yerinə yetirən zaman mərdliyin və igidliyin göstərilməsinə görə Azərbaycan Prezidenti İlham Əliyevin 24.06.2021-ci il tarixli Sərəncamına əsasən Elməddin İbrahimli ölümündən sonra "İgidliyə görə" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Cəbrayıl rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 24.06.2021-ci il tarixli Sərəncamına əsasən Elməddin İbrahimli ölümündən sonra "Cəbrayılın azad olunmasına görə" medalı ilə təltif edildi.
+
+                                            Azərbaycan Prezidenti İlham Əliyevin Sərəncamına əsasən Elməddin İbrahimli ölümündən sonra "Azərbaycan bayrağı" ordeni  ilə təltif edildi.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 col-sm-12">
+                                <div class="cards">
+                                    <div class="cardee">
+                                        <h4 class="card-title">Qasımov Xaspolad</h4>
+                                        <img src="~/img/Qəhrəmanlar/Xaspolad.png" alt="">
+                                        <p class="card-desc">
+                                            Xaspolad Qasımov 1993-cü il dekabrın 14-də Xızı rayonunun Giləzi qəsəbəsində anadan olub. 2000-ci ildə Mikayıl Müşfiq adına Giləzi qəsəbə tam orta məktəbin I sinifinə getmişdir. 2011-ci ildə isə 11 illik təhsilini başa vurub, hərbi xidmətə yollanmışdır. Xidmətdə olduğu müddətdə nümunəvi hərbi qulluqçu olmuşdur. Ailəli idi. Bir oğlu yadigar qaldı.
+                                            Azərbaycan Ordusunun kiçik giziri olan Xaspolad Qasımov 2020-ci il sentyabrın 27-də Azərbaycan Silahlı Qüvvələri tərəfindən Ermənistan işğalı altında olan ərazilərin azad edilməsi və Azərbaycanın ərazi bütövlüyünün bərpa olunması üçün başlanan Vətən müharibəsi zamanı Cəbrayıl və Füzulinin azadlığı uğrunda gedən döyüşlərdə savaşıb. Xaspolad Qasımov oktyabrın 6-da Füzuli döyüşləri zamanı şəhid olub.
+
+                                            Azərbaycanın ərazi bütövlüyünün təmin edilməsi uğrunda döyüş əməliyyatlarına qatılan və hərbi hissə qarşısında qoyulmuş tapşırıqların icrası zamanı vəzifə borcunu şərəflə yerinə yetirdiyi üçün Azərbaycan Prezidenti İlham Əliyevin 15.12.2020-ci il tarixli Sərəncamına əsasən Xaspolad Qasımov ölümündən sonra "Vətən uğrunda" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Cəbrayıl rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 24.12.2020-ci il tarixli Sərəncamına əsasən Xaspolad Qasımov ölümündən sonra "Cəbrayılın azad olunmasına görə" medalı ilə təltif edildi.
+
+                                            Azərbaycan ərazilərinin işğaldan azad olunması zamanı döyüş tapşırıqlarını və xidməti vəzifələrini yerinə yetirən zaman fərqləndiyinə görə Azərbaycan Prezidenti İlham Əliyevin 30.12.2020-ci il tarixli Sərəncamına əsasən Xaspolad Qasımov ölümündən sonra "Hərbi xidmətlərə görə" medalı ilə təltif edildi.
+
+                                            Azərbaycanın ərazi bütövlüyünün təmin edilməsi uğrunda döyüş əməliyyatlarına qatılan və hərbi hissə qarşısında qoyulmuş tapşırıqların icrası zamanı vəzifə borcunu şərəflə yerinə yetirdiyi üçün Azərbaycan Prezidenti İlham Əliyevin Sərəncamına əsasən Xaspolad Qasımov ölümündən sonra "Füzulinin azad olunmasına görə" medalı ilə təltif edildi.
+
+                                            Azərbaycanın ərazi bütövlüyünün təmin edilməsi uğrunda döyüş əməliyyatlarına qatılan və hərbi hissə qarşısında qoyulmuş tapşırıqların icrası zamanı vəzifə borcunu şərəflə yerinə yetirdiyi üçün Azərbaycan Prezidenti İlham Əliyevin Sərəncamına əsasən Xaspolad Qasımov ölümündən sonra "Azərbaycan bayrağı" ordeni ilə təltif edildi.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 col-sm-12">
+                                <div class="cards">
+                                    <div class="cardee">
+                                        <h4 class="card-title">Cabbarov Orxan</h4>
+                                        <img src="~/img/Qəhrəmanlar/Orxan.png" alt="">
+                                        <p class="card-desc">
+                                            Orxan Cabbarov 1995-ci il noyabrın 20-də Tovuz şəhərində anadan olub. Ailəli idi. Ayxan adında bir oğlu yadigar qaldı.
+                                            Orxan Cabbarov 2013-2015-ci illərdə Azərbaycan Silahlı Qüvvələrinin sıralarında müddətli həqiqi hərbi xidmətdə olub. 2015-ci ildən isə Xüsusi Təyinatlı Qüvvələrin sıralarında müddətdən artıq həqiqi hərbi xidmət qulluqçusu olaraq xidmət edirdi. 2016-cı ilin 2-5 aprelində baş verən Aprel döyüşlərində Talış istiqamətində savaşıb.
+
+                                            Azərbaycan Ordusunun Xüsusi Təyinatlı Qüvvələrinin kiçik giziri olan Orxan Cabbarov 2020-ci il sentyabrın 27-də Azərbaycan Silahlı Qüvvələri tərəfindən Ermənistan işğalı altında olan ərazilərin azad edilməsi və Azərbaycanın ərazi bütövlüyünün bərpa olunması üçün başlanan Vətən müharibəsi zamanı Cəbrayılın, Füzulinin, Zəngilanın, Qubadlının, Xocavəndin və Şuşanın azadlığı uğrunda gedən döyüşlərdə savaşıb. Orxan Cabbarov noyabrın 9-da Şuşa döyüşləri zamanı şəhid olub. Tovuz şəhərində dəfn olunub.
+
+                                            Azərbaycanın ərazi bütövlüyünün bərpa edilməsində xüsusi xidmətlərinə və işğal olunmuş ərazilərin azad olunması zamanı düşmənin məhv edilməsi üzrə qarşıya qoyulmuş döyüş tapşırığını yerinə yetirən zaman göstərdiyi qəhrəmanlıq nümunəsinə görə, həmçinin hərbi qulluq vəzifəsini yerinə yetirən zamanı igidliyin və mərdliyin nümayiş etdirilməsinə görə Azərbaycan Prezidenti İlham Əliyevin 09.12.2020-ci il tarixli Sərəncamına əsasən Orxan Cabbarova "Vətən Müharibəsi Qəhrəmanı" adı verildi.
+
+                                            Azərbaycanın ərazi bütövlüyünün təmin edilməsi uğrunda döyüş əməliyyatlarına qatılan və hərbi hissə qarşısında qoyulmuş tapşırıqların icrası zamanı vəzifə borcunu şərəflə yerinə yetirdiyi üçün Azərbaycan Prezidenti İlham Əliyevin 15.12.2020-ci il tarixli Sərəncamına əsasən Orxan Cabbarov ölümündən sonra "Vətən uğrunda" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Cəbrayıl rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 24.12.2020-ci il tarixli Sərəncamına əsasən Orxan Cabbarov ölümündən sonra "Cəbrayılın azad olunmasına görə" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Şuşa rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 29.12.2020-ci il tarixli Sərəncamına əsasən Orxan Cabbarov ölümündən sonra "Şuşanın azad olunmasına görə" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Xocavənd rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 24.06.2021-ci il tarixli Sərəncamına əsasən Orxan Cabbarov ​ölümündən sonra "Xocavəndin azad olunmasına görə" medalı ilə təltif edildi.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 col-sm-12">
+                                <div class="cards">
+                                    <div class="cardee">
+                                        <h4 class="card-title">Ağaəhmədov Elnur</h4>
+                                        <img src="~/img/Qəhrəmanlar/Ağaəhməd.png" alt="">
+                                        <p class="card-desc">
+                                            Elnur Ağaəhmədov 1998-ci il iyunun 28-də Xızı rayonunun Sitalçay kəndində anadan olub. 2004-2015-ci illərdə C. Novruz adına Sitalçay kənd tam orta məktəbində təhsil alıb. Subay idi.
+                                            Elnur Ağaəhmədov 2016-2017-ci illərdə Azərbaycan Silahlı Qüvvələrinin sıralarında müddətli həqiqi hərbi xidmətdə olub. 2017-ci ildən isə "kiçik gizir" hərbi rütbəsində müddətdən artıq həqiqi hərbi qulluqçu olaraq xidmət edirdi.
+
+                                            Azərbaycan Ordusunun kiçik giziri olan Elnur Ağaəhmədov 2020-ci il sentyabrın 27-də Azərbaycan Silahlı Qüvvələri tərəfindən Ermənistan işğalı altında olan ərazilərin azad edilməsi və Azərbaycanın ərazi bütövlüyünün bərpa olunması üçün başlanan Vətən müharibəsi zamanı Füzulinin, Cəbrayılın və Xocavəndin azadlığı uğrunda gedən döyüşlərdə savaşıb. Elnur Ağaəhmədov oktyabrın 26-da Xocavənd döyüşləri zamanı Qırmızı Bazar istiqamətində şəhid olub. Xızı rayonunun Sitalçay kəndində dəfn olunub.
+
+                                            Azərbaycanın ərazi bütövlüyünün təmin edilməsi uğrunda döyüş əməliyyatlarına qatılan və hərbi hissə qarşısında qoyulmuş tapşırıqların icrası zamanı vəzifə borcunu şərəflə yerinə yetirdiyi üçün Azərbaycan Prezidenti İlham Əliyevin 15.12.2020-ci il tarixli Sərəncamına əsasən Elnur Ağaəhmədov ölümündən sonra "Vətən uğrunda" medalı ilə təltif edildi.
+
+                                            Azərbaycan ərazilərinin işğaldan azad olunması zamanı döyüş tapşırıqlarını yerinə yerinə yetirən zaman mərdliyin və igidliyin göstərilməsinə görə Azərbaycan Prezidenti İlham Əliyevin 18.12.2020-ci il tarixli Sərəncamına əsasən Elnur Ağaəhmədov ölümündən sonra "İgidliyə görə" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Kəlbəcər rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 29.12.2020-ci il tarixli Sərəncamına əsasən Elnur Ağaəhmədov ölümündən sonra "Kəlbəcərin azad olunmasına görə" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Cəbrayıl rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 24.06.2021-ci il tarixli Sərəncamına əsasən Elnur Ağaəhmədov ölümündən sonra "Cəbrayılın azad olunmasına görə" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Xocavənd rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 24.06.2021-ci il tarixli Sərəncamına əsasən Elnur Ağaəhmədov ​ölümündən sonra "Xocavəndin azad olunmasına görə" medalı ilə təltif edildi.
+
+                                            zərbaycan Prezidenti İlham Əliyevin 05.11.2021-ci il tarixli Sərəncamına əsasən Azərbaycan Respublikasının ərazi bütövlüyünün bərpa edilməsi uğrunda gedən döyüş əməliyyatlarında iştirak edərək igidlik və mərdlik göstərmiş, hərbi hissə qarşısında qoyulmuş tapşırıqların icrası zamanı vəzifə borcunu şərəflə yerinə yetirərək şəhid olmuş  Ağaəhmədov Elnur Fəxrəddin oğlu “Azərbaycan Bayrağı” ordeni ilə təltif edilib.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 col-sm-12">
+                                <div class="cards">
+                                    <div class="cardee">
+                                        <h4 class="card-title">Hüseynov Cavid</h4>
+                                        <img src="~/img/Qəhrəmanlar/Cavid.png" alt="">
+                                        <p class="card-desc">
+                                            Cavid Hüseynov 1993-cü il dekabrın 12-də Tovuz rayonunun Alakol kəndində anadan olub.[1] 2000-2011-ci illərdə N.Sadıqov adına Alakol kənd tam orta məktəbində təhsil alıb. Subay idi. Cavid Hüseynov 2012-ci ildə müddətli həqiqi hərbi xidmətə çağırılıb.  2012-2013-cü illərdə Azərbaycan Silahlı Qüvvələrinin “N” saylı hərbi hissəsində xidmət edib. 2014-cü ildən Xüsusi Təyinatlı Qüvvələrin “N” saylı hərbi hissəsində xidmət edirdi. Cavid Hüseynov məharətli snayperçi idi. O, snayper təlimatçısı olub; dəfələrlə “Ən yaxşı snayper” fəxri fərmanı ilə təltif edilib. 2019-cu ildə Belarus hərbi idman oyunları üzrə snayper yarışında 21 ölkə iştirakçısı arasında komanda hesabında 2-ci, fərdi yarışda 1-ci yeri tutub.
+                                            Azərbaycan Silahlı Qüvvələrinin çavuşu olan Cavid Hüseynov 2020-ci il sentyabrın 27-də Azərbaycan Silahlı Qüvvələri tərəfindən Ermənistan işğalı altında olan ərazilərin azad edilməsi üçün başlanan Vətən müharibəsi zamanı Laçın və Qubadlının azadlığı uğrunda gedən döyüşlərdə snayperçi kimi iştirak edib. Cavid Hüseynov oktyabrın 27-də Qubadlı döyüşləri zamanı şəhid olub. Tovuz rayonunun Alakol kəndində torpağa tapşırılıb.
+                                            Azərbaycanın ərazi bütövlüyünün təmin edilməsi uğrunda döyüş əməliyyatlarına qatılan və hərbi hissə qarşısında qoyulmuş tapşırıqların icrası zamanı vəzifə borcunu şərəflə yerinə yetirdiyi üçün Azərbaycan Prezidenti İlham Əliyevin 15.12.2020-ci il tarixli Sərəncamına əsasən Cavid Hüseynov ölümündən sonra "Vətən uğrunda" medalı ilə təltif edildi.
+
+                                            Azərbaycanın ərazi bütövlüyünün təmin edilməsi uğrunda döyüş əməliyyatlarına qatılan və hərbi hissə qarşısında qoyulmuş tapşırıqların icrası zamanı vəzifə borcunu şərəflə yerinə yetirdiyi üçün Azərbaycan Prezidenti İlham Əliyevin Sərəncamına əsasən Cavid Hüseynov ölümündən sonra "Füzulinin azad olunmasına görə" medalı ilə təltif edildi.
+
+                                            Azərbaycanın ərazi bütövlüyünün təmin edilməsi uğrunda döyüş əməliyyatlarına qatılan və hərbi hissə qarşısında qoyulmuş tapşırıqların icrası zamanı vəzifə borcunu şərəflə yerinə yetirdiyi üçün Azərbaycan Prezidenti İlham Əliyevin Sərəncamına əsasən Cavid Hüseynov ölümündən sonra "Cəbrayılın azad olunmasına görə" medalı ilə təltif edildi.
+                                            Azərbaycanın Kəlbəcər rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 29.12.2020-ci il tarixli Sərəncamına əsasən Cavid Hüseynov ölümündən sonra "Kəlbəcərin azad olunmasına görə" medalı ilə təltif edildi.
+                                            Azərbaycan ərazilərinin işğaldan azad olunması zamanı döyüş tapşırıqlarını və xidməti vəzifələrini yerinə yetirən zaman fərqləndiyinə görə Azərbaycan Prezidenti İlham Əliyevin 30.12.2020-ci il tarixli Sərəncamına əsasən Cavid Hüseynov ölümündən sonra "Hərbi xidmətlərə görə" medalı ilə təltif edildi.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 col-sm-12">
+                                <div class="cards">
+                                    <div class="cardee">
+                                        <h4 class="card-title">Xankişiyev Mədət</h4>
+                                        <img src="~/img/Qəhrəmanlar/Mədət.png" alt="">
+                                        <p class="card-desc">
+                                            Xankişiyev Mədət Vəkil oğlu 1998-ci il yanvarın 15-i Cəlilabad rayonunun Çünzəli kəndində dünyaya göz açmışdır. Orta təhsilini Çünzəli kənd məktəbində almış, məzun olduqdan sonra hərbi xidmətə yollanmışdır.
+                                            Mədət 2019-cu ildə Quru Qoşunlarının hərbi hissəsinə müraciət edərək MAXE olaraq xidmət etmək istədiyini bildirib. 6 aylıq kurslardan sonra Kiçik gizir olaraq xidmətə başlıyıb. Bir müddətlik xidmətdən sonra o, Gizir rütbəsini alıb. 27 sentyabrda başlayan II Qarabağ müharibəsində iştirak etmişdir. Oktyabrın 18-i Qubadlı uğrunda gedən döyüşlərdə yaralı döyüş yoldaşlarını döyüş meydanından çıxararkən başından aldığı qəlpə yarası nəticəsində ağır yaralanmışdır və şəhid olmuşdur.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 col-sm-12">
+                                <div class="cards">
+                                    <div class="cardee">
+                                        <h4 class="card-title">Şirvanov Davud</h4>
+                                        <img src="~/img/Qəhrəmanlar/Davud.png" alt="">
+                                        <p class="card-desc">
+                                            Davud Şirvanov 1994-cü il aprelin 1-də Lerik rayonunun Livədirqə kəndində anadan olub. Ailəli idi. Bir oğlu və bir qızı yadigar qaldı.
+                                            Davud Şirvanov 2012-2013-cü illərdə Azərbaycan Silahlı Qüvvələrinin sıralarında müddətli həqiqi hərbi xidmətdə olub. 2020-ci ildən isə Azərbaycan Silahlı Qüvvələrinin Füzuli rayonunda yerləşən "N" saylı hərbi hissəsində müddətdən artıq həqiqi hərbi xidmət qulluqçusu idi.
+
+                                            Azərbaycan Ordusunun əsgəri olan Davud Şirvanov 2020-ci il sentyabrın 27-də Azərbaycan Silahlı Qüvvələri tərəfindən Ermənistan işğalı altında olan ərazilərin azad edilməsi və Azərbaycanın ərazi bütövlüyünün bərpa olunması üçün başlanan Vətən müharibəsi zamanı Füzulinin azadlığı uğrunda gedən döyüşlərdə savaşıb. Davud Şirvanov oktyabrın 2-də Füzuli döyüşləri zamanı şəhid olub. Lerik rayonunun Livədirqə kəndində dəfn olunub.
+
+                                            Azərbaycanın ərazi bütövlüyünün təmin edilməsi uğrunda döyüş əməliyyatlarına qatılan və hərbi hissə qarşısında qoyulmuş tapşırıqların icrası zamanı vəzifə borcunu şərəflə yerinə yetirdiyi üçün Azərbaycan Prezidenti İlham Əliyevin 15.12.2020-ci il tarixli Sərəncamına əsasən Davud Şirvanov ölümündən sonra "Vətən uğrunda" medalı ilə təltif edildi.
+
+                                            Azərbaycanın ərazi bütövlüyünün təmin edilməsi uğrunda döyüş əməliyyatlarına qatılan və hərbi hissə qarşısında qoyulmuş tapşırıqların icrası zamanı vəzifə borcunu şərəflə yerinə yetirdiyi üçün Azərbaycan Prezidenti İlham Əliyevin  tarixli Sərəncamına əsasən Davud Şirvanov ölümündən sonra "Cəsur döyüşçü" medalı ilə təltif edildi.
+
+                                            Azərbaycanın ərazi bütövlüyünün təmin edilməsi uğrunda döyüş əməliyyatlarına qatılan və hərbi hissə qarşısında qoyulmuş tapşırıqların icrası zamanı vəzifə borcunu şərəflə yerinə yetirdiyi üçün Azərbaycan Prezidenti İlham Əliyevin  tarixli Sərəncamına əsasən Davud Şirvanov ölümündən sonra "Cəbrayılın azad olunmasına görə" medalı ilə təltif edildi.
+
+                                            Azərbaycanın ərazi bütövlüyünün təmin edilməsi uğrunda döyüş əməliyyatlarına qatılan və hərbi hissə qarşısında qoyulmuş tapşırıqların icrası zamanı vəzifə borcunu şərəflə yerinə yetirdiyi üçün Azərbaycan Prezidenti İlham Əliyevin  tarixli Sərəncamına əsasən Davud Şirvanov ölümündən sonra "Hərbi xidmətlərə görə" medalı ilə təltif edildi.
+
+                                            Azərbaycanın Füzuli rayonunun işğaldan azad edilməsi uğrunda aparılan döyüş əməliyyatlarına qatılaraq şəxsi igidliyi və şücaəti nümayiş etdirdiyinə görə Azərbaycan Prezidenti İlham Əliyevin 25.12.2020-ci il tarixli Sərəncamına əsasən Davud Şirvanov ölümündən sonra "Füzulinin azad olunmasına görə" medalı ilə təltif edildi.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 col-sm-12">
+                                <div class="cards">
+                                    <div class="cardee">
+                                        <h4 class="card-title">Abbasov Elcan</h4>
+                                        <img src="~/img/Qəhrəmanlar/Elcan.png" alt="">
+                                        <p class="card-desc">
+                                            Elcan Abbasov 23 sentyabr 2000-ci ildə Mingəçevir rayonunda doğulub.2007-2017-ci illərdə Mingeçevirdə təhsil almışdır.Uşaq yaşlarında güləşlə məşğul olmuşdur.
+                                            Elcan Abbasov təhsilini başa vurduqdan sonra Azərbaycan Silahlı Qüvvələrinin sıralarında müddətli həqiqi hərbi xidmət qulluqçusu olub. Elcan Abbasov 2020-ci il noyabrın 11-də Azərbaycan Silahlı Qüvvələri tərəfindən Ermənistan işğalı altında olan ərazilərin azad edilməsi və Azərbaycanın ərazi bütövlüyünün bərpa olunması üçün başlanan Vətən müharibəsi zamanı Şuşanın azadlığı uğrunda gedən döyüşlərdə savaşıb.Elcan Abbasov oktyabrın 21-də Şuşa döyüşləri zamanı şəhid olub.
+
+                                            Azərbaycan ərazilərinin işğaldan azad olunması zamanı döyüş tapşırıqlarını uğurla yerinə yetirdiyinə, düşmənin əsas qruplaşmalarının məhv edilməsi ilə qoşunların döyüş qabiliyyətinin qorunub saxlanılmasında fərqləndiyinə görə Azərbaycan Prezidenti İlham Əliyevin müvafiq sərəncamları ilə “Kəlbəcərin azad olunmasına görə”, “Şuşanın azad olunmasına görə”, “Cəbrayılın azad olunmasına görə”, “Xocavəndin azad olunmasına görə”, “Vətən uğrunda”, “Cəsur döyüşçü” medalları və 3-cü dərəcəli “Rəşadət ordeni ”  ilə təltif edilmişdir.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row my-3">
+                            <div id="posination-area">
+                                <div class="posination">
+                                    <i class="fa-solid fa-angles-left"></i>
+                                    <i class="fa-solid fa-angle-left"></i>
+                                    <span class="first">1</span>
+                                    <span>2</span>
+                                    <span>3</span>
+                                    <span>4</span>
+                                    <span>5</span>
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                    <i class="fa-solid fa-angles-right"></i>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+
+        <div id="my-footer" class="my-5">
+            <footer class="text-center text-lg-start text-white">
+                <div class="container p-4 pb-0">
+                    <section class="">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                                <h5 class="text-uppercase">SAYT HAQQINDA</h5>
+
+                                <p>
+                                    Saytımızda Azərbaycan Respublikasının müstəqilliyi, ərazi bütövlüyü və suverenliyi uğrunda canından
+                                    keçmiş qəhrəmanlarımız
+                                    haqqında ətraflı məlumat əldə edə, həmçinin əlavə dəyişikliklər edə bilərsiniz. Etdiyiniz
+                                    dəyişikliklər bizim tərəfimizdən
+                                    baxıldıqdan sonra qısa müddət ərzində yayımlanacaqdır. Bundan əlavə saytımızda hərbi mağaza da
+                                    fəaliyyət göstərir və siz
+                                    rahatlıqla istənilən məhsulu sifariş edə bilərsiniz.
+                                </p>
+                            </div>
+
+                            <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                                <h5 class="text-uppercase">HAQQIMIZDA</h5>
+
+                                <ul class="list-unstyled mb-0">
+                                    <li>
+                                        <a href="~/about.html" class="text-white">haqqımızda</a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="text-white">şərtlər və qaydalar</a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="text-white">
+                                            məxfilik siyasəti
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="text-white">FAQ</a>
+                                    </li>
+                                    <li>
+                                        <a asp-controller="Contact" asp-action="Index" class="text-white">bizimlə əlaqə</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                                <h5 class="text-uppercase">GİRİŞ</h5>
+
+                                <ul class="list-unstyled mb-0">
+                                    <li>
+                                        <a asp-controller="Account" asp-action="Login" class="text-white">daxil ol</a>
+                                    </li>
+                                    <li>
+                                        <a asp-controller="Account" asp-action="Register" class="text-white">qeydiyyat</a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="text-white">şifrəmi unutmuşam</a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="text-white">təşəkkürlər</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                                <h5 class="text-uppercase">KATEQORİYALAR</h5>
+
+                                <ul class="list-unstyled mb-0">
+                                    <li>
+                                        <a href="#!" class="text-white">uniformalar</a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="text-white">geyimlər</a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="text-white">aksesuarlar</a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="text-white">qarışıq mallar</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                                <h5 class="text-uppercase">SOSIAL</h5>
+
+                                <ul class="list-unstyled mb-0">
+                                    <li>
+                                        <a href="https://www.facebook.com/cenab.akberoff" class="text-white">facebook</a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="text-white">twitter</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.youtube.com/shorts/Sk69jShsSE0" class="text-white">youtube</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.instagram.com/cenab.akberoff/" class="text-white">google plus</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                    <hr class="mb-4" />
+                    <div class="copyright">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-12"></div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <span>© Bütün hüquqlar qorunur | e.o baş-leytenant Orxan Əkbərov tərəfindən yaradılmışdır.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="mb-4" />
+                </div>
+            </footer>
+        </div>
+    </footer>
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.30/sweetalert2.all.min.js"></script>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@@popperjs/core@2.10.2/dist/umd/popper.min.js"
+            integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+            integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+            crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/053fc23104.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+            integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="~/js/script.js"></script>
+</body>
+
+</html>

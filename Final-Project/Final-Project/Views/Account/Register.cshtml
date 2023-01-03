@@ -1,0 +1,65 @@
+﻿@model RegisterVM
+
+@{
+    ViewData["Title"] = "Register";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+   
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <link rel="Stylesheet" type="text/css" href="~/css/register/register.css">
+</head>
+<body>
+
+    <main>
+        <div class="container">
+            <div class="form">
+            <button class="button-64" role="button"><a asp-controller="Home" asp-action="Index" class="text">Əsas səhifəyə qayıt</a></button>
+                <div class="text-danger mb-2" asp-validation-summary="All"></div>
+                <span class="form__title">Qeydiyyat</span>
+                <form asp-controller="Account" asp-action="Register" method="post" enctype="multipart/form-data">
+                    <div class="form__input">
+                        <i class="ri-user-line"></i>
+                        <input asp-for="UserName" placeholder="UserName" autocomplete="off">
+                        <span class="text-danger" asp-validation-for="UserName"></span>
+                    </div>
+                    <div class="form__input">
+                        <i class="ri-mail-line"></i>
+                        <input type="email" placeholder="Enter your Email" autocomplete="off" asp-for="Email" required />
+                        <span class="text-danger" asp-validation-for="Email"></span>
+                    </div>
+                    <div class="form__input">
+                        <i class="ri-lock-line"></i>
+                        <input type="password" placeholder="Enter your Password" asp-for="Password" />
+                        <span class="text-danger" asp-validation-for="Password"></span>
+                    </div>
+                    <div class="form__input">
+                        <i class="ri-lock-line"></i>
+                        <input type="password" placeholder="Comfirm your Password" asp-for="ConfirmPassword" />
+                        <span class="text-danger" asp-validation-for="Password"></span>
+                    </div>
+                    <button class="btn form__button">Qeydiyyat ol</button>
+                    <span class="form__switch">
+                        Artıq bir hesabınız var ? <a asp-controller="Account" asp-action="Login">Daxil ol</a>
+                    </span>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="~/js/script.js"></script>
+</body>
+
+</html>

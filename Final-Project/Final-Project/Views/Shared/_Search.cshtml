@@ -1,0 +1,11 @@
+﻿@model List<UnudulmazlarCard>
+
+
+@foreach (var item in Model)
+{
+        <li style="text-align: center;list-style: none;background-color: black;">
+            <a asp-controller="unudulmazlar" asp-action="detail" asp-route-id="@item.Id" style="color:whitesmoke; text-decoration:none;">
+            @item.Name @item.Surname @item.Birthday
+            </a>
+        </li>
+}

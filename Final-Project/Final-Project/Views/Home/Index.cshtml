@@ -1,0 +1,617 @@
+﻿@model HomeVM
+
+
+<section id="slider-header">
+    <section id="header-carousell">
+        <div class="carousell-section container">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    @foreach (var item in Model.Sliders)
+                    {
+                        <div class="swiper-slide">
+                            <img src="~/img/@item.Image" alt="">
+                            <div class="swiper-slide-text">
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="component-section">
+        <div class="container">
+            <div class="row my-5 component-row">
+                
+                @foreach (var item in Model.Services)
+                {
+                        <div class="col-lg-4 col-md-12 col-sm-12">
+                            <div class="component-card">
+                                <div class="shop-iconn"><i class="@item.Icon"></i></div>
+                                <div class="component-text">
+                                    <h3>@item.Name</h3>
+                                    <p>@item.Title</p>
+                                </div>
+                            </div>
+                        </div>
+                }
+
+            </div>
+        </div>
+    </section>
+</section>
+
+<section id="white-area">
+    <div class="container">
+        <div class="wrapper">
+            <div class="medal-1">
+                <img src="~/img/Participant_of_the_Patriotic_War_medal.png">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="unudulmazlar-area">
+    <div class="container unudulmazlar-area">
+        <img src="~/img/Unudulmazlar.jpg" alt="">
+    </div>
+</section>
+
+
+<section id="card-area">
+
+    <div id="card-area" class="container">
+
+        <!-- Card: Beach -->
+       @foreach (var item in Model.UnudulmazlarVideos)
+        {
+            <section class="card-section">
+                <div class="card">
+                    <div class="flip-card">
+                        <div class="flip-card__container">
+                            <div class="card-front">
+                                <div class="card-front__tp card-front__tp--beach card-first">
+                                    <img src="~/img/Qəhrəmanlar/@item.Image" alt="">
+                                </div>
+
+                                <div class="card-front__bt">
+
+                                    <p class="card-front__text-view card-front__text-view--beach">
+                                        Şəhid
+                                        <br>
+                                        @item.Rutbe
+                                        <br>
+                                        @item.Name
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <video class="video__container" autoplay muted loop>
+                                    <source class="video__media" src="~/video/@item.Video" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="inside-page">
+                        <div class="inside-page__container">
+                            <h3 class="inside-page__heading inside-page__heading--beach">
+                                @item.Rutbe
+                            </h3>
+                            <h3 class="inside-page__heading inside-page__heading--beach">
+                                @item.Birthday
+                            </h3>
+                            
+                            <a href="#" class="inside-page__btn inside-page__btn--beach">Ətraflı</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        }
+
+
+@*        <!-- Card: Beach -->
+        <section class="card-section t-dn">
+            <div class="card">
+                <div class="flip-card">
+                    <div class="flip-card__container">
+                        <div class="card-front">
+                            <div class="card-front__tp card-front__tp--beach card-first">
+                                <img src="~/img/Əmrah.png" alt="">
+                            </div>
+
+                            <div class="card-front__bt">
+
+                                <p class="card-front__text-view card-front__text-view--beach">
+                                    Şəhid
+                                    <br>
+                                    Leytenant
+                                    <br>
+                                    Əmrah Əkbərov
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <video class="video__container" autoplay muted loop>
+                                <source class="video__media" src="~/video/lv_0_20221014082800.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="inside-page">
+                    <div class="inside-page__container">
+                        <h3 class="inside-page__heading inside-page__heading--beach">
+                            Leytenant
+                        </h3>
+                        <p class="inside-page__text">
+                            Xüsusi Təyinatlı Qüvvələrin zabiti.
+                        </p>
+                        <a href="#" class="inside-page__btn inside-page__btn--beach">Ətraflı</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Card: Beach -->
+        <section class="card-section s-dn">
+            <div class="card">
+                <div class="flip-card">
+                    <div class="flip-card__container">
+                        <div class="card-front">
+                            <div class="card-front__tp card-front__tp--beach card-first">
+                                <img src="~/img/Əmrah.png" alt="">
+                            </div>
+
+                            <div class="card-front__bt">
+
+                                <p class="card-front__text-view card-front__text-view--beach">
+                                    Şəhid
+                                    <br>
+                                    Leytenant
+                                    <br>
+                                    Əmrah Əkbərov
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <video class="video__container" autoplay muted loop>
+                                <source class="video__media" src="~/video/lv_0_20221014082800.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="inside-page">
+                    <div class="inside-page__container">
+                        <h3 class="inside-page__heading inside-page__heading--beach">
+                            Leytenant
+                        </h3>
+                        <p class="inside-page__text">
+                            Xüsusi Təyinatlı Qüvvələrin zabiti.
+                        </p>
+                        <a href="#" class="inside-page__btn inside-page__btn--beach">Ətraflı</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Card: Beach -->
+        <section class="card-section f-dn">
+            <div class="card">
+                <div class="flip-card">
+                    <div class="flip-card__container">
+                        <div class="card-front">
+                            <div class="card-front__tp card-front__tp--beach card-first">
+                                <img src="~/img/Əmrah.png" alt="">
+                            </div>
+
+                            <div class="card-front__bt">
+
+                                <p class="card-front__text-view card-front__text-view--beach">
+                                    Şəhid
+                                    <br>
+                                    Leytenant
+                                    <br>
+                                    Əmrah Əkbərov
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <video class="video__container" autoplay muted loop>
+                                <source class="video__media" src="~/video/lv_0_20221014082800.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="inside-page">
+                    <div class="inside-page__container">
+                        <h3 class="inside-page__heading inside-page__heading--beach">
+                            Leytenant
+                        </h3>
+                        <p class="inside-page__text">
+                            Xüsusi Təyinatlı Qüvvələrin zabiti.
+                        </p>
+                        <a href="#" class="inside-page__btn inside-page__btn--beach">Ətraflı</a>
+                    </div>
+                </div>
+            </div>
+        </section>*@
+
+    </div>
+</section>
+
+<section id="black-slider">
+    <div class="my-5">
+        <div class="Products">
+            <section id="tab-menu-area">
+                <div class="container">
+                    <div class="row my-5">
+                        <h1>Yeni məhsullar</h1>
+                        <div class="tab-menu">
+                            <div class="tab-header">
+                                <div data-id="1" class="active">Aksesuarlar</div>
+                                <div data-id="2">Qarışıq</div>
+                                <div data-id="3">Geyimlər</div>
+                                <div data-id="4">Uniformalar</div>
+                            </div>
+                            <div class="tab-body">
+                                <div data-id="1" class="swiperr">
+                                    <div class="carousell-section container">
+                                        <div class="swiper mySwiper1">
+                                            <div class="swiper-wrapper">
+                                                @foreach (var item in Model.Aksesuars)
+                                                {
+                                                    
+                                                
+                                                <div class="swiper-slide">
+                                                    <div cat-id="1" class="card bg-light mb-3" style="max-width: 18rem;">
+                                                        <div class="card-header">
+                                                            <div class="prod-img">
+                                                                <img src="~/img/Akses/@item.Image" alt="">
+                                                                <div class="prod-price"><a href="">$ <span>@item.Price</span> </a></div>
+                                                                <div class="prod-add"><a asp-controller="basket" asp-action="addbasket" asp-route-id="@item.Id"><i class="fa-solid fa-cart-shopping"></i></a></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">Bel Kəməri</h5>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-regular fa-star"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                               }
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-id="2" class="d-none swiperr">
+                                    <div class="carousell-section container">
+                                        <div class="swiper mySwiper1">
+                                            <div class="swiper-wrapper">
+                                                <div class="swiper-slide">
+                                                    <div cat-id="6" class="card bg-light mb-3" style="max-width: 18rem;">
+                                                        <div class="card-header">
+                                                            <div class="prod-img">
+                                                                <img src="~/img/DigerShop/bicaq.jpg" alt="">
+                                                                <div class="prod-price"><a href="">$ <span>125.75</span> </a></div>
+                                                                <div class="prod-add"><a href=""><i class="fa-solid fa-cart-shopping"></i></a></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">H/Qalabilmə Dəsti</h5>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-regular fa-star"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div cat-id="7" class="card bg-light mb-3" style="max-width: 18rem;">
+                                                        <div class="card-header">
+                                                            <div class="prod-img">
+                                                                <img src="~/img/DigerShop/esyakisesi.jpg" alt="">
+                                                                <div class="prod-price"><a href="">$<span>847.63</span> </a></div>
+                                                                <div class="prod-add"><a href=""><i class="fa-solid fa-cart-shopping"></i></a></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">Əşya Kisəsi dəsti</h5>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-regular fa-star"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div cat-id="8" class="card bg-light mb-3" style="max-width: 18rem;">
+                                                        <div class="card-header">
+                                                            <div class="prod-img">
+                                                                <img src="~/img/DigerShop/naqrudnik.jpg" alt="">
+                                                                <div class="prod-price"><a href="">$ <span>357.75</span> </a></div>
+                                                                <div class="prod-add"><a href=""><i class="fa-solid fa-cart-shopping"></i></a></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">Döyüş Önlüyü</h5>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-regular fa-star"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div cat-id="9" class="card bg-light mb-3" style="max-width: 18rem;">
+                                                        <div class="card-header">
+                                                            <div class="prod-img">
+                                                                <img src="~/img/DigerShop/torba.jpg" alt="">
+                                                                <div class="prod-price"><a href="">$ <span>568.75</span> </a></div>
+                                                                <div class="prod-add"><a href=""><i class="fa-solid fa-cart-shopping"></i></a></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">Torba</h5>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-regular fa-star"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-id="3" class="d-none swiperr">
+                                    <div class="carousell-section container">
+                                        <div class="swiper mySwiper1">
+                                            <div class="swiper-wrapper">
+                                                <div class="swiper-slide">
+                                                    <div cat-id="11" class="card bg-light mb-3" style="max-width: 18rem;">
+                                                        <div class="card-header">
+                                                            <div class="prod-img">
+                                                                <img src="~/img/Men/1.jpg" alt="">
+                                                                <div class="prod-price"><a href="">$ <span>18.75</span> </a></div>
+                                                                <div class="prod-add"><a href=""><i class="fa-solid fa-cart-shopping"></i></a></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">Qara Kombat</h5>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-regular fa-star"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div cat-id="12" class="card bg-light mb-3" style="max-width: 18rem;">
+                                                        <div class="card-header">
+                                                            <div class="prod-img">
+                                                                <img src="~/img/Men/2.jpg" alt="">
+                                                                <div class="prod-price"><a href="">$ <span>82.75</span> </a></div>
+                                                                <div class="prod-add"><a href=""><i class="fa-solid fa-cart-shopping"></i></a></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">Xaki Kombat</h5>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-regular fa-star"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div cat-id="13" class="card bg-light mb-3" style="max-width: 18rem;">
+                                                        <div class="card-header">
+                                                            <div class="prod-img">
+                                                                <img src="~/img/Men/3.jpg" alt="">
+                                                                <div class="prod-price"><a href="">$ <span>42.75</span> </a></div>
+                                                                <div class="prod-add"><a href=""><i class="fa-solid fa-cart-shopping"></i></a></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">Denim Pullover</h5>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-regular fa-star"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div cat-id="14" class="card bg-light mb-3" style="max-width: 18rem;">
+                                                        <div class="card-header">
+                                                            <div class="prod-img">
+                                                                <img src="~/img/Men/4.jpg" alt="">
+                                                                <div class="prod-price"><a href="">$ <span>40.82</span> </a></div>
+                                                                <div class="prod-add"><a href=""><i class="fa-solid fa-cart-shopping"></i></a></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">Blue Jean</h5>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-regular fa-star"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div cat-id="15" class="card bg-light mb-3" style="max-width: 18rem;">
+                                                        <div class="card-header">
+                                                            <div class="prod-img">
+                                                                <img src="~/img/Men/5.jpg" alt="">
+                                                                <div class="prod-price"><a href="">$ <span>22.75</span> </a></div>
+                                                                <div class="prod-add"><a href=""><i class="fa-solid fa-cart-shopping"></i></a></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">Black T-Shirt</h5>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-regular fa-star"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div cat-id="25" class="card bg-light mb-3" style="max-width: 18rem;">
+                                                        <div class="card-header">
+                                                            <div class="prod-img">
+                                                                <img src="~/img/Men/6.jpg" alt="">
+                                                                <div class="prod-price"><a href="">$ <span>65.75</span> </a></div>
+                                                                <div class="prod-add"><a href=""><i class="fa-solid fa-cart-shopping"></i></a></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">Men White AIR</h5>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-regular fa-star"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-id="4" class="d-none swiperr">
+                                    <div class="carousell-section container">
+                                        <div class="swiper mySwiper1">
+                                            <div class="swiper-wrapper">
+                                                <div class="swiper-slide">
+                                                    <div cat-id="16" class="card bg-light mb-3" style="max-width: 18rem;">
+                                                        <div class="card-header">
+                                                            <div class="prod-img">
+                                                                <img src="~/img/Destleer/Dest 1.webp" alt="">
+                                                                <div class="prod-price"><a href="">$ <span>97.75</span> </a></div>
+                                                                <div class="prod-add"><a href=""><i class="fa-solid fa-cart-shopping"></i></a></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">Red Strip Dress</h5>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-regular fa-star"></i>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div cat-id="17" class="card bg-light mb-3" style="max-width: 18rem;">
+                                                        <div class="card-header">
+                                                            <div class="prod-img">
+                                                                <img src="~/img/Destleer/Dest2.png" alt="">
+                                                                <div class="prod-price"><a href="">$ <span>49.75</span> </a></div>
+                                                                <div class="prod-add"><a href=""><i class="fa-solid fa-cart-shopping"></i></a></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">Blue Denim</h5>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-regular fa-star"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div cat-id="18" class="card bg-light mb-3" style="max-width: 18rem;">
+                                                        <div class="card-header">
+                                                            <div class="prod-img">
+                                                                <img src="~/img/Destleer/dest3.jpg" alt="">
+                                                                <div class="prod-price"><a href="">$ <span>15.75</span> </a></div>
+                                                                <div class="prod-add"><a href=""><i class="fa-solid fa-cart-shopping"></i></a></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">Black Dress</h5>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-regular fa-star"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div cat-id="19" class="card bg-light mb-3" style="max-width: 18rem;">
+                                                        <div class="card-header">
+                                                            <div class="prod-img">
+                                                                <img src="~/img/Destleer/multikam.jpg" alt="">
+                                                                <div class="prod-price"><a href="">$ <span>19.45</span> </a></div>
+                                                                <div class="prod-add"><a href=""><i class="fa-solid fa-cart-shopping"></i></a></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">White T-Shirt</h5>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-regular fa-star"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+</section>
+
+<section id="plus-section">
+    <div class="container">
+        <div class="div-plus">
+            <div class="plus-text">
+                <h2>@Model.Blog.Desc</h2>
+                <h1>@Model.Blog.Name</h1>
+                <a asp-controller="Blog" asp-action="BlogDetails"><button class="glow-on-hover" type="button">Ətraflı</button></a>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section id="foot-slider">
+    <h1>Brendlər</h1>
+    <div class="carousell-section container">
+        <div class="swiper mySwiper2">
+            <div class="swiper-wrapper">
+               @foreach (var item in Model.Brands)
+                {
+                    <div class="swiper-slide foott-slide ">
+                        <img src="~/img/Brands/@item.Image" style="width: 100px; height: 30px; " alt="">
+                    </div>
+
+                }
+            </div>
+        </div>
+    </div>
+</section>

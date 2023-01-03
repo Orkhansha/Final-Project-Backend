@@ -1,0 +1,385 @@
+﻿
+@{
+    ViewData["Title"] = "BlogDetails";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloglar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="~/css/home/style.css">
+    <link rel="stylesheet" href="~/css/blog-details/blog-details.css">
+</head>
+
+<body>
+
+    <header>
+        <section id="black-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 d-flex">
+                        <div class="welcome">
+                            <p>Saytımıza xoş gəlmisiniz !</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="icons">
+                            <div>
+                                <a href="./basket.html">
+                                    <i class="fa-solid fa-cart-shopping"><sup>0</sup></i>
+                                </a>
+                            </div>
+
+                            <div class="dropdown">
+                                <a class="my-btn btn btn-secondary" href="#" role="button" id="dropdownMenuLink"
+                                   data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa-solid fa-user"></i>
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <li>
+                                        <div class="prof-drop">
+                                            <i class="fa-solid fa-gear"></i><a class="dropdown-item"
+                                                                               asp-controller="Account" asp-action="Login">Giriş</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="prof-drop">
+                                            <i class="fa-solid fa-user-plus"></i><a class="dropdown-item"
+                                                                                    asp-controller="Account" asp-action="Register">Qeydiyyat</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="prof-drop">
+                                            <i class="fa-solid fa-right-from-bracket"></i><a class="dropdown-item"
+                                                                                             href="#">Çıxış</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+        </section>
+        <section id="center-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-2">
+                        <div class="head">
+                            <img src="~/img/Participant_of_the_Patriotic_War_medal.png" style="width: 80px" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-8 col-md-8 col-sm-10">
+                        <div class="input">
+                            <input type="text" placeholder="Search...">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="navbar-area">
+            <nav class="navbar navbar-expand-lg navbar-dark  black-nav navbar-desktop">
+                <div class="container">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                            aria-controls="offcanvasNavbar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
+                         aria-labelledby="offcanvasNavbarLabel">
+                        <div class="offcanvas-header">
+                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                    aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <ul class="btn">
+                                <li>
+                                    <a class="nav-a dropdown-btnn" asp-controller="Home" asp-action="Index">ƏSAS SƏHİFƏ</a>
+                                </li>
+
+                                <li>
+                                    <a class="nav-a dropdown-btnn" asp-controller="Unudulmazlar" asp-action="Index">UNUDULMAZLAR</a>
+                                    <ul class="submenu shop">
+                                        <li><a asp-controller="Unudulmazlar" asp-action="Index">ŞƏHİDLƏR</a></li>
+                                        <li><a asp-controller="Account" asp-action="Login">GİRİŞ</a></li>
+                                        <li><a asp-controller="Account" asp-action="Register">QEYDİYYAT</a></li>
+                                    </ul>
+                                </li>
+                                <li><a class="nav-a" asp-controller="Product" asp-action="Index">MAĞAZA</a></li>
+                                <li><a class="nav-a" asp-controller="Blog" asp-action="BlogDetails">BLOGLAR</a></li>
+                                <li> <a class="nav-a" asp-controller="About" asp-action="Index">HAQQIMIZDA</a> </li>
+                                <li><a class="nav-a" asp-controller="Contact" asp-action="Index">BİZİMLƏ ƏLAQƏ</a></li>
+                                <li class="admin"><a class="nav-a" href="#">ADMIN PANEL</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </section>
+
+        <section id="scroll-section">
+            <nav class="navbar navbar-expand-lg navbar-dark  black-nav navbar-desktop">
+                <div class="container inActive">
+                    <div class="head">
+                        <img src="~/img/Participant_of_the_Patriotic_War_medal.png" style="width: 60px;" alt="">
+                    </div>
+                    <div class="offcanvas-body scroll-body">
+
+                        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                                aria-controls="offcanvasNavbar">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
+                             aria-labelledby="offcanvasNavbarLabel">
+                            <div class="offcanvas-header">
+                                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                        aria-label="Close"></button>
+                            </div>
+
+                            <ul class="btn">
+                                <li>
+                                    <a class="nav-a dropdown-btnn" asp-controller="Home" asp-action="Index">ƏSAS SƏHİFƏ</a>
+
+                                </li>
+
+                                <li>
+                                    <a class="nav-a dropdown-btnn" asp-controller="Unudulmazlar" asp-action="Index">UNUDULMAZLAR</a>
+                                    <ul class="submenu shop">
+                                        <li><a asp-controller="Unudulmazlar" asp-action="Index">ŞƏHİDLƏR</a></li>
+                                        <li><a asp-controller="Account" asp-action="Login">GİRİŞ</a></li>
+                                        <li><a asp-controller="Account" asp-action="Register">QEYDİYYAT</a></li>
+                                    </ul>
+                                </li>
+                                <li><a class="nav-a" asp-controller="Product" asp-action="Index">MAĞAZA</a></li>
+                                <li><a class="nav-a" asp-controller="Blog" asp-action="BlogDetails">BLOGLAR</a></li>
+                                <li> <a class="nav-a" asp-controller="About" asp-action="Index">HAQQIMIZDA</a> </li>
+                                <li><a class="nav-a" asp-controller="Contact" asp-action="Index">BİZİMLƏ ƏLAQƏ</a></li>
+                                <li class="admin"><a class="nav-a" href="#">ADMIN PANEL</a></li>
+                            </ul>
+                        </div>
+                    </div>
+            </nav>
+        </section>
+    </header>
+
+    <main>
+
+
+        <section id="product-detail">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-12 col-sm-12">
+                        <div id="big-photo">
+                            <div id="small-photo">
+                                <div>
+                                    <img src="~/img/Blogs/Polad1.jpg" />
+                                </div>
+                                <div>
+                                    <img src="~/img/Blogs/Polad2.jpg" />
+                                </div>
+                                <div>
+                                    <img src="~/img/Blogs/polad4.jpg" />
+                                </div>
+                                <div>
+                                    <img src="~/img/Blogs/Polad2.jpg" />
+                                </div>
+                            </div>
+                            <div id="middle-photo">
+                                <img id="photo" src="~/img/Blogs/Polad1.jpg" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12 metn">
+                        <h2>General-mayor</h2>
+                        <p>
+                            “Əsgərlər çox nadir hallarda öz komandirlərini yadda saxlayırlar, o da çox nadir komandirlərdən idi”.
+                            Bu sözləri jurnalist Seymur Kazımov Tovuz istiqamətində gedən döyüşlərində həlak olmuş general-mayor Polad Həşimov haqqında deyir. Polad Həşimov illər əvvəl N saylı hərbi hissədə jurnalist Seymur Kazımovun qərargah rəisi olub. Jurnalist general-mayoru “çox dəyərli vətəndaş və zabit” olaraq yad edir.
+                            Onun vəfatını “cəmiyyət üçün böyük itki” adlandırır.
+                            Qohumları Polad Həşimovu çox yaxşı insan kimi xatırlayır, onun barəsində “sonuncu loxmasını bölən, sadə insan” deyirlər.
+                            Polad Həşimov kim idi?
+                            1975-ci ildə Sumqayıtda doğulmuş Polad Həşimov əslən Qəbələnin Vəndam kəndindəndir. Elə aldığımız məlumata görə onun nəşi də bu saatlarda o kəndə aparılır. Polad Həşimov Sumqayıtda məktəbi bitirib. Sonra Heydər Əliyev adına ali məktəbdə təhsil alınb və təhsilini Türkiyədə davam etdirib. Onun 3 övladı var, iki oğlu, bir qızı. Qızı onun böyük övladıdır və hələ də orta məktəbi bitirməyib. O, Murov və Daşkəsən kimi bir neçə döyüş bölgəsində xidmət edib.
+                            Polad Həşimov 2016-cı ildə aprel döyüşlərində iştirak edib və xəsarət alıb. Bundan sonra ona vaxtından əvvəl general rütbəsi verilib, bunu qohumları deyir. Bu saatlarda Sumqayıtda onun evinin önünə yüzlərlə vətəndaş toplaşıb və onun nəşini gözləyir. Yerli media yazır ki Polad Həşimov ikinci fəxri xiyabanda dəfn ediləcək.
+                            Əsgərin yanında olan general-mayor
+                            “Cəsur, mərd zabit idi, həm əsgərlər, həm də zabitlər arasında kifayət qədər hörməti var idi. Hər zaman əsgərin yanında idi”, Seymur Kazımov Polad Həşimov haqqında danışır. “O, hər dəfə deyirdi ki, əsgər zabitərinə görə hər zaman ölümə gedir, çünki əsgərlər öndə olurlar və əmr verilən kimi irəli atılırlar. Biz bu gün gördük ki, onun özü ön sırada getdi və şəhid oldu,”- Seymur Kazımov deyir.
+                            Jurnalist deyir ki, general-mayorun ölümü onun üçün çox ağırdır.
+                            “Əsgərləri tənbeh də edərdi, cəzalandırardı da, amma onları təhqir edəcək, alçaldacaq ifadə işlətməzdi, onlara yuxarıdan aşağı baxmazdı. Hərbi nizamnamə nə tələb edirdisə, o cür də davranırdı,” jurnalist deyir.
+                            Seymur Kazımov 2 dəfə general-mayorun cəzasına da məruz qaldığını xatırlayır.
+                            Onun vətənə sonsuz sevgi bəslədiyini, döyüşlərdə qəhrəmanlıq etdiyini, öz evini bir şəhid ailəsinə verdiyini yazanlar var.
+                            Azərbaycan Müdafiə Nazirliyi Tovuz istiqamətində gedən döyüşlərdə 11 şəhid verdiyini bildirir.
+                            Onlar general-mayor Polad Həşimov, polkovnik İlqar Mirzəyev, mayor Namiq Əhmədov, mayor Anar Novruzov, gizir İlqar Zeynallı, gizir Yaşar Babayev, müddətdən artıq həqiqi hərbi xidmət hərbi qulluqçusu əsgər Elçin Mustafazadə, baş leytenant Rəşad Mahmudov, çavuş Vüqar Sadıqov, baş əsgər Elşad Məmmədov, əsgər Xəyyam Daşdəmirovdur.
+                        </p>
+                        <br />
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <footer>
+
+        <div id="my-footer" class="my-5">
+            <footer class="text-center text-lg-start text-white">
+                <div class="container p-4 pb-0">
+                    <section class="">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                                <h5 class="text-uppercase">SAYT HAQQINDA</h5>
+
+                                <p>
+                                    Saytımızda Azərbaycan Respublikasının müstəqilliyi, ərazi bütövlüyü və suverenliyi uğrunda canından
+                                    keçmiş qəhrəmanlarımız
+                                    haqqında ətraflı məlumat əldə edə, həmçinin əlavə dəyişikliklər edə bilərsiniz. Etdiyiniz
+                                    dəyişikliklər bizim tərəfimizdən
+                                    baxıldıqdan sonra qısa müddət ərzində yayımlanacaqdır. Bundan əlavə saytımızda hərbi mağaza da
+                                    fəaliyyət göstərir və siz
+                                    rahatlıqla istənilən məhsulu sifariş edə bilərsiniz.
+                                </p>
+                            </div>
+
+                            <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                                <h5 class="text-uppercase">HAQQIMIZDA</h5>
+
+                                <ul class="list-unstyled mb-0">
+                                    <li>
+                                        <a asp-controller="About" asp-action="Index" class="text-white">haqqımızda</a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="text-white">şərtlər və qaydalar</a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="text-white">
+                                            məxfilik siyasəti
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="text-white">FAQ</a>
+                                    </li>
+                                    <li>
+                                        <a asp-controller="Contact" asp-action="Index" class="text-white">bizimlə əlaqə</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                                <h5 class="text-uppercase">GİRİŞ</h5>
+
+                                <ul class="list-unstyled mb-0">
+                                    <li>
+                                        <a asp-controller="Account" asp-action="Login" class="text-white">daxil ol</a>
+                                    </li>
+                                    <li>
+                                        <a asp-controller="Account" asp-action="Register" class="text-white">qeydiyyat</a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="text-white">şifrəmi unutmuşam</a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="text-white">təşəkkürlər</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                                <h5 class="text-uppercase">KATEQORİYALAR</h5>
+
+                                <ul class="list-unstyled mb-0">
+                                    <li>
+                                        <a href="#!" class="text-white">uniformalar</a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="text-white">geyimlər</a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="text-white">aksesuarlar</a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="text-white">qarışıq mallar</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                                <h5 class="text-uppercase">SOSIAL</h5>
+
+                                <ul class="list-unstyled mb-0">
+                                    <li>
+                                        <a href="https://www.facebook.com/cenab.akberoff" class="text-white">facebook</a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="text-white">twitter</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.youtube.com/shorts/Sk69jShsSE0" class="text-white">youtube</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.instagram.com/cenab.akberoff/" class="text-white">google plus</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                    <hr class="mb-4" />
+                    <div class="copyright">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-12"></div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <span>© Bütün hüquqlar qorunur | e.o baş-leytenant Orxan Əkbərov tərəfindən yaradılmışdır.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="mb-4" />
+                </div>
+            </footer>
+        </div>
+    </footer>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.30/sweetalert2.all.min.js"></script>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@@popperjs/core@2.10.2/dist/umd/popper.min.js"
+            integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+            crossorigin="anonymous"></script>
+    integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@@popperjs/core@2.10.2/dist/umd/popper.min.js"
+            integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+            integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+            crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/053fc23104.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+            integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="~/js/script.js"></script>
+    <script src="~/js/blog-details.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+

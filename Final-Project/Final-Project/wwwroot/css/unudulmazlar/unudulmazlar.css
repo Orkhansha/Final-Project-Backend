@@ -1,0 +1,598 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+h1 {
+  color: #04495F !important;
+}
+
+#qehremanlar .cards {
+  padding-bottom: 20px;
+  width: 100%;
+}
+#qehremanlar #posination-area {
+  display: flex;
+  justify-content: center !important;
+  align-items: center;
+  flex-direction: column;
+}
+#qehremanlar #posination-area span, #qehremanlar #posination-area i {
+  color: white;
+}
+#qehremanlar .cardee {
+  position: relative;
+  max-width: 255px;
+  max-height: 350px;
+  box-shadow: 0 40px 60px -6px black;
+}
+#qehremanlar .card-title {
+  font-size: 24px;
+  display: block;
+  text-align: center;
+  color: #fff;
+  background-color: #6184a8;
+  padding: 2%;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+}
+#qehremanlar .cardee img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+  position: relative;
+}
+#qehremanlar .card-desc {
+  display: block;
+  font-size: 1.2rem;
+  position: absolute;
+  height: 0;
+  top: 0;
+  opacity: 0;
+  padding: 18px 8%;
+  background-color: white;
+  overflow-y: scroll;
+  transition: 0.8s ease;
+}
+#qehremanlar .cardee:hover .card-desc {
+  opacity: 1;
+  height: 100%;
+}
+#qehremanlar h1 {
+  font-size: 2.8rem;
+  color: #fff;
+  margin: 40px 0 20px 0;
+  text-align: center;
+}
+
+
+.searchOne {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .searchOne label {
+        width: 50%;
+    }
+
+    .searchOne input {
+        width: 100%;
+        display: flex;
+        padding: 15px;
+        background-color: white;
+        border: 2px solid black;
+        color: #1a1818;
+        font-size: 15px;
+        box-shadow: 3px 1px 0px 2px, 0px -1px 0px 2px rgba(0, 0, 0, 0.62);
+        height: 58px;
+        transform: skew(-3deg, 1deg);
+        font-family: "Knewave", cursive;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+
+        .searchOne input:focus, .searchOne input:valid {
+            outline: none;
+        }
+
+            .searchOne input:focus ~ ul li:nth-child(1)::before, .searchOne input:valid ~ ul li:nth-child(1)::before {
+                filter: blur(20px);
+                transform: translate(0, -35px) rotate(-210deg);
+            }
+
+            .searchOne input:focus ~ ul li:nth-child(1)::after, .searchOne input:valid ~ ul li:nth-child(1)::after {
+                filter: blur(0);
+                transform: scale(1) rotate(0);
+            }
+
+            .searchOne input:focus ~ ul li:nth-child(2)::before, .searchOne input:valid ~ ul li:nth-child(2)::before {
+                filter: blur(20px);
+                transform: translate(0, -35px) rotate(-210deg);
+            }
+
+            .searchOne input:focus ~ ul li:nth-child(2)::after, .searchOne input:valid ~ ul li:nth-child(2)::after {
+                filter: blur(0);
+                transform: scale(1) rotate(0);
+            }
+
+            .searchOne input:focus ~ ul li:nth-child(3)::before, .searchOne input:valid ~ ul li:nth-child(3)::before {
+                filter: blur(20px);
+                transform: translate(0, -35px) rotate(-210deg);
+            }
+
+            .searchOne input:focus ~ ul li:nth-child(3)::after, .searchOne input:valid ~ ul li:nth-child(3)::after {
+                filter: blur(0);
+                transform: scale(1) rotate(0);
+            }
+
+            .searchOne input:focus ~ ul li:nth-child(4)::before, .searchOne input:valid ~ ul li:nth-child(4)::before {
+                filter: blur(20px);
+                transform: translate(0, -35px) rotate(-210deg);
+            }
+
+            .searchOne input:focus ~ ul li:nth-child(4)::after, .searchOne input:valid ~ ul li:nth-child(4)::after {
+                filter: blur(0);
+                transform: scale(1) rotate(0);
+            }
+
+            .searchOne input:focus ~ ul li:nth-child(5)::before, .searchOne input:valid ~ ul li:nth-child(5)::before {
+                filter: blur(20px);
+                transform: translate(0, -35px) rotate(-210deg);
+            }
+
+            .searchOne input:focus ~ ul li:nth-child(5)::after, .searchOne input:valid ~ ul li:nth-child(5)::after {
+                filter: blur(0);
+                transform: scale(1) rotate(0);
+            }
+
+            .searchOne input:focus ~ ul li:nth-child(6)::before, .searchOne input:valid ~ ul li:nth-child(6)::before {
+                filter: blur(20px);
+                transform: translate(0, -35px) rotate(-210deg);
+            }
+
+            .searchOne input:focus ~ ul li:nth-child(6)::after, .searchOne input:valid ~ ul li:nth-child(6)::after {
+                filter: blur(0);
+                transform: scale(1) rotate(0);
+            }
+
+            .searchOne input:focus ~ ul li:nth-child(1)::after, .searchOne input:valid ~ ul li:nth-child(1)::after {
+                transition-delay: 400ms;
+            }
+
+            .searchOne input:focus ~ ul li:nth-child(2)::after, .searchOne input:valid ~ ul li:nth-child(2)::after {
+                transition-delay: 600ms;
+            }
+
+            .searchOne input:focus ~ ul li:nth-child(3)::after, .searchOne input:valid ~ ul li:nth-child(3)::after {
+                transition-delay: 800ms;
+            }
+
+            .searchOne input:focus ~ ul li:nth-child(4)::after, .searchOne input:valid ~ ul li:nth-child(4)::after {
+                transition-delay: 1000ms;
+            }
+
+            .searchOne input:focus ~ ul li:nth-child(5)::after, .searchOne input:valid ~ ul li:nth-child(5)::after {
+                transition-delay: 1200ms;
+            }
+
+            .searchOne input:focus ~ ul li:nth-child(6)::after, .searchOne input:valid ~ ul li:nth-child(6)::after {
+                transition-delay: 1400ms;
+            }
+
+    .searchOne label {
+        position: relative;
+    }
+
+    .searchOne ul {
+        position: absolute;
+        top: 38px;
+        left: -4px;
+        margin: 0;
+        list-style: none;
+        padding-left: 22px;
+        position: absolute;
+        display: flex;
+        pointer-events: none;
+        transition: 200ms;
+    }
+
+        .searchOne ul li {
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: transparent;
+            pointer-events: none;
+            transition: 500ms ease-in-out;
+        }
+
+            .searchOne ul li ::-moz-selection {
+                color: transparent;
+            }
+
+            .searchOne ul li ::selection {
+                color: transparent;
+            }
+
+            .searchOne ul li::after, .searchOne ul li::before {
+                color: black;
+                position: absolute;
+                transition: 500ms ease-in-out;
+            }
+
+            .searchOne ul li::before {
+                top: -20px;
+            }
+
+            .searchOne ul li::after {
+                top: -63px;
+                transform: scale(0) rotate(210deg);
+                filter: blur(20px);
+                color: #fafafa;
+            }
+
+            .searchOne ul li[s]::before {
+                content: attr(s) "s";
+                transition-delay: 200ms;
+            }
+
+            .searchOne ul li[s]::after {
+                content: attr(s) "s";
+                left: 12px;
+                color: #666;
+            }
+
+            .searchOne ul li[e]::before {
+                content: attr(e) "e";
+                transition-delay: 400ms;
+            }
+
+            .searchOne ul li[e]::after {
+                content: attr(e) "e";
+                left: 24px;
+                color: #666;
+            }
+
+            .searchOne ul li[a]::before {
+                content: attr(a) "a";
+                transition-delay: 600ms;
+            }
+
+            .searchOne ul li[a]::after {
+                content: attr(a) "a";
+                left: 36px;
+                color: #666;
+            }
+
+            .searchOne ul li[r]::before {
+                content: attr(r) "r";
+                transition-delay: 800ms;
+            }
+
+            .searchOne ul li[r]::after {
+                content: attr(r) "r";
+                left: 48px;
+                color: #666;
+            }
+
+            .searchOne ul li[c]::before {
+                content: attr(c) "c";
+                transition-delay: 1000ms;
+            }
+
+            .searchOne ul li[c]::after {
+                content: attr(c) "c";
+                left: 60px;
+                color: #666;
+            }
+
+            .searchOne ul li[h]::before {
+                content: attr(h) "h";
+                transition-delay: 1200ms;
+            }
+
+            .searchOne ul li[h]::after {
+                content: attr(h) "h";
+                left: 72px;
+                color: #666;
+            }
+
+.box {
+  position: relative;
+}
+.box .input {
+  padding: 10px;
+  width: 80px;
+  height: 80px;
+  background: none;
+  border: 4px solid #FD5622;
+  border-radius: 50px;
+  box-sizing: border-box;
+  font-family: Comic Sans MS;
+  font-size: 26px;
+  color: #FD5622;
+  outline: none;
+  transition: 0.5s;
+}
+
+.box:hover input {
+  width: 350px;
+  background: #3b3640;
+  border-radius: 10px;
+}
+
+.box i {
+  position: absolute;
+  top: 25%;
+  left: 18px;
+  font-size: 42px;
+  color: #FD5622;
+  transition: 0.2s;
+}
+
+.box:hover i {
+  opacity: 0;
+  z-index: -1;
+}
+
+/* YouTube icon */
+#ytb {
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  line-height: 52px;
+  border: 2px solid transparent;
+  color: #ff1717;
+  font-size: 25px;
+  transition: 0.3s;
+}
+
+#ytb:hover {
+  border-radius: 50%;
+  border-color: #ff1717;
+  box-shadow: 0 0 10px #ff4040;
+}
+
+#qehremanlar .search {
+  width: 100%;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px 5px 0 0;
+  background-color: rgba(255, 255, 255, 0.226);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+}
+
+#qehremanlar img {
+  width: 100%;
+  height: 285px;
+}
+
+#qehremanlar .product-head {
+  display: flex;
+  justify-content: space-between;
+}
+
+#qehremanlar .posination {
+  margin-top: 60px;
+}
+
+#qehremanlar .posination span {
+  padding: 0 12px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#qehremanlar .posination i {
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+#qehremanlar .posination .first {
+  background-color: #ff5722;
+  border-radius: 5px;
+  color: white;
+}
+
+#qehremanlar .productFirst {
+  position: relative;
+  margin-top: 30px;
+  width: 100%;
+  height: 256px;
+  border-radius: 5px 5px 0 0;
+  background-color: white;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+}
+
+#qehremanlar .productFirst img {
+  padding: 30px;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+#qehremanlar .productFirst i {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 20px;
+  color: grey;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+#qehremanlar .productFirst i:hover {
+  color: black;
+}
+
+#qehremanlar .productFirstInfo {
+  position: relative;
+  width: 100%;
+  height: 117px;
+  border-radius: 0 0 5px 5px;
+  background-color: white;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+}
+
+#qehremanlar .productFirstInfo:hover .shop-icon {
+  transition: 0.5s;
+  transform: translateY(-50px) !important;
+}
+
+#qehremanlar .productFirstInfo h5 {
+  position: absolute;
+  top: 30px;
+  left: 20px;
+  color: black;
+  transition: 0.3s;
+}
+
+#qehremanlar .productFirstInfo h5:hover {
+  color: #ff5722;
+}
+
+#qehremanlar .productFirstInfo span {
+  position: absolute;
+  bottom: 15px;
+  left: 20px;
+  font-size: 20px;
+  color: #ff5722;
+}
+
+#qehremanlar .productFirstInfo .star-icon {
+  position: absolute;
+  bottom: 15px;
+  right: 20px;
+}
+
+#qehremanlar .productFirstInfo .star-icon i {
+  color: gold;
+}
+
+#qehremanlar .productFirstInfo .shop-icon {
+  position: absolute;
+  right: 20px;
+  top: -35px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+  background-color: #ff5722;
+  cursor: pointer;
+}
+
+#qehremanlar .productFirstInfo .shop-icon i {
+  padding-top: 20px;
+  padding-left: 18px;
+  font-size: 20px;
+  color: white;
+}
+
+#qehremanlar .search .myInputSearch {
+  width: 70%;
+  height: 45px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid grey;
+}
+
+#qehremanlar .search .myInput {
+  width: 80%;
+  height: 45px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid grey;
+}
+
+#qehremanlar .categories {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  margin-top: 30px;
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+  background-color: white;
+}
+
+#qehremanlar .categories label {
+  padding-left: 10px;
+}
+
+#qehremanlar .categories .searchInline {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 5px 5px 0 0;
+  background-color: white;
+}
+
+#qehremanlar .categories .myInputSearch {
+  width: 70%;
+  height: 45px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid grey;
+}
+
+#qehremanlar .categories .myInput {
+  width: 80%;
+  height: 45px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid grey;
+}
+
+#qehremanlar .categories .digit .num {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid grey;
+}
+
+#qehremanlar .categories .digit .go {
+  margin-left: 10px;
+  width: 50px;
+  height: 35px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ff5722;
+  transition: 0.3s;
+}
+
+#qehremanlar .categories .digit .go:hover {
+  background-color: blue;
+}
+
+#qehremanlar .categories .digit .go span {
+  color: white;
+}
+
+#qehremanlar .categories .clearPart {
+  width: 45%;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ff5722;
+  transition: 0.3s;
+}
+
+#qehremanlar .categories .clearPart:hover {
+  background-color: blue;
+}
+
+#qehremanlar .categories .clearPart span {
+  color: white;
+}
+
+#qehremanlar .categories i {
+  color: #ff5722;
+}
+
+#qehremanlar .categories h5 {
+  font-weight: bold;
+}/*# sourceMappingURL=unudulmazlar.css.map */

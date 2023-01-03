@@ -1,0 +1,497 @@
+﻿@model List<Product>
+@{
+    ViewData["Title"] = "Index";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="~/css/home/style.css">
+    <link rel="stylesheet" href="~/css/accessories/accessories.css">
+
+</head>
+
+<body>
+
+    <header>
+        <section id="black-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 d-flex">
+                        <div class="welcome">
+                            <p>Saytımıza xoş gəlmisiniz !</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="icons">
+                            <div>
+                                <a href="~/basket.html">
+                                    <i class="fa-solid fa-cart-shopping"><sup>0</sup></i>
+                                </a>
+                            </div>
+
+                            <div class="dropdown">
+                                <a class="my-btn btn btn-secondary" href="#" role="button" id="dropdownMenuLink"
+                                   data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa-solid fa-user"></i>
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <li>
+                                        <div class="prof-drop">
+                                            <i class="fa-solid fa-gear"></i><a class="dropdown-item"
+                                                                               asp-controller="Account" asp-action="Login">Giriş</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="prof-drop">
+                                            <i class="fa-solid fa-user-plus"></i><a class="dropdown-item"
+                                                                                    asp-controller="Account" asp-action="Register">Qeydiyyat</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="prof-drop">
+                                            <i class="fa-solid fa-right-from-bracket"></i><a class="dropdown-item"
+                                                                                             href="#">Çıxış</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+        </section>
+        <section id="center-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-2">
+                        <div class="head">
+                            <a asp-controller="Home" asp-action="Index">
+
+                                <img src="~/img/Participant_of_the_Patriotic_War_medal.png" style="width: 60px;" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 col-md-8 col-sm-10">
+                        <div class="input">
+                            <input type="text" id="searchinp" placeholder="Search...">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                        <ul id="search-list-p" class="d-block">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="navbar-area">
+            <nav class="navbar navbar-expand-lg navbar-dark  black-nav navbar-desktop">
+                <div class="container">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                            aria-controls="offcanvasNavbar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
+                         aria-labelledby="offcanvasNavbarLabel">
+                        <div class="offcanvas-header">
+                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                    aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <ul class="btn">
+                                <li>
+                                    <a class="nav-a dropdown-btnn" asp-controller="Home" asp-action="Index">ƏSAS SƏHİFƏ</a>
+
+                                </li>
+
+                                <li>
+                                    <a class="nav-a dropdown-btnn" asp-controller="Unudulmazlar" asp-action="Index">UNUDULMAZLAR</a>
+                                    <ul class="submenu shop">
+                                        <li><a asp-controller="Unudulmazlar" asp-action="Index">ŞƏHİDLƏR</a></li>
+                                        <li><a asp-controller="Account" asp-action="Login">GİRİŞ</a></li>
+                                        <li><a asp-controller="Account" asp-action="Register">QEYDİYYAT</a></li>
+                                    </ul>
+                                </li>
+                                <li><a class="nav-a" asp-controller="Product" asp-action="Index">MAĞAZA</a></li>
+                                <li><a class="nav-a" asp-controller="Blog" asp-action="BlogDetails">BLOGLAR</a></li>
+                                <li> <a class="nav-a" asp-controller="About" asp-action="Index">HAQQIMIZDA</a> </li>
+                                <li><a class="nav-a" asp-controller="Contact" asp-action="Index">BİZİMLƏ ƏLAQƏ</a></li>
+                                <li class="admin"><a class="nav-a" href="#">ADMIN PANEL</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </section>
+
+        <section id="scroll-section">
+            <nav class="navbar navbar-expand-lg navbar-dark  black-nav navbar-desktop">
+                <div class="container inActive">
+                    <div class="head">
+                        <a asp-controller="Home" asp-action="Index">
+
+                            <img src="~/img/Participant_of_the_Patriotic_War_medal.png" style="width: 60px;" alt="">
+                        </a>
+                    </div>
+                    <div class="offcanvas-body scroll-body">
+
+                        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                                aria-controls="offcanvasNavbar">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
+                             aria-labelledby="offcanvasNavbarLabel">
+                            <div class="offcanvas-header">
+                                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                        aria-label="Close"></button>
+                            </div>
+
+                            <ul class="btn">
+                                <li>
+                                    <a class="nav-a dropdown-btnn" asp-controller="Home" asp-action="Index">ƏSAS SƏHİFƏ</a>
+
+                                </li>
+
+                                <li>
+                                    <a class="nav-a dropdown-btnn" asp-controller="Unudulmazlar" asp-action="Index">UNUDULMAZLAR</a>
+                                    <ul class="submenu shop">
+                                        <li><a asp-controller="Unudulmazlar" asp-action="Index">ŞƏHİDLƏR</a></li>
+                                        <li><a asp-controller="Account" asp-action="Login">GİRİŞ</a></li>
+                                        <li><a asp-controller="Account" asp-action="Register">QEYDİYYAT</a></li>
+                                    </ul>
+                                </li>
+                                <li><a class="nav-a" asp-controller="Product" asp-action="Index">MAĞAZA</a></li>
+                                <li><a class="nav-a" asp-controller="Blog" asp-action="BlogDetails">BLOGLAR</a></li>
+                                <li> <a class="nav-a" asp-controller="About" asp-action="Index">HAQQIMIZDA</a> </li>
+                                <li><a class="nav-a" asp-controller="Contact" asp-action="Index">BİZİMLƏ ƏLAQƏ</a></li>
+                                <li class="admin"><a class="nav-a" href="#">ADMIN PANEL</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+            </nav>
+        </section>
+    </header>
+
+    <main>
+
+        <section id="products">
+            <div class="container">
+                <div class="row my-5">
+                    <div class="col-lg-3 col-md-6 col-sm-12 my-3">
+
+                        <div class="categories">
+                            <h5>Categories</h5>
+                            <div class="category-tabs">
+                                <a href="All">All</a> <span class="price">@ViewBag.ProductCount</span><br />
+                                @foreach (var item in ViewBag.Categories)
+                                {
+                                    <a href="@item.Name">@item.Name</a> <span class="price">@item.ProductCategories.Count</span>
+
+                                    <br />
+                                }
+                            </div>
+                        </div>
+
+
+                        <div class="categoriesSecond">
+                            <h5>Price</h5>
+                            <div id="check">
+                                <p class="d-none" id="getvalue">@ViewBag.id</p>
+
+                                <div>
+                                    <input value="6" type="radio" id="radio-input" name="types" />
+                                    <label>Below $10</label>
+                                </div>
+                                <div>
+                                    <input value="7" type="radio" id="radio-input" name="types" />
+                                    <label>$10 - $100</label>
+                                </div>
+                                <div>
+                                    <input value="8" type="radio" id="radio-input" name="types" />
+                                    <label>$100 - $500</label>
+                                </div>
+                                <div>
+                                    <input value="9" type="radio" id="radio-input" name="types" />
+                                    <label>Above $500</label>
+                                </div>
+                                <div>
+                                    <input value="10" type="radio" id="radio-input" name="types" />
+                                    <label>All</label>
+                                </div>
+                            </div>
+                            <h5>Enter Price Range</h5>
+                            <div class="digit">
+                                <input class="num" type="number" min="1" max="7000" value="1" />
+                                <span> - </span>
+                                <input class="num" type="number" min="1" max="7000" value="5000" />
+                                <button class="go"><span>Go</span></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-9 col-md-6 col-sm-12 my-3">
+                        <div class="product-head">
+                            <select name="cars" id="select">
+                                <option value="1">Default</option>
+                                <option value="5">Low to high</option>
+                                <option value="4">High to low</option>
+                                <option value="3">A to Z</option>
+                                <option value="2">Z to A</option>
+                            </select>
+
+                            <span></span>
+                        </div>
+
+                        <div class="row">
+                            @foreach (var item in Model)
+                            {
+                                <div class="col-lg-4 col-md-12 col-sm-12 items" data-id="All & @foreach(var categorys in item.ProductCategories){
+                            @(categorys.Category.Name )
+}">
+                                    <div class="productFirst">
+                                        <img src="~/img/img-Accessories/@item.Image" alt="" />
+                                    </div>
+                                    <div class="productFirstInfo">
+                                        <a href="">
+                                            <h5>@item.Title</h5>
+                                        </a>
+                                        <div class="shop-icon">
+                                            <a asp-controller="basket" asp-action="AddBasket" asp-route-id="@item.Id">
+                                                <i class="fa-solid fa-cart-shopping"></i>
+                                            </a>
+                                        </div>
+                                        <span>$@item.Price</span>
+                                        <div class="star-icon">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star-half-stroke"></i>
+                                            <i class="fa-regular fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                        <div class="row my-3">
+                            <div class="posination">
+                                <i class="fa-solid fa-angles-left"></i>
+                                <i class="fa-solid fa-angle-left"></i>
+                                <span class="first">1</span>
+                                <span>2</span>
+                                <span>3</span>
+                                <span>4</span>
+                                <span>5</span>
+                                <i class="fa-solid fa-chevron-right"></i>
+                                <i class="fa-solid fa-angles-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+
+
+    <footer>
+
+        <div id="my-footer" class="my-5">
+            <footer class="text-center text-lg-start text-white">
+                <div class="container p-4 pb-0">
+                    <section class="">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                                <h5 class="text-uppercase">SAYT HAQQINDA</h5>
+
+                                <p>
+                                    Saytımızda Azərbaycan Respublikasının müstəqilliyi, ərazi bütövlüyü və suverenliyi uğrunda canından
+                                    keçmiş qəhrəmanlarımız
+                                    haqqında ətraflı məlumat əldə edə, həmçinin əlavə dəyişikliklər edə bilərsiniz. Etdiyiniz
+                                    dəyişikliklər bizim tərəfimizdən
+                                    baxıldıqdan sonra qısa müddət ərzində yayımlanacaqdır. Bundan əlavə saytımızda hərbi mağaza da
+                                    fəaliyyət göstərir və siz
+                                    rahatlıqla istənilən məhsulu sifariş edə bilərsiniz.
+                                </p>
+                            </div>
+
+                            <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                                <h5 class="text-uppercase">HAQQIMIZDA</h5>
+
+                                <ul class="list-unstyled mb-0">
+                                    <li>
+                                        <a href="~/about.html" class="text-white">haqqımızda</a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="text-white">şərtlər və qaydalar</a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="text-white">
+                                            məxfilik siyasəti
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="text-white">FAQ</a>
+                                    </li>
+                                    <li>
+                                        <a asp-controller="Contact" asp-action="Index" class="text-white">bizimlə əlaqə</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                                <h5 class="text-uppercase">GİRİŞ</h5>
+
+                                <ul class="list-unstyled mb-0">
+                                    <li>
+                                        <a asp-controller="Account" asp-action="Login" class="text-white">daxil ol</a>
+                                    </li>
+                                    <li>
+                                        <a asp-controller="Account" asp-action="Register" class="text-white">qeydiyyat</a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="text-white">şifrəmi unutmuşam</a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="text-white">təşəkkürlər</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                                <h5 class="text-uppercase">KATEQORİYALAR</h5>
+
+                                <ul class="list-unstyled mb-0">
+                                    <li>
+                                        <a href="#!" class="text-white">uniformalar</a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="text-white">geyimlər</a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="text-white">aksesuarlar</a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="text-white">qarışıq mallar</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                                <h5 class="text-uppercase">SOSIAL</h5>
+
+                                <ul class="list-unstyled mb-0">
+                                    <li>
+                                        <a href="https://www.facebook.com/cenab.akberoff" class="text-white">facebook</a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="text-white">twitter</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.youtube.com/shorts/Sk69jShsSE0" class="text-white">youtube</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.instagram.com/cenab.akberoff/" class="text-white">google plus</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                    <hr class="mb-4" />
+                    <div class="copyright">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-12"></div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <span>© Bütün hüquqlar qorunur | e.o baş-leytenant Orxan Əkbərov tərəfindən yaradılmışdır.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="mb-4" />
+                </div>
+            </footer>
+        </div>
+    </footer>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.30/sweetalert2.all.min.js"></script>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@@popperjs/core@2.10.2/dist/umd/popper.min.js"
+            integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+            integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+            crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/053fc23104.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+            integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="~/js/script.js"></script>
+    <script src="~/js/accessories.js"></script>
+
+</body>
+
+</html>
+
+
+<script>
+    $(".category-tabs a").click(function (e) {
+        e.preventDefault();
+        // console.log("dofuhc")
+        var id = $(this).attr("href")
+
+        var items = document.querySelectorAll(".items")
+        items.forEach(item => {
+            item.style.display = "none"
+            var a = item.getAttribute("data-id")
+
+            if (a.includes(id)) {
+                item.style.display = "block"
+            }
+        })
+
+
+    });
+</script>
+<script>
+    var option = document.querySelectorAll("#select option")
+     
+    var id = document.getElementById("getvalue").innerHTML
+    console.log(id)
+    for (i = 0; i <= option.length - 1; i++) {
+        if (option[i].value == id) {
+            option[i].setAttribute("selected", "true")
+        }
+    }
+     
+    $(document).ready(function () {
+
+        $(document).on("change", "#select", function (e) {
+
+            var base = window.location.origin;
+            var url = `${base}/product?sortId=${$(this).val()}`
+            window.location.replace(url)
+
+        })
+       
+    });
+</script>
+
+
