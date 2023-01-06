@@ -172,3 +172,6 @@ D:\My-Project\Backend-Project\Final-Project\Final-Project\obj\Debug\netcoreapp3.
 D:\My-Project\Backend-Project\Final-Project\Final-Project\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Martyrs.cshtml.g.cs
 D:\My-Project\Backend-Project\Final-Project\Final-Project\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout2.cshtml.g.cs
 D:\My-Project\Backend-Project\Final-Project\Final-Project\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_SearchProduct.cshtml.g.cs
+D:\My-Project\Backend-Project\Final-Project\Final-Project\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Shared\_AdminLayout.cshtml.g.cs
+D:\My-Project\Backend-Project\Final-Project\Final-Project\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\_ViewImports.cshtml.g.cs
+D:\My-Project\Backend-Project\Final-Project\Final-Project\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\_ViewStart.cshtml.g.cs
