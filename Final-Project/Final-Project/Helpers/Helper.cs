@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using System.IO;
 using System.Threading.Tasks;
 
@@ -29,6 +30,7 @@ namespace Final_Project.Helpers
             if (File.Exists(path))
                 File.Delete(path);
         }
+      
 
         public static async Task SaveFile(string path, IFormFile photo)
         {

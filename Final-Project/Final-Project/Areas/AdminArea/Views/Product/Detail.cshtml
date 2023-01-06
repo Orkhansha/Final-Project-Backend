@@ -1,0 +1,52 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/AdminArea/Views/Shared/_AdminLayout.cshtml";
+   
+}
+
+
+<div class="container-fluid pt-4 px-4">
+    <div class="row g-4">
+        <div class="col-sm-12 col-xl-12">
+            <div class="bg-secondary rounded h-100 p-4">
+                <h6 class="mb-4">Basic Table</h6>
+                <a asp-area="adminarea" asp-controller="product" asp-action="create"  class="btn btn-success  ">Create</a>
+                <table class="table">
+                    <thead>
+                        <tr>
+                          
+                            <th scope="col">Image</th>
+                            <th scope="col">product Name</th>
+                            <th scope="col">Description</th>
+                          
+                        </tr>
+                    </thead>
+                    <tbody>
+                     
+                                <tr>
+                                  
+                                 
+                     
+                        @foreach (var item in Model.ProductImages)
+                            {
+                                if (item.IsMain)
+                                {
+                                                            <td><img style="width:100px;"src="~/img/products/@item.ImageUrl"/></td>
+                                    
+                                }
+                            }
+                       
+                                <td>@Model.Title</td>
+                                <td>@Model.Description.Substring(0,50) ...</td>
+                                   
+
+                                </tr>
+                        
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

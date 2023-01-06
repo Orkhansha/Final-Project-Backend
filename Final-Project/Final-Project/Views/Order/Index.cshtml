@@ -1,0 +1,91 @@
+﻿@model OrderVM
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    decimal total = 0;
+
+}
+
+<div class="container">
+        <div class="row">
+            <div class="col-lg-7 left-side">
+                <form method="post">
+
+                    <div class="billing-address">
+
+
+
+                        <input asp-for="Username" class="form-control" placeholder=""style="font-size:15px">
+                        <span asp-validation-for="Username" class="text text-danger"></span><br />
+
+
+                        <input asp-for="Address" type="text" placeholder="Address">
+                        <span asp-validation-for="Address" class="text text-danger"></span>
+
+                        <div class="post-code">
+                            <input asp-for="Country" type="text" placeholder="Country">
+                             <span asp-validation-for="Country" class="text text-danger"></span>
+                            <input asp-for="Region" type="text" placeholder="Region">
+                            <span asp-validation-for="Region" class="text text-danger"></span>
+
+                        </div>
+                        <div class="post-code">
+                            <input asp-for="City" type="text" placeholder="City">
+                             <span asp-validation-for="City" class="text text-danger"></span>
+                            <input asp-for="Apartment" type="text" placeholder="Apartment">
+                            <span asp-validation-for="Apartment" class="text text-danger"></span>
+
+                        </div>
+                          <div class="post-code">
+                            <input asp-for="PostCode" type="text" placeholder="PostCode">
+                             <span asp-validation-for="PostCode" class="text text-danger"></span>
+                            <input asp-for="Phone" type="text" placeholder="Phone">
+                            <span asp-validation-for="Phone" class="text text-danger"></span>
+
+                        </div>
+                    </div>
+                    <div class="submit">
+                        <button type="submit">Buy</button>
+                        <a asp-controller="basket" asp-action="index" style="text-decoration:none;">Return to cart</a>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-5 right-side">
+            @foreach (var item in Model.BasketItems)
+            {
+                       <span style="display:none">@(total += item.Count * item.Product.Price)</span>
+                       <div class="my-product">
+                        <div class="Product-image">
+                        @foreach (var photo in item.Product.ProductImages)
+                        {
+                            if (photo.IsMain)
+                            {
+
+                                    <img style="width:100px;" src="~/img/products/@photo.ImageUrl" alt="">
+                            }
+
+                        }
+                        </div>
+                        <div class="Product-info">
+                            <h5>@item.Product.Title</h5>
+                                <span>@item.Count X  
+                            @item.Product.Price
+
+                                </span>
+                        </div>
+                        <div class="price">
+                            <h5>Total Price</h5>
+                            <span>$ 
+                            @(item.Product.Price * item.Count)
+                                    </span>
+                        </div>
+                    </div>
+            }
+
+                <div class="total-price">
+                    <span class="text">Total Price</span>
+                    <span>$@total.ToString("f2")</span>
+                </div>
+            </div>
+        </div>
+    </div>

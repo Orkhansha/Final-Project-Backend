@@ -1,0 +1,53 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/AdminArea/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container mt-5">
+    <form class="forms-sample" method="post" enctype="multipart/form-data">
+
+
+        <div class="form-group col-md-3">
+            <label asp-for="Photo"></label>
+            <input asp-for="Photo" class="form-control">
+            <span style="color: red;" asp-validation-for="Photo"></span>
+        </div>
+        <div class="form-group col-md-3">
+            <label asp-for="@Model.Title">Name</label>
+            <input asp-for="@Model.Title" />
+            <span asp-validation-for="@Model.Title"></span>
+        </div>
+        <div class="form-group col-md-3">
+            <label asp-for="@Model.Price">Price</label>
+            <input asp-for="@Model.Price" />
+            <span asp-validation-for="@Model.Price"></span>
+        </div>
+        <div class="form-group col-md-3">
+            <label asp-for="@Model.Stock">Stock</label>
+            <input asp-for="@Model.Stock" />
+            <span asp-validation-for="@Model.Stock"></span>
+        </div>
+        <div class="form-group col-md-3">
+            <label asp-for="@Model.Description">Description</label>
+            <input asp-for="@Model.Description" />
+            <span asp-validation-for="@Model.Description"></span>
+        </div>
+
+     
+
+
+
+
+        <div class="form-group col-md-3">
+            <label asp-for="@Model.CategoryId">Categories</label>
+            <select class="form-control" asp-for="@Model.CategoryId" asp-items="@(new SelectList(ViewBag.Categories,"Id","Name"))">
+            </select>
+        </div>
+       
+        <button type="submit" class="btn btn-success mt-4">Create</button>
+    </form>
+
+
+</div>
+

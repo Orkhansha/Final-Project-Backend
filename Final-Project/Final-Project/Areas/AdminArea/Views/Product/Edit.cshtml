@@ -1,0 +1,64 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="container-fluid mb-4">
+    <form method="post" enctype="multipart/form-data">
+        <div class="form-group">
+
+            <label asp-for="Photo"></label>
+            <input asp-for="Photo" class="form-control">
+            <span style="color: red;" asp-validation-for="Photo"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.Title">Name</label>
+            <input type="text" asp-for="@Model.Title" class="form-control" id="Name" placeholder="Name" rows="3">
+            <span asp-validation-for="@Model.Title" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.Price">Price</label>
+            <input type="number" asp-for="@Model.Price" class="form-control" id="Price" placeholder="Price" rows="3">
+            <span asp-validation-for="@Model.Price" class="text-danger"></span>
+        </div>
+
+
+        <div class="form-group  ">
+            <label asp-for="@Model.Description">Description</label>
+            <input asp-for="@Model.Description" />
+            <span asp-validation-for="@Model.Description"></span>
+        </div>
+
+     
+  
+
+        <div class="form-group ">
+            <label asp-for="@Model.Stock">Stock</label>
+            <input asp-for="@Model.Stock" />
+            <span asp-validation-for="@Model.Stock"></span>
+        </div>
+      
+
+
+
+
+ 
+
+        <div class="form-group">
+            <select style="width: 50%" asp-for="CategoryId" class="form-select" asp-items="ViewBag.Categories">
+                <option selected>Categories</option>
+            </select>
+            <span style="color: red;" asp-validation-for="CategoryId"></span>
+        </div>
+
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+        <a asp-controller="product" asp-action="index">
+
+            <i style="font-size:0.875rem; text-decoration:none;" class="btn btn-dark">Back</i>
+        </a>
+    </form>
+</div>
+
+ 

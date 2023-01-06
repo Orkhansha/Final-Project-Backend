@@ -6,9 +6,7 @@ namespace Final_Project.ViewModels
 {
     public class OrderVM
     {
-        [Required]
-        [StringLength(maximumLength: 150)]
-        public string CompanyName { get; set; }
+        
         [StringLength(maximumLength: 40)]
         public string Region { get; set; }
         [Required]
@@ -30,10 +28,7 @@ namespace Final_Project.ViewModels
 
         [StringLength(maximumLength: 25)]
         public string Username { get; set; }
-        [Required]
-        [StringLength(maximumLength: 50)]
-        [DataType(DataType.EmailAddress)]
-        public string Email { get; set; }
+       
         [Required]
         [StringLength(maximumLength: 150)]
         public string Address { get; set; }

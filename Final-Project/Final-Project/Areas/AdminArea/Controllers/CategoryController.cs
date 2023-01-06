@@ -73,16 +73,7 @@ namespace Final_Project.Areas.AdminArea.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Detail(int? id)
-        {
-            if (id == null) return BadRequest();
-
-            Category category = await _context.Categories.FindAsync(id);
-
-            if (category == null) return NotFound();
-
-            return View(category);
-        }
+       
 
 
 

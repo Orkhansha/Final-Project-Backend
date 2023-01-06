@@ -183,7 +183,7 @@ namespace Final_Project.Controllers
             OrderVM model = new OrderVM
             {
                 Username = user.UserName,
-                Email = user.Email,
+          
                 BasketItems = _context.BasketItems.Include(b => b.Product).Where(b => b.AppUserId == user.Id).ToList(),
 
             };
