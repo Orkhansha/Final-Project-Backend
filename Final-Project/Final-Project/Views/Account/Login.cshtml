@@ -22,7 +22,12 @@
 
 <body>
 
-
+    @if (TempData["Fail"] != null)
+    {
+        <div class="alert alert-danger" id="failAlert" role="alert">
+            @TempData["Fail"]
+        </div>
+    }
 
     <main>
         <div class="container my-5">
@@ -49,7 +54,7 @@
                         <div id="beam"></div>
                     </div>
                 </div>
-                <p>Forgot passwrod? <a asp-controller="Account" asp-action="resetpassword">Reset password</a></p>
+               
                 <button class="button-646" id="submit">Sign in</button>
             </form>
         </div>
@@ -59,6 +64,17 @@
 
     <script src="~/js/script.js"></script>
     <script src="~/js/login.js"></script>
+
+    <script>
+
+
+        let alertDiv = document.getElementById("failAlert");
+        setTimeout(function () {
+            alertDiv.remove()
+        }, 3000)
+
+    </script>
+
 </body>
 
 </html>

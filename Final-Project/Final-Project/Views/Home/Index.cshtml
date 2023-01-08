@@ -9,7 +9,7 @@
                     @foreach (var item in Model.Sliders)
                     {
                         <div class="swiper-slide">
-                            <img src="~/img/@item.Image" alt="">
+                            <img src="~/img/Slides/@item.Image" alt="">
                             <div class="swiper-slide-text">
                             </div>
                         </div>
@@ -22,18 +22,18 @@
     <section class="component-section">
         <div class="container">
             <div class="row my-5 component-row">
-                
+
                 @foreach (var item in Model.Services)
                 {
-                        <div class="col-lg-4 col-md-12 col-sm-12">
-                            <div class="component-card">
-                                <div class="shop-iconn"><i class="@item.Icon"></i></div>
-                                <div class="component-text">
-                                    <h3>@item.Name</h3>
-                                    <p>@item.Title</p>
-                                </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="component-card">
+                            <div class="shop-iconn"><i class="@item.Icon"></i></div>
+                            <div class="component-text">
+                                <h3>@item.Name</h3>
+                                <p>@item.Title</p>
                             </div>
                         </div>
+                    </div>
                 }
 
             </div>
@@ -63,7 +63,7 @@
     <div id="card-area" class="container">
 
         <!-- Card: Beach -->
-       @foreach (var item in Model.UnudulmazlarVideos)
+        @foreach (var item in Model.UnudulmazlarVideos.Take(4))
         {
             <section class="card-section">
                 <div class="card">
@@ -101,8 +101,8 @@
                             <h3 class="inside-page__heading inside-page__heading--beach">
                                 @item.Birthday
                             </h3>
-                            
-                            <a href="#" class="inside-page__btn inside-page__btn--beach">Ətraflı</a>
+
+                            <a asp-controller="unudulmazlar" asp-action="details" asp-route-id="@item.Id" class="inside-page__btn inside-page__btn--beach">Ətraflı</a>
                         </div>
                     </div>
                 </div>
@@ -110,131 +110,131 @@
         }
 
 
-@*        <!-- Card: Beach -->
+        @*        <!-- Card: Beach -->
         <section class="card-section t-dn">
-            <div class="card">
-                <div class="flip-card">
-                    <div class="flip-card__container">
-                        <div class="card-front">
-                            <div class="card-front__tp card-front__tp--beach card-first">
-                                <img src="~/img/Əmrah.png" alt="">
-                            </div>
+        <div class="card">
+        <div class="flip-card">
+        <div class="flip-card__container">
+        <div class="card-front">
+        <div class="card-front__tp card-front__tp--beach card-first">
+        <img src="~/img/Əmrah.png" alt="">
+        </div>
 
-                            <div class="card-front__bt">
+        <div class="card-front__bt">
 
-                                <p class="card-front__text-view card-front__text-view--beach">
-                                    Şəhid
-                                    <br>
-                                    Leytenant
-                                    <br>
-                                    Əmrah Əkbərov
-                                </p>
-                            </div>
-                        </div>
-                        <div class="card-back">
-                            <video class="video__container" autoplay muted loop>
-                                <source class="video__media" src="~/video/lv_0_20221014082800.mp4" type="video/mp4">
-                            </video>
-                        </div>
-                    </div>
-                </div>
+        <p class="card-front__text-view card-front__text-view--beach">
+        Şəhid
+        <br>
+        Leytenant
+        <br>
+        Əmrah Əkbərov
+        </p>
+        </div>
+        </div>
+        <div class="card-back">
+        <video class="video__container" autoplay muted loop>
+        <source class="video__media" src="~/video/lv_0_20221014082800.mp4" type="video/mp4">
+        </video>
+        </div>
+        </div>
+        </div>
 
-                <div class="inside-page">
-                    <div class="inside-page__container">
-                        <h3 class="inside-page__heading inside-page__heading--beach">
-                            Leytenant
-                        </h3>
-                        <p class="inside-page__text">
-                            Xüsusi Təyinatlı Qüvvələrin zabiti.
-                        </p>
-                        <a href="#" class="inside-page__btn inside-page__btn--beach">Ətraflı</a>
-                    </div>
-                </div>
-            </div>
+        <div class="inside-page">
+        <div class="inside-page__container">
+        <h3 class="inside-page__heading inside-page__heading--beach">
+        Leytenant
+        </h3>
+        <p class="inside-page__text">
+        Xüsusi Təyinatlı Qüvvələrin zabiti.
+        </p>
+        <a href="#" class="inside-page__btn inside-page__btn--beach">Ətraflı</a>
+        </div>
+        </div>
+        </div>
         </section>
         <!-- Card: Beach -->
         <section class="card-section s-dn">
-            <div class="card">
-                <div class="flip-card">
-                    <div class="flip-card__container">
-                        <div class="card-front">
-                            <div class="card-front__tp card-front__tp--beach card-first">
-                                <img src="~/img/Əmrah.png" alt="">
-                            </div>
+        <div class="card">
+        <div class="flip-card">
+        <div class="flip-card__container">
+        <div class="card-front">
+        <div class="card-front__tp card-front__tp--beach card-first">
+        <img src="~/img/Əmrah.png" alt="">
+        </div>
 
-                            <div class="card-front__bt">
+        <div class="card-front__bt">
 
-                                <p class="card-front__text-view card-front__text-view--beach">
-                                    Şəhid
-                                    <br>
-                                    Leytenant
-                                    <br>
-                                    Əmrah Əkbərov
-                                </p>
-                            </div>
-                        </div>
-                        <div class="card-back">
-                            <video class="video__container" autoplay muted loop>
-                                <source class="video__media" src="~/video/lv_0_20221014082800.mp4" type="video/mp4">
-                            </video>
-                        </div>
-                    </div>
-                </div>
+        <p class="card-front__text-view card-front__text-view--beach">
+        Şəhid
+        <br>
+        Leytenant
+        <br>
+        Əmrah Əkbərov
+        </p>
+        </div>
+        </div>
+        <div class="card-back">
+        <video class="video__container" autoplay muted loop>
+        <source class="video__media" src="~/video/lv_0_20221014082800.mp4" type="video/mp4">
+        </video>
+        </div>
+        </div>
+        </div>
 
-                <div class="inside-page">
-                    <div class="inside-page__container">
-                        <h3 class="inside-page__heading inside-page__heading--beach">
-                            Leytenant
-                        </h3>
-                        <p class="inside-page__text">
-                            Xüsusi Təyinatlı Qüvvələrin zabiti.
-                        </p>
-                        <a href="#" class="inside-page__btn inside-page__btn--beach">Ətraflı</a>
-                    </div>
-                </div>
-            </div>
+        <div class="inside-page">
+        <div class="inside-page__container">
+        <h3 class="inside-page__heading inside-page__heading--beach">
+        Leytenant
+        </h3>
+        <p class="inside-page__text">
+        Xüsusi Təyinatlı Qüvvələrin zabiti.
+        </p>
+        <a href="#" class="inside-page__btn inside-page__btn--beach">Ətraflı</a>
+        </div>
+        </div>
+        </div>
         </section>
         <!-- Card: Beach -->
         <section class="card-section f-dn">
-            <div class="card">
-                <div class="flip-card">
-                    <div class="flip-card__container">
-                        <div class="card-front">
-                            <div class="card-front__tp card-front__tp--beach card-first">
-                                <img src="~/img/Əmrah.png" alt="">
-                            </div>
+        <div class="card">
+        <div class="flip-card">
+        <div class="flip-card__container">
+        <div class="card-front">
+        <div class="card-front__tp card-front__tp--beach card-first">
+        <img src="~/img/Əmrah.png" alt="">
+        </div>
 
-                            <div class="card-front__bt">
+        <div class="card-front__bt">
 
-                                <p class="card-front__text-view card-front__text-view--beach">
-                                    Şəhid
-                                    <br>
-                                    Leytenant
-                                    <br>
-                                    Əmrah Əkbərov
-                                </p>
-                            </div>
-                        </div>
-                        <div class="card-back">
-                            <video class="video__container" autoplay muted loop>
-                                <source class="video__media" src="~/video/lv_0_20221014082800.mp4" type="video/mp4">
-                            </video>
-                        </div>
-                    </div>
-                </div>
+        <p class="card-front__text-view card-front__text-view--beach">
+        Şəhid
+        <br>
+        Leytenant
+        <br>
+        Əmrah Əkbərov
+        </p>
+        </div>
+        </div>
+        <div class="card-back">
+        <video class="video__container" autoplay muted loop>
+        <source class="video__media" src="~/video/lv_0_20221014082800.mp4" type="video/mp4">
+        </video>
+        </div>
+        </div>
+        </div>
 
-                <div class="inside-page">
-                    <div class="inside-page__container">
-                        <h3 class="inside-page__heading inside-page__heading--beach">
-                            Leytenant
-                        </h3>
-                        <p class="inside-page__text">
-                            Xüsusi Təyinatlı Qüvvələrin zabiti.
-                        </p>
-                        <a href="#" class="inside-page__btn inside-page__btn--beach">Ətraflı</a>
-                    </div>
-                </div>
-            </div>
+        <div class="inside-page">
+        <div class="inside-page__container">
+        <h3 class="inside-page__heading inside-page__heading--beach">
+        Leytenant
+        </h3>
+        <p class="inside-page__text">
+        Xüsusi Təyinatlı Qüvvələrin zabiti.
+        </p>
+        <a href="#" class="inside-page__btn inside-page__btn--beach">Ətraflı</a>
+        </div>
+        </div>
+        </div>
         </section>*@
 
     </div>
@@ -259,30 +259,37 @@
                                     <div class="carousell-section container">
                                         <div class="swiper mySwiper1">
                                             <div class="swiper-wrapper">
-                                                @foreach (var item in Model.Aksesuars)
+                                                @foreach (var item in Model.Products.Take(6))
                                                 {
-                                                    
-                                                
-                                                <div class="swiper-slide">
-                                                    <div cat-id="1" class="card bg-light mb-3" style="max-width: 18rem;">
-                                                        <div class="card-header">
-                                                            <div class="prod-img">
-                                                                <img src="~/img/Akses/@item.Image" alt="">
-                                                                <div class="prod-price"><a href="">$ <span>@item.Price</span> </a></div>
-                                                                <div class="prod-add"><a asp-controller="basket" asp-action="addbasket" asp-route-id="@item.Id"><i class="fa-solid fa-cart-shopping"></i></a></div>
+
+
+                                                    <div class="swiper-slide">
+                                                        <div cat-id="1" class="card bg-light mb-3" style="max-width: 18rem;">
+                                                            <div class="card-header">
+                                                                <div class="prod-img">
+                                                                    @foreach (var photo in item.ProductImages)
+                                                                    {
+                                                                        @if (photo.IsMain)
+                                                                        {
+
+                                                                            <img src="~/img/products/@photo.ImageUrl" alt="">
+                                                                        }
+                                                                    }
+                                                                    <div class="prod-price"><a href="">$ <span>@item.Price</span> </a></div>
+                                                                    <div class="prod-add"><a asp-controller="basket" asp-action="AddBasket" asp-route-id="@item.Id"><i class="fa-solid fa-cart-shopping"></i></a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="card-body">
+                                                                <h5 class="card-title">Bel Kəməri</h5>
+                                                                <i class="fa-solid fa-star"></i>
+                                                                <i class="fa-solid fa-star"></i>
+                                                                <i class="fa-solid fa-star"></i>
+                                                                <i class="fa-solid fa-star"></i>
+                                                                <i class="fa-regular fa-star"></i>
                                                             </div>
                                                         </div>
-                                                        <div class="card-body">
-                                                            <h5 class="card-title">Bel Kəməri</h5>
-                                                            <i class="fa-solid fa-star"></i>
-                                                            <i class="fa-solid fa-star"></i>
-                                                            <i class="fa-solid fa-star"></i>
-                                                            <i class="fa-solid fa-star"></i>
-                                                            <i class="fa-regular fa-star"></i>
-                                                        </div>
                                                     </div>
-                                                </div>
-                                               }
+                                                }
                                             </div>
                                         </div>
                                     </div>
@@ -604,7 +611,7 @@
     <div class="carousell-section container">
         <div class="swiper mySwiper2">
             <div class="swiper-wrapper">
-               @foreach (var item in Model.Brands)
+                @foreach (var item in Model.Brands)
                 {
                     <div class="swiper-slide foott-slide ">
                         <img src="~/img/Brands/@item.Image" style="width: 100px; height: 30px; " alt="">

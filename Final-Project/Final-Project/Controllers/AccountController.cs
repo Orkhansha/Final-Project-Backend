@@ -73,9 +73,7 @@ namespace Final_Project.Controllers
             }
 
             await _userManager.AddToRoleAsync(user, Roless.User.ToString());
-
-            await _signInManager.SignInAsync(user, false);
-
+             
             string token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
             string link = Url.Action(nameof(VerifyEmail), "Account", new { email = user.Email, token }, Request.Scheme, Request.Host.ToString());
             MailMessage mail = new MailMessage();
@@ -88,7 +86,7 @@ namespace Final_Project.Controllers
             {
                 body = reader.ReadToEnd();
             }
-            string about = $"Hi <strong>{user.UserName}</strong> please click the link in below to verify your account";
+            string about = $"Welcome <strong>{user.UserName}</strong> , please click the link in below to verify your account";
 
             body = body.Replace("{{link}}", link);
             mail.Body = body.Replace("{{About}}", about);
@@ -101,6 +99,8 @@ namespace Final_Project.Controllers
 
             smtp.Credentials = new NetworkCredential("orkhansha@code.edu.az", "mfeudepymigpmlij");
             smtp.Send(mail);
+            TempData["Verify"] = true;
+
             return RedirectToAction(nameof(Login));
         }
         #endregion
@@ -128,15 +128,18 @@ namespace Final_Project.Controllers
                 ModelState.AddModelError("", "Email or password wrong");
                 return View(loginVM);
             }
+            if (user.EmailConfirmed == false)
+            {
+                TempData["Fail"] = "Please go to gmail and confirm Email!";
+                return RedirectToAction("login", "account");
 
+            }
             var result = await _signInManager.PasswordSignInAsync(user, loginVM.Password, false, false);
-
             if (!result.Succeeded)
             {
                 ModelState.AddModelError("", "Email or password wrong");
                 return View(loginVM);
             }
-
             bool isAdmin = await _userManager.IsInRoleAsync(user, "Admin");
 
 
@@ -149,6 +152,8 @@ namespace Final_Project.Controllers
             {
                 return RedirectToAction("Index", "Home");
             }
+            
+
         }
 
         public async Task<IActionResult> Logout()
@@ -160,17 +165,17 @@ namespace Final_Project.Controllers
 
 
         //[Authorize(Roles = "Admin")]
-        public async Task CreateRoles()
-        {
-            foreach (var role in Enum.GetValues(typeof(Roless)))
-            {
-                if (!await _roleManager.RoleExistsAsync(role.ToString()))
-                {
-                    await _roleManager.CreateAsync(new IdentityRole { Name = role.ToString() });
-                }
-            }
+        //public async Task CreateRoles()
+        //{
+        //    foreach (var role in Enum.GetValues(typeof(Roless)))
+        //    {
+        //        if (!await _roleManager.RoleExistsAsync(role.ToString()))
+        //        {
+        //            await _roleManager.CreateAsync(new IdentityRole { Name = role.ToString() });
+        //        }
+        //    }
 
-        }
+        //}
         public async Task<IActionResult> VerifyEmail(string email, string token)
         {
             AppUser user = await _userManager.FindByEmailAsync(email);
@@ -178,7 +183,7 @@ namespace Final_Project.Controllers
             await _userManager.ConfirmEmailAsync(user, token);
 
             await _signInManager.SignInAsync(user, true);
-        
+
 
             return RedirectToAction("Index", "Home");
         }
@@ -194,11 +199,11 @@ namespace Final_Project.Controllers
         {
             AppUser user = await _userManager.FindByEmailAsync(account.AppUser.Email);
             if (user == null) return BadRequest();
-
+            //Elgun8195!
             string token = await _userManager.GeneratePasswordResetTokenAsync(user);
             string link = Url.Action(nameof(ResetPassword), "Account", new { email = user.Email, token }, Request.Scheme, Request.Host.ToString());
             MailMessage mail = new MailMessage();
-            mail.From = new MailAddress("orkhansha@code.edu.az", "BookShop");
+            mail.From = new MailAddress("orkhansha@code.edu.az", "Military");
             mail.To.Add(new MailAddress(user.Email));
 
             mail.Subject = "Reset Password";

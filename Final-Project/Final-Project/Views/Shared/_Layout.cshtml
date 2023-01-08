@@ -32,7 +32,7 @@
                                 {
                                     
                                 <a asp-controller="basket" asp-action="index">
-                                    <i class="fa-solid fa-cart-shopping"><sup>0</sup></i>
+                                        <i class="fa-solid fa-cart-shopping"><sup> @await Component.InvokeAsync("Header")</sup></i>
                                 </a>
                                 }else{
                                         <a asp-controller="account" asp-action="login">
@@ -124,6 +124,10 @@
                                     <a class="nav-a dropdown-btnn" asp-controller="Home" asp-action="Index">ƏSAS SƏHİFƏ</a>
 
                                 </li>
+                                <li>
+                                    <a class="nav-a dropdown-btnn"  href="#">@User.Identity.Name</a>
+
+                                </li>
 
                                 <li>
                                     <a class="nav-a dropdown-btnn" asp-controller="Unudulmazlar" asp-action="Index">UNUDULMAZLAR</a>
@@ -137,7 +141,7 @@
                                 <li><a class="nav-a" asp-controller="Blog" asp-action="BlogDetails">BLOGLAR</a></li>
                                 <li> <a class="nav-a" asp-controller="About" asp-action="Index">HAQQIMIZDA</a> </li>
                                 <li><a class="nav-a" asp-controller="Contact" asp-action="Index">BİZİMLƏ ƏLAQƏ</a></li>
-                                <li class="admin"><a class="nav-a" href="#">ADMIN PANEL</a></li>
+                                <li class="admin"><a class="nav-a" asp-area="AdminArea" asp-controller="Dashboard" asp-action="Index">ADMIN PANEL</a></li>
                             </ul>
                         </div>
                     </div>
@@ -190,6 +194,7 @@
                         </div>
                    
                     </div>
+                </div>
             </nav>
         </section>
     </header>
@@ -200,7 +205,7 @@
         </div>
     </main>
 
-    <footer>
+    <footerr>
 
         <div id="my-footer" class="my-5">
             <footer class="text-center text-lg-start text-white">
@@ -318,7 +323,7 @@
                 </div>
             </footer>
         </div>
-    </footer>
+    </footerr>
 
 
 

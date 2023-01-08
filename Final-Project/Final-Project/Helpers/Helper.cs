@@ -30,8 +30,18 @@ namespace Final_Project.Helpers
             if (File.Exists(path))
                 File.Delete(path);
         }
-      
 
+        public static void DeleteImage(IWebHostEnvironment env, string folder, string file)
+        {
+            string path = env.WebRootPath;
+            string result = Path.Combine(path, folder, file);
+
+            if (System.IO.File.Exists(result))
+            {
+                System.IO.File.Delete(result);
+            }
+
+        }
         public static async Task SaveFile(string path, IFormFile photo)
         {
 

@@ -19,8 +19,15 @@ using Final_Project.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "D:\My-Project\Backend-Project\Final-Project\Final-Project\Areas\AdminArea\Views\_ViewImports.cshtml"
+using Final_Project.ViewModels.ProductViewModels;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6ea566161f469a094507dbf534a60b47984271eb", @"/Areas/AdminArea/Views/Dashboard/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"69e9985fbeb19fc653893dbb61347fc74e28b88a", @"/Areas/AdminArea/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"767b4244a7d0e4d78410b42e4cecbcb97efee751", @"/Areas/AdminArea/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_AdminArea_Views_Dashboard_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     #nullable disable

@@ -16,6 +16,24 @@
     <Compile Remove="Migrations\20230103111312_updatingentity.Designer.cs" />
     <Compile Remove="Migrations\20230103111521_updatingentity.cs" />
     <Compile Remove="Migrations\20230103111521_updatingentity.Designer.cs" />
+    <Compile Remove="Migrations\20230108151650_sometablesedit.cs" />
+    <Compile Remove="Migrations\20230108151650_sometablesedit.Designer.cs" />
+    <Compile Remove="Migrations\20230108151931_sometablesedit.cs" />
+    <Compile Remove="Migrations\20230108151931_sometablesedit.Designer.cs" />
+    <Compile Remove="Migrations\20230108152016_sometablesedit.cs" />
+    <Compile Remove="Migrations\20230108152016_sometablesedit.Designer.cs" />
+    <Compile Remove="Migrations\20230108152207_sometablesedit.cs" />
+    <Compile Remove="Migrations\20230108152207_sometablesedit.Designer.cs" />
+    <Compile Remove="Migrations\20230108152500_sometablesedits.cs" />
+    <Compile Remove="Migrations\20230108152500_sometablesedits.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Areas\AdminArea\Controllers\CategoryController.cs" />
+    <Content Include="Areas\AdminArea\Controllers\DashboardController.cs" />
+    <Content Include="Areas\AdminArea\Controllers\OrderController.cs" />
+    <Content Include="Areas\AdminArea\Controllers\ProductController.cs" />
+    <Content Include="Areas\AdminArea\Controllers\SlideController.cs" />
   </ItemGroup>
 
   <ItemGroup>

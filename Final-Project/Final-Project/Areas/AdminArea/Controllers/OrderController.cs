@@ -32,14 +32,14 @@ namespace Final_Project.Areas.AdminArea.Controllers
             List<Order> orders = _context.Order.Skip((page - 1) * 5).Take(5).ToList();
             return View(orders);
         }
-       
+
 
         public IActionResult Edit(int id)
         {
-            Order order = _context.Order.Include(o => o.OrderItems).Include(o => o.AppUser).FirstOrDefault(o => o.Id == id);
+            Order order = _context.Order.Include(o => o.OrderItems).ThenInclude(p => p.Product.ProductImages).Include(o => o.AppUser).FirstOrDefault(o => o.Id == id);
             if (order == null) return NotFound();
             return View(order);
-            
+
         }
 
         public async Task<IActionResult> Accept(int id, string message)

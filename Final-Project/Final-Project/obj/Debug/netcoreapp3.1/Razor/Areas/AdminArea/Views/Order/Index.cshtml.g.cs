@@ -19,8 +19,15 @@ using Final_Project.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "D:\My-Project\Backend-Project\Final-Project\Final-Project\Areas\AdminArea\Views\_ViewImports.cshtml"
+using Final_Project.ViewModels.ProductViewModels;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"904ce683194420d08d31e5269249657ce1c54419", @"/Areas/AdminArea/Views/Order/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"69e9985fbeb19fc653893dbb61347fc74e28b88a", @"/Areas/AdminArea/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"767b4244a7d0e4d78410b42e4cecbcb97efee751", @"/Areas/AdminArea/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_AdminArea_Views_Order_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<Order>>
     #nullable disable
@@ -168,7 +175,7 @@ using Final_Project.Models;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n                    <td>\r\n                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "904ce683194420d08d31e5269249657ce1c544198987", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "904ce683194420d08d31e5269249657ce1c544199218", async() => {
                 WriteLiteral("\r\n                            <i class=\"mdi mdi-file-check btn-icon-append\"></i>\r\n                            Edit\r\n                        ");
             }
             );
@@ -221,7 +228,7 @@ WriteAttributeValue(" ", 2605, ViewBag.Currentpage == 1 ? "disabled" : "", 2606,
 #nullable disable
             EndWriteAttribute();
             WriteLiteral(">\r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "904ce683194420d08d31e5269249657ce1c5441912635", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "904ce683194420d08d31e5269249657ce1c5441912866", async() => {
                 WriteLiteral("Previous");
             }
             );
@@ -285,7 +292,7 @@ WriteAttributeValue(" ", 3010, ViewBag.CurrentPage == i ? "none" : "", 3011, 41,
 #nullable disable
             EndWriteAttribute();
             WriteLiteral(">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "904ce683194420d08d31e5269249657ce1c5441916459", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "904ce683194420d08d31e5269249657ce1c5441916690", async() => {
 #nullable restore
 #line 95 "D:\My-Project\Backend-Project\Final-Project\Final-Project\Areas\AdminArea\Views\Order\Index.cshtml"
                                                                                                                                                                                                                                        Write(i);
@@ -344,7 +351,7 @@ WriteAttributeValue(" ", 3207, ViewBag.CurrentPage == ViewBag.TotalPage ? "disab
 #nullable disable
             EndWriteAttribute();
             WriteLiteral(">\r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "904ce683194420d08d31e5269249657ce1c5441920268", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "904ce683194420d08d31e5269249657ce1c5441920499", async() => {
                 WriteLiteral("Next");
             }
             );

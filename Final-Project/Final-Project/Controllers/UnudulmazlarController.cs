@@ -74,14 +74,17 @@ namespace Final_Project.Controllers
 
             return unudulmazlarList;
         }
-        //birinci action yaradiriq sonra views/sharedin icine bax orda _Search var sonra script.js filesinin icinde js kodlari var
-        //ada gore axtaris edir , hemin adin detailine gedecek , detail actionunu da ozun yazarsan
+        
         public IActionResult Search(string search)
         {
             List<UnudulmazlarCard> searchItem = _context.UnudulmazlarCards.Where(p => p.Name.ToLower().Contains(search.ToLower())).ToList();
             return PartialView("_Search", searchItem);
         }
-
+        public async Task<IActionResult> Details(int id)
+        {
+            UnudulmazlarVideo UnudulmazlarVideo = await _context.UnudulmazlarVideo.FirstOrDefaultAsync(x => x.Id == id);
+            return View(UnudulmazlarVideo);
+        }
         public async Task<IActionResult> Detail(int id)
         {
             UnudulmazlarCard unudulmazlarCard = await _context.UnudulmazlarCards.FirstOrDefaultAsync(x => x.Id == id);

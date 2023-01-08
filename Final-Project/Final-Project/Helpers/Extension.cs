@@ -21,5 +21,18 @@ namespace Final_Project.Helpers
             return filename;
 
         }
+        public static async Task<string> SaveVideo(this IFormFile formfile, IWebHostEnvironment env, string folder)
+        {
+            string path = env.WebRootPath;
+            string filename = Guid.NewGuid().ToString() + formfile.FileName;
+            string result = Path.Combine(path, folder, filename);
+
+            using (FileStream fileStream = new FileStream(result, FileMode.Create))
+            {
+                await formfile.CopyToAsync(fileStream);
+            }
+            return filename;
+
+        }
     }
 }

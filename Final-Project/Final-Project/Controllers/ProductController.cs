@@ -20,12 +20,16 @@ namespace Final_Project.Controllers
 
         public async Task<IActionResult> Index(int sortId, int page = 1)
         {
-            ViewBag.Categories= _context.Categories.Include(p => p.ProductCategories).ThenInclude(p => p.Category).ToList();
+            ViewBag.Categories = _context.Categories.Where(p => !p.IsDeleted)
+                .Include(p => p.ProductCategories)
+                .ThenInclude(p => p.Category)
+                .ToList();
+
             ViewBag.CurrentPage = page;
-            ViewBag.TotalPage = Math.Ceiling((decimal)_context.Products.Count() / 3);
+            ViewBag.TotalPage = Math.Ceiling((decimal)_context.Products.Where(p => !p.IsDeleted).Count() / 3);
             ViewBag.id = sortId;
-            List<Product> products = await _context.Products.Include(p=>p.ProductCategories).ThenInclude(p=>p.Category).Where(p => p.IsDeleted == false).ToListAsync();
-            ViewBag.ProductCount = products.Count;
+            List<Product> products = await _context.Products.Where(p => !p.IsDeleted).Include(p=>p.ProductImages).Include(p=>p.ProductCategories).ThenInclude(p=>p.Category).Where(p => p.IsDeleted == false).ToListAsync();
+            ViewBag.ProductCount = products.Count();
             switch (sortId)
             {
                 case 1:
@@ -54,7 +58,7 @@ namespace Final_Project.Controllers
         }
         public IActionResult ProductSearch(string search)
         {
-            List<Product> searchItem = _context.Products.Where(p => p.Title.ToLower().Contains(search.ToLower())).ToList();
+            List<Product> searchItem = _context.Products.Where(p => p.Title.ToLower().Contains(search.ToLower()) &&!p.IsDeleted).ToList();
             return PartialView("_SearchProduct", searchItem);
         }
     }

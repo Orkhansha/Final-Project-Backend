@@ -18,7 +18,7 @@ namespace Final_Project.Models
         public string Description { get; set; }
         public List<ProductCategories> ProductCategories { get; set; }
         [NotMapped]
-        public List<int> CategoryId { get; set; }
+        public int CategoryId { get; set; }
         public List<ProductImages> ProductImages { get; set; }
 
     }

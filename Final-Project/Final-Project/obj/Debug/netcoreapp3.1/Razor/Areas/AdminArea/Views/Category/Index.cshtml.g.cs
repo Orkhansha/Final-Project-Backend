@@ -19,8 +19,15 @@ using Final_Project.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "D:\My-Project\Backend-Project\Final-Project\Final-Project\Areas\AdminArea\Views\_ViewImports.cshtml"
+using Final_Project.ViewModels.ProductViewModels;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"72878c569c24767b1e987491b177d318916bc98b", @"/Areas/AdminArea/Views/Category/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"69e9985fbeb19fc653893dbb61347fc74e28b88a", @"/Areas/AdminArea/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"767b4244a7d0e4d78410b42e4cecbcb97efee751", @"/Areas/AdminArea/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_AdminArea_Views_Category_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<Category>>
     #nullable disable
@@ -68,7 +75,7 @@ using Final_Project.Models;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n<div class=\"container-fluid pt-4 px-4\">\r\n    <div class=\"row g-4\">\r\n        <div class=\"col-sm-12 col-xl-12\">\r\n            <div class=\"bg-secondary rounded h-100 p-4\">\r\n                <h6 class=\"mb-4\">Basic Table</h6>\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "72878c569c24767b1e987491b177d318916bc98b6224", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "72878c569c24767b1e987491b177d318916bc98b6455", async() => {
                 WriteLiteral("Create");
             }
             );
@@ -126,7 +133,7 @@ using Final_Project.Models;
 #line hidden
 #nullable disable
             WriteLiteral("</td>\r\n                                <td>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "72878c569c24767b1e987491b177d318916bc98b9344", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "72878c569c24767b1e987491b177d318916bc98b9575", async() => {
                 WriteLiteral("Delete");
             }
             );
@@ -162,7 +169,7 @@ using Final_Project.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("</td>\r\n                                <td>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "72878c569c24767b1e987491b177d318916bc98b12114", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "72878c569c24767b1e987491b177d318916bc98b12345", async() => {
                 WriteLiteral("Edit");
             }
             );
