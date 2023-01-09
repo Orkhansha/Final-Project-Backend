@@ -1,6 +1,7 @@
 ﻿@using Final_Project.Helpers;
 
 @model Paginate<UnudulmazlarListVM>
+
 @{
     ViewData["Title"] = "Index";
     Layout = null;
@@ -57,10 +58,9 @@
                                     </ul>
                                 </li>
                                 <li><a class="nav-a" asp-controller="Product" asp-action="Index">MAĞAZA</a></li>
-                                <li><a class="nav-a" asp-controller="Blog" asp-action="BlogDetails">BLOGLAR</a></li>
+                                <li><a class="nav-a" asp-controller="Blog" asp-action="Index">BLOGLAR</a></li>
                                 <li> <a class="nav-a" asp-controller="About" asp-action="Index">HAQQIMIZDA</a> </li>
                                 <li><a class="nav-a" asp-controller="Contact" asp-action="Index">BİZİMLƏ ƏLAQƏ</a></li>
-                                <li class="admin"><a class="nav-a" href="#">ADMIN PANEL</a></li>
                             </ul>
                         </div>
                     </div>
@@ -102,13 +102,13 @@
                                     </ul>
                                 </li>
                                 <li><a class="nav-a" asp-controller="Product" asp-action="Index">MAĞAZA</a></li>
-                                <li><a class="nav-a" asp-controller="Blog" asp-action="BlogDetails">BLOGLAR</a></li>
+                                <li><a class="nav-a" asp-controller="Blog" asp-action="Index">BLOGLAR</a></li>
                                 <li> <a class="nav-a" asp-controller="About" asp-action="Index">HAQQIMIZDA</a> </li>
                                 <li><a class="nav-a" asp-controller="Contact" asp-action="Index">BİZİMLƏ ƏLAQƏ</a></li>
-                                <li class="admin"><a class="nav-a" href="#">ADMIN PANEL</a></li>
                             </ul>
                         </div>
                     </div>
+                </div>
             </nav>
         </section>
     </header>
@@ -179,7 +179,7 @@
 
     </main>
 
-    <footer>
+    <footerr>
 
         <div id="my-footer" class="my-5">
             <footer class="text-center text-lg-start text-white">
@@ -205,7 +205,7 @@
 
                                 <ul class="list-unstyled mb-0">
                                     <li>
-                                        <a href="~/about.html" class="text-white">haqqımızda</a>
+                                        <a asp-asp-controller="About" asp-action="Index" class="text-white">haqqımızda</a>
                                     </li>
                                     <li>
                                         <a href="#!" class="text-white">şərtlər və qaydalar</a>
@@ -235,7 +235,7 @@
                                         <a asp-controller="Account" asp-action="Register" class="text-white">qeydiyyat</a>
                                     </li>
                                     <li>
-                                        <a href="#!" class="text-white">şifrəmi unutmuşam</a>
+                                        <a asp-controller="Account" asp-action="ResetPassword" class="text-white">şifrəmi unutmuşam</a>
                                     </li>
                                     <li>
                                         <a href="#!" class="text-white">təşəkkürlər</a>
@@ -244,20 +244,20 @@
                             </div>
 
                             <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
-                                <h5 class="text-uppercase">KATEQORİYALAR</h5>
+                                <h5 class="text-uppercase">ƏLAQƏLİ SAYTLAR</h5>
 
                                 <ul class="list-unstyled mb-0">
                                     <li>
-                                        <a href="#!" class="text-white">uniformalar</a>
+                                        <a href="https://unudulmazlar.az/az/infom/3758" class="text-white">unudulmazlar</a>
                                     </li>
                                     <li>
-                                        <a href="#!" class="text-white">geyimlər</a>
+                                        <a href="https://mod.gov.az/" class="text-white">müdafiə nazirliyi</a>
                                     </li>
                                     <li>
-                                        <a href="#!" class="text-white">aksesuarlar</a>
+                                        <a href="https://www.sosial.gov.az/" class="text-white">əəsmn</a>
                                     </li>
                                     <li>
-                                        <a href="#!" class="text-white">qarışıq mallar</a>
+                                        <a href="https://dost.gov.az/" class="text-white">dost xidməti</a>
                                     </li>
                                 </ul>
                             </div>
@@ -270,7 +270,7 @@
                                         <a href="https://www.facebook.com/cenab.akberoff" class="text-white">facebook</a>
                                     </li>
                                     <li>
-                                        <a href="#!" class="text-white">twitter</a>
+                                        <a href="https://www.linkedin.com/in/orkhanakbarov052/" class="text-white">linkedin</a>
                                     </li>
                                     <li>
                                         <a href="https://www.youtube.com/shorts/Sk69jShsSE0" class="text-white">youtube</a>
@@ -297,9 +297,7 @@
                 </div>
             </footer>
         </div>
-    </footer>
-
-
+    </footerr>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.30/sweetalert2.all.min.js"></script>

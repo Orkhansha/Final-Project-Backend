@@ -18,18 +18,18 @@ namespace Final_Project.Controllers
             _context = context;
         }
 
-        public async Task<IActionResult> Index(int sortId, int page = 1)
+        public async Task<IActionResult> Index(int sortId, int page = 1, int take=3)
         {
             ViewBag.Categories = _context.Categories.Where(p => !p.IsDeleted)
                 .Include(p => p.ProductCategories)
                 .ThenInclude(p => p.Category)
                 .ToList();
-
+            
             ViewBag.CurrentPage = page;
             ViewBag.TotalPage = Math.Ceiling((decimal)_context.Products.Where(p => !p.IsDeleted).Count() / 3);
             ViewBag.id = sortId;
             List<Product> products = await _context.Products.Where(p => !p.IsDeleted).Include(p=>p.ProductImages).Include(p=>p.ProductCategories).ThenInclude(p=>p.Category).Where(p => p.IsDeleted == false).ToListAsync();
-            ViewBag.ProductCount = products.Count();
+            
             switch (sortId)
             {
                 case 1:
@@ -55,6 +55,18 @@ namespace Final_Project.Controllers
                     break;
             }
             return View(products);
+        }
+
+        public async Task<IActionResult> Detail(int id)
+        {
+           
+            Product product = await _context.Products
+                .Include(p=>p.ProductImages)
+                .Include(p=>p.ProductCategories)
+                .ThenInclude(p=>p.Category)
+                .Where(p=>!p.IsDeleted)
+                .FirstOrDefaultAsync(x => x.Id == id);
+            return View(product);
         }
         public IActionResult ProductSearch(string search)
         {

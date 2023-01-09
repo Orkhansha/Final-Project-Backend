@@ -6,7 +6,7 @@ namespace Final_Project.ViewModels
     public class HomeVM
     {
         public IEnumerable<Slider> Sliders { get; set; }
-        public Blog Blog { get; set; }
+        public IEnumerable<Blog> Blogs { get; set; }
         public IEnumerable<Aksesuar> Aksesuars { get; set; }
         public IEnumerable<Banner> Banners { get; set; }
         public IEnumerable<Brand> Brands { get; set; }

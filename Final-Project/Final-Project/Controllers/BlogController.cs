@@ -1,8 +1,10 @@
 ﻿using Final_Project.Data;
 using Final_Project.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Final_Project.Controllers
 {
@@ -15,9 +17,10 @@ namespace Final_Project.Controllers
             _context = context;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            IEnumerable<Blog> blog = await _context.Blogs.Where(b=>!b.IsDeleted).ToListAsync();
+            return View(blog);
         }
 
         public IActionResult BlogDetails(int? id)

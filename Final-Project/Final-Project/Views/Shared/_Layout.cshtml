@@ -30,12 +30,14 @@
                             <div>
                                 @if (User.Identity.IsAuthenticated)
                                 {
-                                    
-                                <a asp-controller="basket" asp-action="index">
+
+                                    <a asp-controller="basket" asp-action="index">
                                         <i class="fa-solid fa-cart-shopping"><sup> @await Component.InvokeAsync("Header")</sup></i>
-                                </a>
-                                }else{
-                                        <a asp-controller="account" asp-action="login">
+                                    </a>
+                                }
+                                else
+                                {
+                                    <a asp-controller="account" asp-action="login">
                                         <i class="fa-solid fa-cart-shopping"><sup>0</sup></i>
                                     </a>
                                 }
@@ -49,7 +51,7 @@
                                     <i class="fa-solid fa-user"></i>
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                     @if (User.Identity.IsAuthenticated)
+                                    @if (User.Identity.IsAuthenticated)
                                     {
                                         <li>
                                             <div class="prof-drop">
@@ -57,7 +59,10 @@
                                                                                              asp-controller="Account" asp-action="logout">Çıxış</a>
                                             </div>
                                         </li>
-                                    }else{
+                                        
+                                    }
+                                    else
+                                    {
                                         <li>
                                             <div class="prof-drop">
                                                 <i class="fa-solid fa-gear"></i><a class="dropdown-item"
@@ -71,15 +76,13 @@
                                             </div>
                                         </li>
                                     }
-                                   
-                                   
+
+
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            </div>
             </div>
         </section>
         <section id="center-area">
@@ -95,11 +98,11 @@
                     </div>
                     <div class="col-lg-8 col-md-8 col-sm-10">
                         <div class="input">
-                            <input type="text" id="search-inp" placeholder="Search...">
+                            <input type="text" id="search-inp" placeholder="Ad daxil edin...">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </div>
-                         <ul id="search-list" class="d-block">
-                    </ul>
+                        <ul id="search-list" class="d-block">
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -124,10 +127,6 @@
                                     <a class="nav-a dropdown-btnn" asp-controller="Home" asp-action="Index">ƏSAS SƏHİFƏ</a>
 
                                 </li>
-                                <li>
-                                    <a class="nav-a dropdown-btnn"  href="#">@User.Identity.Name</a>
-
-                                </li>
 
                                 <li>
                                     <a class="nav-a dropdown-btnn" asp-controller="Unudulmazlar" asp-action="Index">UNUDULMAZLAR</a>
@@ -138,7 +137,7 @@
                                     </ul>
                                 </li>
                                 <li><a class="nav-a" asp-controller="Product" asp-action="Index">MAĞAZA</a></li>
-                                <li><a class="nav-a" asp-controller="Blog" asp-action="BlogDetails">BLOGLAR</a></li>
+                                <li><a class="nav-a" asp-controller="Blog" asp-action="Index">BLOGLAR</a></li>
                                 <li> <a class="nav-a" asp-controller="About" asp-action="Index">HAQQIMIZDA</a> </li>
                                 <li><a class="nav-a" asp-controller="Contact" asp-action="Index">BİZİMLƏ ƏLAQƏ</a></li>
                                 <li class="admin"><a class="nav-a" asp-area="AdminArea" asp-controller="Dashboard" asp-action="Index">ADMIN PANEL</a></li>
@@ -155,7 +154,7 @@
                     <div class="head">
                         <a asp-controller="Home" asp-action="Index">
 
-                        <img src="~/img/Participant_of_the_Patriotic_War_medal.png" style="width: 60px;" alt="">
+                            <img src="~/img/Participant_of_the_Patriotic_War_medal.png" style="width: 60px;" alt="">
                         </a>
                     </div>
                     <div class="offcanvas-body scroll-body">
@@ -186,13 +185,12 @@
                                     </ul>
                                 </li>
                                 <li><a class="nav-a" asp-controller="Product" asp-action="Index">MAĞAZA</a></li>
-                                <li><a class="nav-a" asp-controller="Blog" asp-action="BlogDetails">BLOGLAR</a></li>
+                                <li><a class="nav-a" asp-controller="Blog" asp-action="Index">BLOGLAR</a></li>
                                 <li> <a class="nav-a" asp-controller="About" asp-action="Index">HAQQIMIZDA</a> </li>
                                 <li><a class="nav-a" asp-controller="Contact" asp-action="Index">BİZİMLƏ ƏLAQƏ</a></li>
-                                <li class="admin"><a class="nav-a" href="#">ADMIN PANEL</a></li>
                             </ul>
                         </div>
-                   
+
                     </div>
                 </div>
             </nav>
@@ -201,7 +199,7 @@
 
     <main>
         <div>
-        @RenderBody()
+            @RenderBody()
         </div>
     </main>
 
@@ -231,7 +229,7 @@
 
                                 <ul class="list-unstyled mb-0">
                                     <li>
-                                        <a href="~/about.html" class="text-white">haqqımızda</a>
+                                        <a asp-asp-controller="About" asp-action="Index" class="text-white">haqqımızda</a>
                                     </li>
                                     <li>
                                         <a href="#!" class="text-white">şərtlər və qaydalar</a>
@@ -254,36 +252,46 @@
                                 <h5 class="text-uppercase">GİRİŞ</h5>
 
                                 <ul class="list-unstyled mb-0">
-                                    <li>
-                                        <a asp-controller="Account" asp-action="Login" class="text-white">daxil ol</a>
-                                    </li>
-                                    <li>
-                                        <a asp-controller="Account" asp-action="Register" class="text-white">qeydiyyat</a>
-                                    </li>
-                                    <li>
-                                        <a href="#!" class="text-white">şifrəmi unutmuşam</a>
-                                    </li>
+                                    @if (User.Identity.IsAuthenticated)
+                                    {
+
+                                        <li>
+                                            <a asp-controller="Account" asp-action="ResetPassword" class="text-white">şifrəmi unutmuşam</a>
+                                        </li>
+                                        
+                                    }
+                                    else
+                                    {
+                                        <li>
+                                            <a asp-controller="Account" asp-action="Login" class="text-white">daxil ol</a>
+                                        </li>
+                                        <li>
+                                            <a asp-controller="Account" asp-action="Register" class="text-white">qeydiyyat</a>
+                                        </li>
+                                    }
                                     <li>
                                         <a href="#!" class="text-white">təşəkkürlər</a>
                                     </li>
+                                    
+                                    
                                 </ul>
                             </div>
 
                             <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
-                                <h5 class="text-uppercase">KATEQORİYALAR</h5>
+                                <h5 class="text-uppercase">ƏLAQƏLİ SAYTLAR</h5>
 
                                 <ul class="list-unstyled mb-0">
                                     <li>
-                                        <a href="#!" class="text-white">uniformalar</a>
+                                        <a href="https://unudulmazlar.az/az/infom/3758" class="text-white">unudulmazlar</a>
                                     </li>
                                     <li>
-                                        <a href="#!" class="text-white">geyimlər</a>
+                                        <a href="https://mod.gov.az/" class="text-white">müdafiə nazirliyi</a>
                                     </li>
                                     <li>
-                                        <a href="#!" class="text-white">aksesuarlar</a>
+                                        <a href="https://www.sosial.gov.az/" class="text-white">əəsmn</a>
                                     </li>
                                     <li>
-                                        <a href="#!" class="text-white">qarışıq mallar</a>
+                                        <a href="https://dost.gov.az/" class="text-white">dost xidməti</a>
                                     </li>
                                 </ul>
                             </div>
@@ -296,7 +304,7 @@
                                         <a href="https://www.facebook.com/cenab.akberoff" class="text-white">facebook</a>
                                     </li>
                                     <li>
-                                        <a href="#!" class="text-white">twitter</a>
+                                        <a href="https://www.linkedin.com/in/orkhanakbarov052/" class="text-white">linkedin</a>
                                     </li>
                                     <li>
                                         <a href="https://www.youtube.com/shorts/Sk69jShsSE0" class="text-white">youtube</a>

@@ -14,7 +14,6 @@ namespace Final_Project.Data
         public DbSet<Banner> Banners { get; set; }
         public DbSet<Order> Order { get; set; }
         public DbSet<OrderItem> OrderItems { get; set; }
-
         public DbSet<Blog> Blogs { get; set; }
         public DbSet<Brand> Brands { get; set; }
         public DbSet<Geyim> Geyims { get; set; }

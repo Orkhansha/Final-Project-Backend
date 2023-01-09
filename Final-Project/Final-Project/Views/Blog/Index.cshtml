@@ -1,7 +1,51 @@
-﻿
+﻿@model IEnumerable<Blog>
+
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Bloglar";
 }
 
-<h1>Blog</h1>
+
+<main>
+    <div class="container">
+        <div class="row my-5">
+            <ul class="articles">
+                <div class="col-lg-3 col-md-6 col-sm-12">
+
+               @foreach (var item in Model)
+                    {
+                    <li class="articles__article" style="--animation-order:2">
+                        <a asp-controller="Blog" asp-action="Index" class="articles__link">
+                            <div class="articles__content articles__content--lhs">
+                                <h2 class="articles__title">@item.Title</h2>
+                                <div class="articles__footer">
+                                   
+                                    <time>@item.CreatedDate</time>
+                                </div>
+                            </div>
+                            <div class="articles__content articles__content--rhs" aria-hidden="true">
+                                <h2 class="articles__title">@item.Title</h2>
+                                <div class="articles__footer">
+
+                                    <time>@item.CreatedDate</time>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    }
+                </div>
+                
+                
+            </ul>
+        </div>
+        
+       
+
+    </div>
+
+    </div>
+</main>
+
+@section Scripts {
+    <link rel="stylesheet" href="~/css/Blog/sss.css">
+}
 

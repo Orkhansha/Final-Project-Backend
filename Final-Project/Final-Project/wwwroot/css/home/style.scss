@@ -190,11 +190,15 @@ body {
   background-color: white;
 }
 #black-area .icons .prof-drop i {
-  color: #000;
+    color: black !important;
+    color: #000;
 }
+
 #black-area .icons .prof-drop a {
-  padding-left: 45px;
+    color: black !important;
+    padding-left: 45px;
 }
+
 
 
 #center-area {
@@ -614,7 +618,7 @@ body {
 /////////////////////////////////////////////////////////////////Cards-area
 
 /* CSS reset */
-*,
+/**,
 *::after,
 *::before {
   box-sizing: inherit;
@@ -630,7 +634,7 @@ body {
   box-sizing: border-box;
   font-family: 'Open Sans', sans-serif;
   position: relative;
-}
+}*/
 
 /* Typography =======================*/
 
@@ -1836,7 +1840,7 @@ body {
   }
 
   .f-dn{
-    display: none;
+    display: none !important;
   }
 }
 @media (max-width: 768px) {
@@ -1853,14 +1857,14 @@ body {
   }
 
   .s-dn{
-    display: none;
+    display: none !important;
   }
 }
 
 @media (max-width: 565px) {
   
   .t-dn{
-    display: none;
+    display: none !important;
   }
 }
 

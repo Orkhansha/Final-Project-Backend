@@ -20,7 +20,7 @@ namespace Final_Project.Controllers
         public async Task<IActionResult> Index()
         {
             IEnumerable<Slider> sliders = await _context.Sliders.ToListAsync();
-            Blog blog = await _context.Blogs.FirstOrDefaultAsync();
+            IEnumerable<Blog> blogs = await _context.Blogs.ToListAsync();
             IEnumerable<Aksesuar> aksesuars = await _context.Aksesuars.ToListAsync();
             IEnumerable<Banner> banners = await _context.Banners.ToListAsync();
             IEnumerable<Brand> brands = await _context.Brands.ToListAsync();
@@ -36,7 +36,7 @@ namespace Final_Project.Controllers
 
             HomeVM model = new HomeVM
             {
-                Blog = blog,
+                Blogs = blogs,
                 Sliders = sliders,
                 Aksesuars = aksesuars,
                 Banners = banners,

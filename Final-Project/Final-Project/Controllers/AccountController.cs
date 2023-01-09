@@ -86,7 +86,7 @@ namespace Final_Project.Controllers
             {
                 body = reader.ReadToEnd();
             }
-            string about = $"Welcome <strong>{user.UserName}</strong> , please click the link in below to verify your account";
+            string about = $"Hörmətli <strong>{user.UserName}</strong> , zəhmət olmasa hesabınızı təsdiqləmək üçün klik edin";
 
             body = body.Replace("{{link}}", link);
             mail.Body = body.Replace("{{About}}", about);
@@ -101,6 +101,7 @@ namespace Final_Project.Controllers
             smtp.Send(mail);
             TempData["Verify"] = true;
 
+            TempData["Fail"] = "Please go to gmail and confirm Email!";
             return RedirectToAction(nameof(Login));
         }
         #endregion
@@ -221,11 +222,11 @@ namespace Final_Project.Controllers
         }
 
 
+         
 
-
-        public async Task<IActionResult> ResetPassword(string email, string token)
+        public async Task<IActionResult> ResetPassword(string Email, string token)
         {
-            AppUser user = await _userManager.FindByEmailAsync(email);
+            AppUser user = await _userManager.FindByEmailAsync(Email);
             if (user == null) return BadRequest();
             AccountVM model = new AccountVM
             {

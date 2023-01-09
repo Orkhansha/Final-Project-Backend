@@ -153,17 +153,17 @@ body {
   border: none;
   border-bottom: 1px solid grey;
 }
-#products .categories {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 20px;
-  margin-top: 30px;
-  width: 100%;
-  border-radius: 5px;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
-  background-color: white;
-}
+    #products .categories {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+        margin-top: 30px;
+        width: 100%;
+        border-radius: 5px;
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+        background-color: #F8F4EA;
+    }
 #products .categories label {
   padding-left: 10px;
 }

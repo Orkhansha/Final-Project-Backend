@@ -76,7 +76,7 @@ namespace Final_Project.Areas.AdminArea.Controllers
             smtp.EnableSsl = true;
             smtp.Credentials = new NetworkCredential("orkhansha@code.edu.az", "mfeudepymigpmlij");
             smtp.Send(mail);
-            return RedirectToAction(nameof(Index));
+            return Json(new { status = 200 });
         }
         public async Task<IActionResult> Reject(int id, string message)
         {

@@ -26,6 +26,18 @@
     <Compile Remove="Migrations\20230108152207_sometablesedit.Designer.cs" />
     <Compile Remove="Migrations\20230108152500_sometablesedits.cs" />
     <Compile Remove="Migrations\20230108152500_sometablesedits.Designer.cs" />
+    <Compile Remove="Migrations\20230108234039_CreateBlogTable.cs" />
+    <Compile Remove="Migrations\20230108234039_CreateBlogTable.Designer.cs" />
+    <Compile Remove="Migrations\20230108234321_CreateBlogTable.cs" />
+    <Compile Remove="Migrations\20230108234321_CreateBlogTable.Designer.cs" />
+    <Compile Remove="Migrations\20230108234844_CreateBlogTable.cs" />
+    <Compile Remove="Migrations\20230108234844_CreateBlogTable.Designer.cs" />
+    <Compile Remove="Migrations\20230109000651_CreateBlogTable.cs" />
+    <Compile Remove="Migrations\20230109000651_CreateBlogTable.Designer.cs" />
+    <Compile Remove="Migrations\20230109001546_CreateBlogsTable.cs" />
+    <Compile Remove="Migrations\20230109001546_CreateBlogsTable.Designer.cs" />
+    <Compile Remove="Migrations\20230109001711_CreateBlogTable.cs" />
+    <Compile Remove="Migrations\20230109001711_CreateBlogTable.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -54,6 +66,7 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\Admin\" />
+    <Folder Include="wwwroot\css\Blog\" />
     <Folder Include="wwwroot\img\products\" />
   </ItemGroup>
 

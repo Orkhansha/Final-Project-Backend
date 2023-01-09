@@ -18,231 +18,263 @@ body {
 }
 
 #products {
-  background-color: rgba(2, 2, 93, 0.319) !important;
+    background-color: rgba(2, 2, 93, 0.319) !important;
 
-  .search {
-    width: 100%;
-    height: 90px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px 5px 0 0;
-    background-color: white;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
-  }
-  img {
-    width: 100%;
-    height: 344px;
-  }
-  .product-head {
-    display: flex;
-    justify-content: space-between;
-  }
-  .posination {
-    margin-top: 60px;
-    span {
-      color: azure;
-      padding: 0 12px;
-      font-size: 20px;
-      cursor: pointer;
+    .search {
+        width: 100%;
+        height: 90px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px 5px 0 0;
+        background-color: white;
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
     }
-    i {
-      color: azure;
-      padding: 0 10px;
-      cursor: pointer;
-    }
-    .first {
-      background-color: rgba(2, 2, 93, 0.86);
-      border-radius: 5px;
-      color: white;
-    }
-  }
-  .productFirst {
-    position: relative;
-    margin-top: 30px;
-    width: 100%;
-    height: 256px;
-    border-radius: 5px 5px 0 0;
-    background-color: white;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
 
-    // &:hover {
-    //   #products .productFirstInfo .shop-icon {
-    //     background-color: #999999 !important;
-    //     // transform: translateY(-50px) !important;
-    //   }
-    // }
     img {
-      padding: 30px;
-      width: 100%;
-      height: 100%;
-      cursor: pointer;
-    }
-    i {
-      position: absolute;
-      right: 20px;
-      top: 20px;
-      font-size: 20px;
-      color: grey;
-      transition: 0.3s;
-      cursor: pointer;
-      &:hover {
-        color: black;
-      }
-    }
-  }
-  .productFirstInfo {
-    position: relative;
-    width: 100%;
-    height: 117px;
-    border-radius: 0 0 5px 5px;
-    background-color: white;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
-    &:hover {
-      .shop-icon {
-        transition: 0.5s;
-        transform: translateY(-50px) !important;
-      }
+        width: 100%;
+        height: 344px;
     }
 
-    h5 {
-      position: absolute;
-      top: 30px;
-      left: 20px;
-      color: black;
-      transition: 0.3s;
-      &:hover {
-        color: rgba(2, 2, 93, 0.86);
-      }
+    .product-head {
+        display: flex;
+        justify-content: space-between;
     }
-    span {
-      position: absolute;
-      bottom: 15px;
-      left: 20px;
-      font-size: 20px;
-      color: rgba(2, 2, 93, 0.86);
-    }
-    .star-icon {
-      position: absolute;
-      bottom: 15px;
-      right: 20px;
-      i {
-        color: rgb(183, 155, 2);
-      }
-    }
-    .shop-icon {
-      position: absolute;
-      right: 20px;
-      top: -35px;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
-      background-color: rgba(2, 2, 93, 0.86);
-      cursor: pointer;
-      i {
-        padding-top: 20px;
-        padding-left: 18px;
-        font-size: 20px;
-        color: white;
-      }
-    }
-  }
-  .search {
-    .myInputSearch {
-      width: 70%;
-      height: 45px;
-      outline: none;
-      border: none;
-      border-bottom: 1px solid grey;
-    }
-    .myInput {
-      width: 80%;
-      height: 45px;
-      outline: none;
-      border: none;
-      border-bottom: 1px solid grey;
-    }
-  }
-  .categories {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px;
-    margin-top: 30px;
-    width: 100%;
-    border-radius: 5px;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
-    background-color: white;
-    label {
-      padding-left: 10px;
-    }
-    .searchInline {
-      width: 100%;
-      height: 40px;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      border-radius: 5px 5px 0 0;
-      background-color: white;
-    }
-    .myInputSearch {
-      width: 70%;
-      height: 45px;
-      outline: none;
-      border: none;
-      border-bottom: 1px solid grey;
-    }
-    .myInput {
-      width: 80%;
-      height: 45px;
-      outline: none;
-      border: none;
-      border-bottom: 1px solid grey;
-    }
-    .digit {
-      .num {
-        border: none;
-        outline: none;
-        border-bottom: 1px solid grey;
-      }
-      .go {
-        margin-left: 10px;
-        width: 50px;
-        height: 35px;
-        border: none;
-        border-radius: 5px;
-        background-color: rgba(2, 2, 93, 0.86);
-        transition: 0.3s;
-        &:hover {
-          background-color: blue;
-        }
+
+    .posination {
+        margin-top: 60px;
+
         span {
-          color: white;
+            color: azure;
+            padding: 0 12px;
+            font-size: 20px;
+            cursor: pointer;
         }
-      }
+
+        i {
+            color: azure;
+            padding: 0 10px;
+            cursor: pointer;
+        }
+
+        .first {
+            background-color: rgba(2, 2, 93, 0.86);
+            border-radius: 5px;
+            color: white;
+        }
     }
-    .clearPart {
-      width: 45%;
-      height: 40px;
-      border: none;
-      border-radius: 5px;
-      background-color: rgba(2, 2, 93, 0.86);
-      transition: 0.3s;
-      &:hover {
-        background-color: blue;
-      }
-      span {
-        color: white;
-      }
+
+    .productFirst {
+        position: relative;
+        margin-top: 30px;
+        width: 100%;
+        height: 256px;
+        border-radius: 5px 5px 0 0;
+        background-color: white;
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+        // &:hover {
+        //   #products .productFirstInfo .shop-icon {
+        //     background-color: #999999 !important;
+        //     // transform: translateY(-50px) !important;
+        //   }
+        // }
+        img {
+            padding: 30px;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        i {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            font-size: 20px;
+            color: grey;
+            transition: 0.3s;
+            cursor: pointer;
+
+            &:hover {
+                color: black;
+            }
+        }
     }
-    i {
-      color: rgba(2, 2, 93, 0.86);
+
+    .productFirstInfo {
+        position: relative;
+        width: 100%;
+        height: 117px;
+        border-radius: 0 0 5px 5px;
+        background-color: white;
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+
+        &:hover {
+            .shop-icon {
+                transition: 0.5s;
+                transform: translateY(-50px) !important;
+            }
+        }
+
+        h5 {
+            position: absolute;
+            top: 30px;
+            left: 20px;
+            color: black;
+            transition: 0.3s;
+
+            &:hover {
+                color: rgba(2, 2, 93, 0.86);
+            }
+        }
+
+        span {
+            position: absolute;
+            bottom: 15px;
+            left: 20px;
+            font-size: 20px;
+            color: rgba(2, 2, 93, 0.86);
+        }
+
+        .star-icon {
+            position: absolute;
+            bottom: 15px;
+            right: 20px;
+
+            i {
+                color: rgb(183, 155, 2);
+            }
+        }
+
+        .shop-icon {
+            position: absolute;
+            right: 20px;
+            top: -35px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+            background-color: rgba(2, 2, 93, 0.86);
+            cursor: pointer;
+
+            i {
+                padding-top: 20px;
+                padding-left: 18px;
+                font-size: 20px;
+                color: white;
+            }
+        }
     }
-    h5 {
-      font-weight: bold;
+
+    .search {
+        .myInputSearch {
+            width: 70%;
+            height: 45px;
+            outline: none;
+            border: none;
+            border-bottom: 1px solid grey;
+        }
+
+        .myInput {
+            width: 80%;
+            height: 45px;
+            outline: none;
+            border: none;
+            border-bottom: 1px solid grey;
+        }
     }
-  }
+
+    .categories {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+        margin-top: 30px;
+        width: 100%;
+        border-radius: 5px;
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+        background-color: #F8F4EA;
+
+        label {
+            padding-left: 10px;
+        }
+
+        .searchInline {
+            width: 100%;
+            height: 40px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            border-radius: 5px 5px 0 0;
+            background-color: white;
+        }
+
+        .myInputSearch {
+            width: 70%;
+            height: 45px;
+            outline: none;
+            border: none;
+            border-bottom: 1px solid grey;
+        }
+
+        .myInput {
+            width: 80%;
+            height: 45px;
+            outline: none;
+            border: none;
+            border-bottom: 1px solid grey;
+        }
+
+        .digit {
+            .num {
+                border: none;
+                outline: none;
+                border-bottom: 1px solid grey;
+            }
+
+            .go {
+                margin-left: 10px;
+                width: 50px;
+                height: 35px;
+                border: none;
+                border-radius: 5px;
+                background-color: rgba(2, 2, 93, 0.86);
+                transition: 0.3s;
+
+                &:hover {
+                    background-color: blue;
+                }
+
+                span {
+                    color: white;
+                }
+            }
+        }
+
+        .clearPart {
+            width: 45%;
+            height: 40px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgba(2, 2, 93, 0.86);
+            transition: 0.3s;
+
+            &:hover {
+                background-color: blue;
+            }
+
+            span {
+                color: white;
+            }
+        }
+
+        i {
+            color: rgba(2, 2, 93, 0.86);
+        }
+
+        h5 {
+            font-weight: bold;
+        }
+    }
 }
 
 .prod-first:hover {

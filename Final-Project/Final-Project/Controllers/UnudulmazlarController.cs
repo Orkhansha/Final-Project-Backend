@@ -48,7 +48,7 @@ namespace Final_Project.Controllers
             int Count = await _context.UnudulmazlarCards.Where(m => !m.IsDeleted).CountAsync();
 
             return (int)Math.Ceiling((decimal)Count / take);
-        }
+        } 
 
         private List<UnudulmazlarListVM> GetMapDatas(List<UnudulmazlarCard> unudulmazlar)
         {

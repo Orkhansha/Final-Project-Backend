@@ -8,6 +8,7 @@
 
 .carde {
   display: block;
+  height: 500px;
   border-radius: 18px;
   background: #fff;
   box-shadow: 8px 0px 20px #d1d1d1;
@@ -87,7 +88,7 @@
   width: fit-content;
   padding: 4px 7px;
   border-radius: 99px;
-  margin-top: -138px;
+  margin-top: -45px;
   margin-left: 220px;
 }
 
@@ -139,14 +140,8 @@
   margin-right: 156px;
 }
 
-.old-price {
-  text-decoration: line-through;
-  font-size: 13px;
-  margin-left: 220px;
-  margin-top: 24px;
-}
-
 .new-price {
+  padding: 50px 0;
   font-weight: 600;
   font-size: 38px;
   margin-left: 220px;

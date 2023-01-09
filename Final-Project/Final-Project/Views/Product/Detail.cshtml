@@ -1,0 +1,141 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<main>
+    <div class="container">
+        <div class="row my-5">
+           
+            <div class="col-6">
+                 @foreach (var item in Model.ProductImages)
+            {
+                @if (item.IsMain)
+                    {
+                        
+                <img style="width:80%; height:500px;" src="~/img/products/@item.ImageUrl" />
+                    }
+            }
+            </div>
+            <div class="col-6 d-flex flex-column justify-content-center align-items-start">
+                <div class="product-description">
+
+                    <h1>@Model.Title</h1>
+                    <p>@Model.Description</p>
+                </div>
+
+
+
+                <!-- Product Pricing -->
+                <div class="product-price">
+                    <span>@Model.Price$</span>
+                    <a href="#" class="cart-btn">Add to cart</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+
+@section Scripts {
+    <style>
+
+        .product-description {
+            border-bottom: 1px solid #E1E8EE;
+            margin-bottom: 20px;
+        }
+
+            .product-description span {
+                font-size: 28px;
+                font-weight: 600;
+                color: #358ED7;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                text-decoration: none;
+            }
+
+            .product-description h1 {
+                font-weight: 300;
+                font-size: 52px;
+                color: #E1E8EE;
+                letter-spacing: -2px;
+            }
+
+            .product-description p {
+                font-size: 16px;
+                font-weight: 300;
+                color: #E1E8EE;
+                line-height: 24px;
+            }
+
+        /* Product Configuration */
+        .product-color span,
+        .cable-config span {
+            font-size: 14px;
+            font-weight: 400;
+            color: #E1E8EE;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        /* Product Price */
+        .product-price {
+            display: flex;
+            align-items: center;
+        }
+
+            .product-price span {
+                font-size: 26px;
+                font-weight: 300;
+                color: #E1E8EE;
+                margin-right: 20px;
+            }
+
+        .cart-btn {
+            display: inline-block;
+            background-color: #7DC855;
+            border-radius: 6px;
+            font-size: 16px;
+            color: #FFFFFF;
+            text-decoration: none;
+            padding: 12px 30px;
+            transition: all .5s;
+        }
+
+            .cart-btn:hover {
+                background-color: #64af3d;
+            }
+
+        /* Responsive */
+        @@media (max-width: 940px) {
+            .container {
+                flex-direction: column;
+                margin-top: 60px;
+            }
+
+            .left-column,
+            .right-column {
+                width: 100%;
+            }
+
+                .left-column img {
+                    width: 300px;
+                    right: 0;
+                    top: -65px;
+                    left: initial;
+                }
+        }
+
+        @@media (max-width: 535px) {
+            .left-column img {
+                width: 220px;
+                top: -85px;
+            }
+        }
+    </style>
+}
+
+

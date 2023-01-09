@@ -45,7 +45,7 @@
                     @if (Model.Status == null)
                     {
 
-                        <span style="background:orange;display:inline-block; padding:3px 7px">Pending</span>
+                        <span style="background:yellow;display:inline-block; padding:3px 7px">Pending</span>
 
                     }
                     else if (Model.Status == true)
@@ -81,11 +81,11 @@
                 <input class="Message" cols="60" rows="10" />
             </form>
             <div>
-                <a asp-controller="order" asp-action="Accept" asp-route-id="@Model.Id" class="accept btn btn-success btn-icon-text">
+                <a asp-area="AdminArea" asp-controller="order" asp-action="Accept" asp-route-id="@Model.Id" class="accept btn btn-success btn-icon-text">
                     <i class="mdi mdi-file-check btn-icon-append"></i>
                     Qəbul et
                 </a>
-                <a asp-controller="order" asp-action="Reject" asp-route-id="@Model.Id" class="reject btn btn-danger btn-icon-text">
+                <a asp-area="AdminArea" asp-controller="order" asp-action="Reject" asp-route-id="@Model.Id" class="reject btn btn-danger btn-icon-text">
                     <i class="mdi mdi-file-check btn-icon-append"></i>
                     Rədd et
                 </a>

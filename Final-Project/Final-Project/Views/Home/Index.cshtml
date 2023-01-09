@@ -280,7 +280,9 @@
                                                                 </div>
                                                             </div>
                                                             <div class="card-body">
-                                                                <h5 class="card-title">Bel Kəməri</h5>
+                                                                <a asp-controller="Product" asp-action="Detail" asp-route-id="@item.Id">
+                                                                    <h5 class="card-title">Bel Kəməri</h5>
+                                                                </a>
                                                                 <i class="fa-solid fa-star"></i>
                                                                 <i class="fa-solid fa-star"></i>
                                                                 <i class="fa-solid fa-star"></i>
@@ -589,17 +591,21 @@
                         </div>
                     </div>
                 </div>
+            </section>
         </div>
+    </div>
 </section>
 
 <section id="plus-section">
     <div class="container">
         <div class="div-plus">
-            <div class="plus-text">
-                <h2>@Model.Blog.Desc</h2>
-                <h1>@Model.Blog.Name</h1>
-                <a asp-controller="Blog" asp-action="BlogDetails"><button class="glow-on-hover" type="button">Ətraflı</button></a>
-            </div>
+           @foreach (var item in Model.Blogs)
+            {
+                <div class="plus-text">
+                    <h1>@item.Title</h1>
+                    <a asp-controller="Blog" asp-action="BlogDetails"><button class="glow-on-hover" type="button">Ətraflı</button></a>
+                </div>
+            }
 
         </div>
 

@@ -218,13 +218,15 @@ body {
   background-color: white;
 }
 
-#black-area .icons .prof-drop i {
-  color: #000;
-}
+    #black-area .icons .prof-drop i {
+        color: black !important;
+        color: #000;
+    }
 
-#black-area .icons .prof-drop a {
-  padding-left: 45px;
-}
+    #black-area .icons .prof-drop a {
+        color: black !important;
+        padding-left: 45px;
+    }
 
 #center-area .container .head {
   height: 40px;
@@ -1678,9 +1680,9 @@ body {
   #new-arriwals .col-lg-3 {
     margin-bottom: 20px;
   }
-  .f-dn {
-    display: none;
-  }
+    .f-dn {
+        display: none !important;
+    }
 }
 @media (max-width: 768px) {
   #black-area {
@@ -1692,12 +1694,12 @@ body {
   #banner .banner-first {
     margin-bottom: 0px;
   }
-  .s-dn {
-    display: none;
-  }
+    .s-dn {
+        display: none !important;
+    }
 }
 @media (max-width: 565px) {
-  .t-dn {
-    display: none;
-  }
+    .t-dn {
+        display: none !important;
+    }
 }

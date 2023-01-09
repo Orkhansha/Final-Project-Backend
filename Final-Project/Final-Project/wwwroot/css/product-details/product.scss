@@ -9,15 +9,9 @@
 }
 .carde {
   display: block;
-  // width: 50%;
-  // height: 500px;
+  height: 500px;
   border-radius: 18px;
   background: #fff;
-  // position: absolute;
-  // top: 50%;
-  // left: 50%;
-  //margin-right: -50%;
-  //transform: translate(-50%, 0);
   box-shadow: 8px 0px 20px #d1d1d1;
 }
 
@@ -75,7 +69,7 @@
   width: fit-content;
   padding: 4px 7px;
   border-radius: 99px;
-  margin-top: -138px;
+  margin-top: -45px;
   margin-left: 220px;
 }
 
@@ -120,14 +114,9 @@
   margin-right: 156px;
 }
 
-.old-price {
-  text-decoration: line-through;
-  font-size: 13px;
-  margin-left: 220px;
-  margin-top: 24px;
-}
 
 .new-price {
+  padding: 30px 0;
   font-weight: 600;
   font-size: 38px;
   margin-left: 220px;
@@ -272,15 +261,8 @@
 .preview-container {
   display: none;
   position: absolute;
-  // top: 0;
-  // left: 0;
-  // right: 0;
-  // bottom: 0;
-  //width: 94%;
-  //height: 94%;
   background: #000000d6;
   z-index: 9;
-  //padding: 32px;
 }
 
 .close-prev-btn {
@@ -301,15 +283,9 @@
 
 #prev-img {
   position: absolute;
-  //top: 50%;
   left: 45%;
-  //margin-right: -50%;
   transform: translate(-50%, 5%);
   width: 60%;
   height: 445px;
   border-radius: 22px;
-}
-
-.metn p{
-    overflow-y:hidden;
 }
