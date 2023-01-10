@@ -228,18 +228,28 @@
                                 <h5 class="text-uppercase">GİRİŞ</h5>
 
                                 <ul class="list-unstyled mb-0">
-                                    <li>
-                                        <a asp-controller="Account" asp-action="Login" class="text-white">daxil ol</a>
-                                    </li>
-                                    <li>
-                                        <a asp-controller="Account" asp-action="Register" class="text-white">qeydiyyat</a>
-                                    </li>
-                                    <li>
-                                        <a asp-controller="Account" asp-action="ResetPassword" class="text-white">şifrəmi unutmuşam</a>
-                                    </li>
+                                    @if (User.Identity.IsAuthenticated)
+                                    {
+
+                                        <li>
+                                            <a asp-controller="Account" asp-action="Logout" class="text-white">profildən çıxış</a>
+                                        </li>
+
+                                    }
+                                    else
+                                    {
+                                        <li>
+                                            <a asp-controller="Account" asp-action="Login" class="text-white">daxil ol</a>
+                                        </li>
+                                        <li>
+                                            <a asp-controller="Account" asp-action="Register" class="text-white">qeydiyyat</a>
+                                        </li>
+                                    }
                                     <li>
                                         <a href="#!" class="text-white">təşəkkürlər</a>
                                     </li>
+
+
                                 </ul>
                             </div>
 

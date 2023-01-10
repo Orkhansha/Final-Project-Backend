@@ -14,6 +14,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.IO;
 using System.Net.Mail;
 using System.Net;
+using System.Reflection.Metadata;
 
 namespace Final_Project.Areas.AdminArea.Controllers
 {
@@ -32,66 +33,79 @@ namespace Final_Project.Areas.AdminArea.Controllers
         {
             List<Product> products = await _context.Products
               .Where(m => !m.IsDeleted)
-              .Include(m => m.ProductImages)
               .Include(m => m.ProductCategories)
               .ToListAsync();
             return View(products);
 
         }
-
-
-
-
+        #region
 
         public IActionResult Create()
         {
-            ViewBag.Categories = _context.Categories.ToList();
+            ViewBag.Categories = _context.Categories.Where(c=>!c.IsDeleted).ToList();
+            
+
             return View();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Product product)
         {
-            if (!ModelState.IsValid) return View();
+            ViewBag.Categories = _context.Categories.Where(c => !c.IsDeleted).ToList();
+             
 
 
-            List<ProductImages> Images = new List<ProductImages>();
-            foreach (var item in product.Photo)
+            if (!ModelState.IsValid)
             {
-
-                ProductImages image = new ProductImages();
-                image.ImageUrl = await item.SaveImage(_env, "img/products");
-                Images.Add(image);
+                return View();
             }
-            product.ProductImages = Images;
-            product.ProductImages[0].IsMain = true;
+
+          
             product.ProductCategories = new List<ProductCategories>();
-
-            //foreach (var categoryId in product.CategoryId)
-            //{
-            ProductCategories pCategory = new ProductCategories
+            if (product.Photo != null)
             {
-                Product = product,
-                CategoryId = product.CategoryId,
-            };
-            _context.ProductCategories.Add(pCategory);
+                if (!product.Photo.IsImage())
+                {
+                    ModelState.AddModelError("Photo", "Choose correct image format file");
+                    return View();
+                }
+                if (!product.Photo.CheckFileSize(2000))
+                {
+                    ModelState.AddModelError("Photo", "File must be max 2000mb");
+                    return View();
+                }
+                product.Image =await product.Photo.SaveImage(_env, "img/products");
+            }
+            else
+            {
+                ModelState.AddModelError("Photo", "Choose Image");
+                return View();
+            }
+            
 
-
-
-
+            if (product.CategoryIds != null)
+            {
+                foreach (var categoryId in product.CategoryIds)
+                {
+                    ProductCategories productCategories = new ProductCategories
+                    {
+                        Product = product,
+                        CategoryId = categoryId
+                    };
+                    _context.ProductCategories.Add(productCategories);
+                }
+            }
+            
+            
 
             _context.Products.Add(product);
             _context.SaveChanges();
+            
+            return RedirectToAction(nameof(Index));
 
-            return RedirectToAction("index");
-        }
-        [HttpGet]
-        public async Task<IActionResult> Detail(int? id)
-        {
-            Product product = await _context.Products.Include(p => p.ProductImages).FirstOrDefaultAsync(p => p.Id == id);
 
-            return View(product);
         }
+
 
 
         public async Task<IActionResult> Delete(int id)
@@ -128,178 +142,106 @@ namespace Final_Project.Areas.AdminArea.Controllers
         {
             return await _context.Products
                                  .Where(m => !m.IsDeleted && m.Id == id)
-                                 .Include(m => m.CategoryId)
-                                 .Include(m => m.ProductImages)
+                                 //.Include(m => m.CategoryIds)
                                  .FirstOrDefaultAsync();
         }
 
+        #endregion
 
-        ///__Isleyen edit__/////
-        //[HttpGet]
-        //public async Task<IActionResult> Edit(int? id)
-        //{
-        //    try
-        //    {
-        //        if (id is null) return BadRequest();
-
-        //        ViewBag.categories = await GetCategoriesAsync();
-
-        //        Product product = await _context.Products.FirstOrDefaultAsync(m => m.Id == id);
-
-        //        if (product is null) return NotFound();
-
-        //        return View(product);
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-
-        //        ViewBag.Message = ex.Message;
-        //        return View();
-        //    }
-        //}
-
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> Edit(int id, Product product)
-        //{
-        //    try
-        //    {
-        //        if (!ModelState.IsValid)
-        //        {
-        //            return View(product);
-        //        }
-
-        //        Product dbProduct = await _context.Products.AsNoTracking().FirstOrDefaultAsync(m => m.Id == id);
-
-        //        if (dbProduct is null) return NotFound();
-
-        //        if (dbProduct.Title.ToLower().Trim() == product.Title.ToLower().Trim() 
-        //            && dbProduct.Price == product.Price 
-        //            && dbProduct.Description == product.Description)
-        //        {
-        //            return RedirectToAction(nameof(Index));
-        //        }
-
-        //        dbProduct.CategoryId = product.CategoryId;
-        //        dbProduct.Title = product.Title;
-        //        dbProduct.Price = product.Price;
-        //        dbProduct.Description = product.Description;
-        //        dbProduct.ProductImages = product.ProductImages;
-
-        //        _context.Products.Update(product);
-
-        //        await _context.SaveChangesAsync();
-
-        //        return RedirectToAction(nameof(Index));
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-
-        //        ViewBag.Message = ex.Message;
-        //        return View();
-        //    }
-        //}
-
-
-        [HttpGet]
-        public async Task<IActionResult> Edit(int? id)
+        public IActionResult Edit(int id)
         {
-            if (id is null) return BadRequest();
+            ViewBag.Categories = _context.Categories.Where(c => !c.IsDeleted).ToList();
+             
 
-            ViewBag.categories = await GetCategoriesAsync();
-
-            Product dbProduct = await _context.Products.FirstOrDefaultAsync(m => m.Id == id);
-
-            return View(new ProductUpdateVM
+            Product product = _context.Products.Include(b => b.ProductCategories).ThenInclude(bc => bc.Category).FirstOrDefault(b => b.Id == id);
+            if (product == null)
             {
-                Id = dbProduct.Id,
-                Title = dbProduct.Title,
-                Description = dbProduct.Description,
-                Price = dbProduct.Price.ToString("0.#####").Replace(",", "."),
-                CategoryId = dbProduct.CategoryId,
-                Images = dbProduct.ProductImages
-            });
+                return RedirectToAction(nameof(Index));
+            }
+
+            return View(product);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, ProductUpdateVM updatedProduct)
+        public async Task<IActionResult> Edit(Product product)
         {
-            ViewBag.categories = await GetCategoriesAsync();
+            ViewBag.Categories = _context.Categories.Where(c => !c.IsDeleted).ToList();
+            
 
-            if (!ModelState.IsValid) return View(updatedProduct);
+            Product existProduct = _context.Products.Include(b => b.ProductCategories).ThenInclude(bc => bc.Category).FirstOrDefault(x => x.Id == product.Id);
 
-            Product dbProduct = await _context.Products.FirstOrDefaultAsync(m => m.Id == id);
 
-            if (updatedProduct.Photos != null)
+
+            if (existProduct == null)
             {
-
-                foreach (var photo in updatedProduct.Photos)
+                return RedirectToAction("index");
+            }
+            if (product.Photo != null)
+            {
+                if (!product.Photo.IsImage())
                 {
-                    if (!photo.CheckFileType("image/"))
-                    {
-                        ModelState.AddModelError("Photo", "Please choose correct image type");
-                        return View(updatedProduct);
-                    }
-
-
-                    if (!photo.CheckFileSize(500))
-                    {
-                        ModelState.AddModelError("Photo", "Please choose correct image size");
-                        return View(updatedProduct);
-                    }
-
+                    ModelState.AddModelError("Photo", "Choose correct format file");
+                    return View(existProduct);
                 }
-
-                //foreach (var item in dbProduct.ProductImages)
-                //{
-                //    string path = Helper.GetFilePath(_env.WebRootPath, "img/products", item.ImageUrl);
-                //    Helper.DeleteFile(path);
-                //}
-
-
-                List<ProductImages> images = new List<ProductImages>();
-
-                foreach (var photo in updatedProduct.Photos)
+                if (!product.Photo.CheckFileSize(20000))
                 {
-
-                    string fileName = Guid.NewGuid().ToString() + "_" + photo.FileName;
-
-                    string path = Helper.GetFilePath(_env.WebRootPath, "img/products", fileName);
-
-                    await Helper.SaveFile(path, photo);
-
-
-                    ProductImages image = new ProductImages
-                    {
-                        ImageUrl = fileName,
-                    };
-
-                    images.Add(image);
-
+                    ModelState.AddModelError("Photo", "File must be max 20000mb");
+                    return View(existProduct);
                 }
+                Helpers.Helper.DeleteImage(_env, "img/products", existProduct.Image);
+                existProduct.Image =await product.Photo.SaveImage(_env, "img/products");
 
-                images.FirstOrDefault().IsMain = true;
-
-                dbProduct.ProductImages = images;
 
             }
 
-            decimal convertedPrice = StringToDecimal(updatedProduct.Price);
 
-            dbProduct.Title = updatedProduct.Title;
-            dbProduct.ProductImages = (List<ProductImages>)updatedProduct.Images;
-            dbProduct.Price = convertedPrice;
-            dbProduct.CategoryId = updatedProduct.CategoryId;
 
-            await _context.SaveChangesAsync();
+            if (!ModelState.IsValid)
+            {
+                return View(existProduct);
+            }
+            
+            
+            var existCategories = _context.ProductCategories.Where(x => x.ProductId == product.Id).ToList();
+            if (product.CategoryIds != null)
+            {
+                foreach (var categoryId in product.CategoryIds)
+                {
+                    var existCategory = existCategories.FirstOrDefault(x => x.CategoryId == categoryId);
+                    if (existCategory == null)
+                    {
+                        ProductCategories productCategories = new ProductCategories
+                        {
+                            ProductId = product.Id,
+                            CategoryId = categoryId,
+                        };
+
+                        _context.ProductCategories.Add(productCategories);
+                    }
+                    else
+                    {
+                        existCategories.Remove(existCategory);
+                    }
+                }
+
+            }
+            _context.ProductCategories.RemoveRange(existCategories);
+
+
+             
+
+            existProduct.Title = product.Title;
+            existProduct.Stock = product.Stock;
+            existProduct.Description = product.Description;
+            existProduct.Price = product.Price;
+            
+
+
+            _context.SaveChanges();
 
             return RedirectToAction(nameof(Index));
         }
-
-
 
     }
 }

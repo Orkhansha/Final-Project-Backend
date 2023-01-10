@@ -8,9 +8,9 @@ namespace Final_Project.Models
 {
     public class Product : BaseEntity
     {
-    
+        public string Image { get; set; }
         [NotMapped]
-        public List<IFormFile> Photo { get; set; }
+        public IFormFile Photo { get; set; }
         public int Stock { get; set; }
         public string Title { get; set; }
         [Column(TypeName = "decimal(18,2)")]
@@ -18,8 +18,7 @@ namespace Final_Project.Models
         public string Description { get; set; }
         public List<ProductCategories> ProductCategories { get; set; }
         [NotMapped]
-        public int CategoryId { get; set; }
-        public List<ProductImages> ProductImages { get; set; }
+        public List<int> CategoryIds { get; set; }
 
     }
 }

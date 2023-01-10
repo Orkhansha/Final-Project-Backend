@@ -1,6 +1,6 @@
 :root {
   --bgColor: white;
-  --inputColor: white;
+  --inputColor: black;
   --outlineColor: rgba(39, 128, 161, 0.847);
   --beamColor: yellow;
   --spacer: 1rem;

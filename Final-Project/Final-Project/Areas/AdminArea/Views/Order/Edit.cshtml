@@ -21,15 +21,10 @@
                         @foreach (OrderItem item in Model.OrderItems)
                         {
                             <li class="list-group-item">
-                                @foreach (var photo in item.Product.ProductImages)
-                                {
-                                    @if (photo.IsMain)
-                                    {
+                                
 
-                                        <img style="width:60px;" src="~/img/products/@photo.ImageUrl">
-                                    }
-
-                                }
+                                        <img style="width:60px;" src="~/img/products/photo.ImageUrl">
+                                  
                             </li>
                             <li class="list-group-item">
                                 @item.Title gdfsfgdvsdvg

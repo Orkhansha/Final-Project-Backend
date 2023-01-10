@@ -36,7 +36,7 @@ namespace Final_Project.Areas.AdminArea.Controllers
 
         public IActionResult Edit(int id)
         {
-            Order order = _context.Order.Include(o => o.OrderItems).ThenInclude(p => p.Product.ProductImages).Include(o => o.AppUser).FirstOrDefault(o => o.Id == id);
+            Order order = _context.Order.Include(o => o.OrderItems).Include(o => o.AppUser).FirstOrDefault(o => o.Id == id);
             if (order == null) return NotFound();
             return View(order);
 

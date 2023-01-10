@@ -29,7 +29,7 @@ namespace Final_Project.Controllers
                 
                 Username = user.UserName,
         
-                BasketItems = _context.BasketItems.Include(b => b.Product).ThenInclude(p => p.ProductImages).Where(b => b.AppUserId == user.Id).ToList(),
+                BasketItems = _context.BasketItems.Include(b => b.Product).Where(b => b.AppUserId == user.Id).ToList(),
 
             };
             return View(model);
@@ -45,7 +45,7 @@ namespace Final_Project.Controllers
               
                 Username = orderVM.Username,
                 
-                BasketItems = _context.BasketItems.Include(b => b.Product).ThenInclude(p=>p.ProductImages).Where(b => b.AppUserId == user.Id).ToList()
+                BasketItems = _context.BasketItems.Include(b => b.Product).Where(b => b.AppUserId == user.Id).ToList()
             };
             if (!ModelState.IsValid) return View(model);
 

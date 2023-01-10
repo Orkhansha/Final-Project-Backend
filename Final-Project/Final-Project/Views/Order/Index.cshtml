@@ -46,15 +46,10 @@
                        <span style="display:none">@(total += item.Count * item.Product.Price)</span>
                        <div class="my-product">
                         <div class="Product-image">
-                        @foreach (var photo in item.Product.ProductImages)
-                        {
-                            if (photo.IsMain)
-                            {
+                       
 
-                                    <img style="width:80px;" src="~/img/products/@photo.ImageUrl" alt="">
-                            }
-
-                        }
+                                    <img style="width:80px;" src="~/img/products/@item.Product.Image" alt="">
+                        
                         </div>
                         <div class="Product-info">
                             <h5>@item.Product.Title</h5>

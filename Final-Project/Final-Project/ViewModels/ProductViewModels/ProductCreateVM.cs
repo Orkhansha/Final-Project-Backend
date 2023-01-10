@@ -15,7 +15,6 @@ namespace Final_Project.ViewModels.ProductViewModels
         public string Price { get; set; }
         [Required]
         public string Description { get; set; }
-        public ProductImages ProductImages { get; set; }
         public DateTime CreateTime { get; set; }
         public int CategoryId { get; set; }
         [Required]

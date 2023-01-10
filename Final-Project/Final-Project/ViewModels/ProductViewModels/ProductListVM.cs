@@ -21,7 +21,6 @@ namespace Final_Project.ViewModels.ProductViewModels
         public Size Size { get; set; }
 
         //public ShopBanner ShopBanner { get; set; }
-        public ICollection<ProductImages> ProductImages { get; set; }
         public Product Product { get; set; }
     }
 }

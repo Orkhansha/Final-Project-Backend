@@ -10,14 +10,10 @@
         <div class="row my-5">
            
             <div class="col-6">
-                 @foreach (var item in Model.ProductImages)
-            {
-                @if (item.IsMain)
-                    {
+                
                         
-                <img style="width:80%; height:500px;" src="~/img/products/@item.ImageUrl" />
-                    }
-            }
+                <img style="width:80%; height:500px;" src="~/img/products/@Model.Image" />
+            
             </div>
             <div class="col-6 d-flex flex-column justify-content-center align-items-start">
                 <div class="product-description">
@@ -25,13 +21,13 @@
                     <h1>@Model.Title</h1>
                     <p>@Model.Description</p>
                 </div>
-
+                
 
 
                 <!-- Product Pricing -->
                 <div class="product-price">
                     <span>@Model.Price$</span>
-                    <a href="#" class="cart-btn">Add to cart</a>
+                    <a asp-controller="basket" asp-action="addbasket" asp-route-id="@Model.Id" class="cart-btn">Add to cart</a>
                 </div>
             </div>
         </div>

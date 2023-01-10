@@ -37,13 +37,14 @@
                             <div>
                                 @if (User.Identity.IsAuthenticated)
                                 {
-                                    
-                                <a asp-controller="basket" asp-action="index">
+
+                                    <a asp-controller="basket" asp-action="index">
                                         <i class="fa-solid fa-cart-shopping"><sup> @await Component.InvokeAsync("Header")</sup></i>
-                                </a>
-                                }else
+                                    </a>
+                                }
+                                else
                                 {
-                                        <a asp-controller="account" asp-action="login">
+                                    <a asp-controller="account" asp-action="login">
                                         <i class="fa-solid fa-cart-shopping"><sup>0</sup></i>
                                     </a>
                                 }
@@ -86,7 +87,7 @@
                     </div>
                 </div>
             </div>
-            
+
         </section>
         <section id="center-area">
             <div class="container">
@@ -214,11 +215,11 @@
                                 <a href="All">All</a> <span class="price">@ViewBag.ProductCount</span><br />
                                 @foreach (var item in ViewBag.Categories)
                                 {
-                                    
-                                        <a href="@item.Name">@item.Name</a> <span class="price">@item.ProductCategories.Count</span>
 
-                                        <br />
-                                    
+                                    <a href="@item.Name">@item.Name</a> <span class="price">@item.ProductCategories.Count</span>
+
+                                    <br />
+
                                 }
                             </div>
                         </div>
@@ -280,14 +281,10 @@
                             @(categorys.Category.Name )
 }">
                                     <div class="productFirst">
-                                        @foreach (var photo in item.ProductImages)
-                                        {
-                                            if (photo.IsMain)
-                                            {
-                                                
-                                        <img src="~/img/products/@photo.ImageUrl" alt="" />
-                                            }
-                                        }
+
+
+                                        <img src="~/img/products/@item.Image" alt="" />
+
 
                                     </div>
                                     <div class="productFirstInfo">
@@ -389,18 +386,28 @@
                                 <h5 class="text-uppercase">GİRİŞ</h5>
 
                                 <ul class="list-unstyled mb-0">
-                                    <li>
-                                        <a asp-controller="Account" asp-action="Login" class="text-white">daxil ol</a>
-                                    </li>
-                                    <li>
-                                        <a asp-controller="Account" asp-action="Register" class="text-white">qeydiyyat</a>
-                                    </li>
-                                    <li>
-                                        <a asp-controller="Account" asp-action="ResetPassword" class="text-white">şifrəmi unutmuşam</a>
-                                    </li>
+                                    @if (User.Identity.IsAuthenticated)
+                                    {
+
+                                        <li>
+                                            <a asp-controller="Account" asp-action="Logout" class="text-white">profildən çıxış</a>
+                                        </li>
+
+                                    }
+                                    else
+                                    {
+                                        <li>
+                                            <a asp-controller="Account" asp-action="Login" class="text-white">daxil ol</a>
+                                        </li>
+                                        <li>
+                                            <a asp-controller="Account" asp-action="Register" class="text-white">qeydiyyat</a>
+                                        </li>
+                                    }
                                     <li>
                                         <a href="#!" class="text-white">təşəkkürlər</a>
                                     </li>
+
+
                                 </ul>
                             </div>
 

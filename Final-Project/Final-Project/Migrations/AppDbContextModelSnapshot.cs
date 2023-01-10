@@ -417,6 +417,9 @@ namespace Final_Project.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
@@ -457,32 +460,6 @@ namespace Final_Project.Migrations
                     b.HasIndex("ProductId");
 
                     b.ToTable("ProductCategories");
-                });
-
-            modelBuilder.Entity("Final_Project.Models.ProductImages", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("ImageUrl")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsMain")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ProductId");
-
-                    b.ToTable("ProductImages");
                 });
 
             modelBuilder.Entity("Final_Project.Models.Qarishiq", b =>
@@ -794,7 +771,7 @@ namespace Final_Project.Migrations
             modelBuilder.Entity("Final_Project.Models.BlogImages", b =>
                 {
                     b.HasOne("Final_Project.Models.Blog", "Blog")
-                        .WithMany()
+                        .WithMany("BlogImages")
                         .HasForeignKey("BlogId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -834,15 +811,6 @@ namespace Final_Project.Migrations
 
                     b.HasOne("Final_Project.Models.Product", "Product")
                         .WithMany("ProductCategories")
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Final_Project.Models.ProductImages", b =>
-                {
-                    b.HasOne("Final_Project.Models.Product", "Product")
-                        .WithMany("ProductImages")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

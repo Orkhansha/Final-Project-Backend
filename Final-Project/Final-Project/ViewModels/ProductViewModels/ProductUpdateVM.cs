@@ -17,7 +17,6 @@ namespace Final_Project.ViewModels.ProductViewModels
         public string Description { get; set; }
         public DateTime CreateTime { get; set; }
         public int CategoryId { get; set; }
-        public ICollection<ProductImages> Images { get; set; }
         public List<IFormFile> Photos { get; set; }
     }
 }

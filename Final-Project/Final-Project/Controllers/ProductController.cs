@@ -28,8 +28,8 @@ namespace Final_Project.Controllers
             ViewBag.CurrentPage = page;
             ViewBag.TotalPage = Math.Ceiling((decimal)_context.Products.Where(p => !p.IsDeleted).Count() / 3);
             ViewBag.id = sortId;
-            List<Product> products = await _context.Products.Where(p => !p.IsDeleted).Include(p=>p.ProductImages).Include(p=>p.ProductCategories).ThenInclude(p=>p.Category).Where(p => p.IsDeleted == false).ToListAsync();
-            
+            List<Product> products = await _context.Products.Where(p => !p.IsDeleted).Include(p=>p.ProductCategories).ThenInclude(p=>p.Category).Where(p => p.IsDeleted == false).ToListAsync();
+            ViewBag.ProductCount=products.Count;
             switch (sortId)
             {
                 case 1:
@@ -61,7 +61,6 @@ namespace Final_Project.Controllers
         {
            
             Product product = await _context.Products
-                .Include(p=>p.ProductImages)
                 .Include(p=>p.ProductCategories)
                 .ThenInclude(p=>p.Category)
                 .Where(p=>!p.IsDeleted)

@@ -27,14 +27,9 @@
                                   
                                  
                      
-                        @foreach (var item in Model.ProductImages)
-                            {
-                                if (item.IsMain)
-                                {
-                                                            <td><img style="width:100px;"src="~/img/products/@item.ImageUrl"/></td>
-                                    
-                                }
-                            }
+                     
+                                                            <td><img style="width:100px;"src="~/img/products/item.ImageUrl"/></td>
+                           
                        
                                 <td>@Model.Title</td>
                                 <td>@Model.Description</td>

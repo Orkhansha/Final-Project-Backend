@@ -19,6 +19,7 @@ namespace Final_Project.Controllers
 
         public async Task<IActionResult> Index()
         {
+           
             IEnumerable<Slider> sliders = await _context.Sliders.ToListAsync();
             IEnumerable<Blog> blogs = await _context.Blogs.Take(1).ToListAsync();
             IEnumerable<Aksesuar> aksesuars = await _context.Aksesuars.ToListAsync();
@@ -27,14 +28,14 @@ namespace Final_Project.Controllers
             IEnumerable<Geyim> geyims = await _context.Geyims.ToListAsync();
             IEnumerable<Qarishiq> qarishiqs = await _context.Qarishiqs.ToListAsync();
             IEnumerable<Service> services = await _context.Services.ToListAsync();
-            IEnumerable<Product> products = await _context.Products.Include(p=>p.ProductImages).Include(p=>p.ProductCategories)
+            IEnumerable<Product> products = await _context.Products.Include(p=>p.ProductCategories)
                 .ThenInclude(p=>p.Category).Where(p=>!p.IsDeleted).ToListAsync();
             IEnumerable<Uniforma> uniformas = await _context.Uniformas.ToListAsync();
             IEnumerable<UnudulmazlarCard> unudulmazlarCards = await _context.UnudulmazlarCards.ToListAsync();
             IEnumerable<UnudulmazlarVideo> unudulmazlarVideos = await _context.UnudulmazlarVideo.ToListAsync();
+            ViewBag.Categories = _context.Categories.Where(c=>!c.IsDeleted).ToList();
 
-
-            HomeVM model = new HomeVM
+           HomeVM model = new HomeVM
             {
                 Blogs = blogs,
                 Sliders = sliders,

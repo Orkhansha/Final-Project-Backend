@@ -30,15 +30,11 @@
                             counter++;
                                 <tr>
                                     <th scope="row">@counter</th>
-                                      @foreach (var photo in item.ProductImages)
-                       {
-                           if (photo.IsMain)
-                            {
+                                     
                                 
-                                                            <td><img style="width:100px;"src="~/img/products/@photo.ImageUrl"/></td>
+                                                            <td><img style="width:100px;"src="~/img/products/@item.Image"/></td>
 
-                            }
-                       } 
+                          
                                 <td>@item.Title</td>
                                 <td>@item.Price</td>
                                 <td>@item.Description</td>

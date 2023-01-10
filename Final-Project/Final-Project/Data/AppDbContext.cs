@@ -30,7 +30,6 @@ namespace Final_Project.Data
         public DbSet<Color> Colors { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductCategories> ProductCategories { get; set; }
-        public DbSet<ProductImages> ProductImages { get; set; }
         public DbSet<BlogImages> BlogImages { get; set; }
 
         //public DbSet<Size> Sizes { get; set; }

@@ -259,22 +259,14 @@
                                     <div class="carousell-section container">
                                         <div class="swiper mySwiper1">
                                             <div class="swiper-wrapper">
-                                                @foreach (var item in Model.Products.Take(6))
+                                                @foreach (var item in Model.Products.Take(5))
                                                 {
-
-
+                                                   
                                                     <div class="swiper-slide">
                                                         <div cat-id="1" class="card bg-light mb-3" style="max-width: 18rem;">
                                                             <div class="card-header">
                                                                 <div class="prod-img">
-                                                                    @foreach (var photo in item.ProductImages)
-                                                                    {
-                                                                        @if (photo.IsMain)
-                                                                        {
-
-                                                                            <img src="~/img/products/@photo.ImageUrl" alt="">
-                                                                        }
-                                                                    }
+                                                                            <img src="~/img/products/@item.Image" alt="">
                                                                     <div class="prod-price"><a href="">$ <span>@item.Price</span> </a></div>
                                                                     <div class="prod-add"><a asp-controller="basket" asp-action="AddBasket" asp-route-id="@item.Id"><i class="fa-solid fa-cart-shopping"></i></a></div>
                                                                 </div>
@@ -300,25 +292,33 @@
                                     <div class="carousell-section container">
                                         <div class="swiper mySwiper1">
                                             <div class="swiper-wrapper">
+                                                @foreach (var item in Model.Products.Take(5))
+                                                {
                                                 <div class="swiper-slide">
-                                                    <div cat-id="6" class="card bg-light mb-3" style="max-width: 18rem;">
-                                                        <div class="card-header">
-                                                            <div class="prod-img">
-                                                                <img src="~/img/DigerShop/bicaq.jpg" alt="">
-                                                                <div class="prod-price"><a href="">$ <span>125.75</span> </a></div>
-                                                                <div class="prod-add"><a href=""><i class="fa-solid fa-cart-shopping"></i></a></div>
+                                                        <div cat-id="1" class="card bg-light mb-3" style="max-width: 18rem;">
+                                                            <div class="card-header">
+                                                                <div class="prod-img">
+                                                                    <img src="~/img/products/@item.Image" alt="">
+                                                                    <div class="prod-price"><a href="">$ <span>@item.Price</span> </a></div>
+                                                                    <div class="prod-add"><a asp-controller="basket" asp-action="AddBasket" asp-route-id="@item.Id"><i class="fa-solid fa-cart-shopping"></i></a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="card-body">
+                                                                <a asp-controller="Product" asp-action="Detail" asp-route-id="@item.Id">
+                                                                    <h5 class="card-title">Bel Kəməri</h5>
+                                                                </a>
+                                                                <i class="fa-solid fa-star"></i>
+                                                                <i class="fa-solid fa-star"></i>
+                                                                <i class="fa-solid fa-star"></i>
+                                                                <i class="fa-solid fa-star"></i>
+                                                                <i class="fa-regular fa-star"></i>
                                                             </div>
                                                         </div>
-                                                        <div class="card-body">
-                                                            <h5 class="card-title">H/Qalabilmə Dəsti</h5>
-                                                            <i class="fa-solid fa-star"></i>
-                                                            <i class="fa-solid fa-star"></i>
-                                                            <i class="fa-solid fa-star"></i>
-                                                            <i class="fa-solid fa-star"></i>
-                                                            <i class="fa-regular fa-star"></i>
-                                                        </div>
-                                                    </div>
                                                 </div>
+                                                }
+
+
+                                              @*    
                                                 <div class="swiper-slide">
                                                     <div cat-id="7" class="card bg-light mb-3" style="max-width: 18rem;">
                                                         <div class="card-header">
@@ -375,7 +375,7 @@
                                                             <i class="fa-regular fa-star"></i>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div>*@
                                             </div>
                                         </div>
                                     </div>
@@ -603,7 +603,7 @@
             {
                 <div class="plus-text">
                     <h1>@item.Title</h1>
-                    <a asp-controller="Blog" asp-action="BlogDetails"><button class="glow-on-hover" type="button">Ətraflı</button></a>
+                    <a asp-controller="Blog" asp-action="BlogDetails" asp-route-id="@item.Id"><button class="glow-on-hover" type="button">Ətraflı</button></a>
                 </div>
             }
 
