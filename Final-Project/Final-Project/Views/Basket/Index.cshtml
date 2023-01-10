@@ -16,10 +16,12 @@
                     <table class="table bg-white">
                         <thead>
                             <tr>
+                                <th class="image">Image</th>
                                 <th class="item">Items</th>
                                 <th class="price">Price</th>
                                 <th class="qty">Quantity</th>
                                 <th class="total-price">Total</th>
+                                <th class="total-price">Remove</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -30,21 +32,32 @@
                                     <td class="item-info">
                                         <div class="item-image-info">
                                             <div class="item-image">
+                                                @foreach (var photo in item.Product.ProductImages)
+                                                {
+                                                    @if (photo.IsMain)
+                                                    {
+                                                        
                                                 <a href="">
-                                                    @*<img src="~/img/img-Accessories/@item.Product.Image" alt="">*@
+                                                    <img width="100" src="~/img/products/@photo.ImageUrl" alt="">
                                                 </a>
+                                                    }
+                                                    
+                                                }
                                             </div>
-                                            <div class="item-title">
-                                                <a asp-controller="Product" asp-action="detail" asp-route-id="@item.Product.Id" style="text-decoration:none;">
-                                                    <span class="item-name">
+                                           
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="item-title">
+                                            <a asp-controller="Product" asp-action="detail" asp-route-id="@item.Product.Id" style="text-decoration:none;">
+                                                <span class="item-name">
 
-                                                        @item.Product.Title
+                                                    @item.Product.Title
 
-                                                    </span>
-                                                </a>
+                                                </span>
+                                            </a>
 
 
-                                            </div>
                                         </div>
                                     </td>
                                     <td class="item-price">
@@ -71,15 +84,13 @@
 
 
                                         </span>
-
-
+                                    </td>
+                                     <td class="item-quantity">
                                         <div class="remove">
                                             <a asp-controller="basket" asp-action="removecartitem" asp-route-id="@item.Product.Id" class="cart-remove-btn">
                                                 <span>Remove</span>
                                             </a>
                                         </div>
-
-
                                     </td>
                                 </tr>
                             }
@@ -104,7 +115,67 @@
 
 </main>
 
+@section Scripts{
+    <style>
+        
 
+.button-64 {
+    align-items: center;
+    background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+    border: 0;
+    border-radius: 8px;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    display: flex;
+    font-family: Phantomsans, sans-serif;
+    font-size: 20px;
+    justify-content: center;
+    line-height: 1em;
+    max-width: 100%;
+    min-width: 140px;
+    padding: 3px;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+
+.button-64:active,
+.button-64:hover {
+    outline: 0;
+}
+
+.button-64 a {
+    text-decoration: none;
+    background-color: rgb(5, 6, 45);
+    padding: 16px 24px;
+    border-radius: 6px;
+    width: 100%;
+    height: 100%;
+    transition: 300ms;
+}
+
+
+.button-64:hover a {
+    color: black;
+    background: none;
+}
+
+
+
+@@media (min-width: 768px) {
+    .button-64 {
+        font-size: 24px;
+        min-width: 196px;
+    }
+}
+
+    </style>
+}
 
 
 

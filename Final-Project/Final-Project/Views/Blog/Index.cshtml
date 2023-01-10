@@ -9,16 +9,15 @@
     <div class="container">
         <div class="row my-5">
             <ul class="articles">
-                <div class="col-lg-3 col-md-6 col-sm-12">
 
-               @foreach (var item in Model)
-                    {
+                @foreach (var item in Model)
+                {
+                    <div class="col-lg-3 col-md-6 col-sm-12">
                     <li class="articles__article" style="--animation-order:2">
-                        <a asp-controller="Blog" asp-action="Index" class="articles__link">
+                        <a asp-controller="Blog" asp-action="BlogDetails" asp-route-id="@item.Id" class="articles__link">
                             <div class="articles__content articles__content--lhs">
                                 <h2 class="articles__title">@item.Title</h2>
                                 <div class="articles__footer">
-                                   
                                     <time>@item.CreatedDate</time>
                                 </div>
                             </div>
@@ -31,18 +30,13 @@
                             </div>
                         </a>
                     </li>
-                    }
-                </div>
-                
-                
+            </div>
+                }
             </ul>
         </div>
-        
-       
-
     </div>
 
-    </div>
+
 </main>
 
 @section Scripts {

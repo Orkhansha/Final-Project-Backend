@@ -20,7 +20,7 @@ namespace Final_Project.Controllers
         public async Task<IActionResult> Index()
         {
             IEnumerable<Slider> sliders = await _context.Sliders.ToListAsync();
-            IEnumerable<Blog> blogs = await _context.Blogs.ToListAsync();
+            IEnumerable<Blog> blogs = await _context.Blogs.Take(1).ToListAsync();
             IEnumerable<Aksesuar> aksesuars = await _context.Aksesuars.ToListAsync();
             IEnumerable<Banner> banners = await _context.Banners.ToListAsync();
             IEnumerable<Brand> brands = await _context.Brands.ToListAsync();

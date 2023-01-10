@@ -38,6 +38,8 @@
     <Compile Remove="Migrations\20230109001546_CreateBlogsTable.Designer.cs" />
     <Compile Remove="Migrations\20230109001711_CreateBlogTable.cs" />
     <Compile Remove="Migrations\20230109001711_CreateBlogTable.Designer.cs" />
+    <Compile Remove="Migrations\20230110121641_CreateBlogImagesTable.cs" />
+    <Compile Remove="Migrations\20230110121641_CreateBlogImagesTable.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

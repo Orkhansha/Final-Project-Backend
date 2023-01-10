@@ -23,9 +23,12 @@ namespace Final_Project.Controllers
             return View(blog);
         }
 
-        public IActionResult BlogDetails(int? id)
+        public async Task<IActionResult> BlogDetails(int? id)
         {
-            Blog blog = _context.Blogs.FirstOrDefault(b => b.Id == id);
+            Blog blog = await _context.Blogs
+               .Include(p => p.BlogImages)
+               .Where(p => !p.IsDeleted)
+               .FirstOrDefaultAsync(x => x.Id == id);
             return View(blog);
         }
 

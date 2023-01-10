@@ -9,39 +9,30 @@
 <div class="container">
         <div class="row">
             <div class="col-lg-12 left-side">
+                <div class="d-flexxx">
                 <form method="post">
-
                     <div class="billing-address">
-
-
-
-                        <input asp-for="Username" class="form-control" placeholder=""style="font-size:15px">
+                        <input asp-for="Username" class="form-control" placeholder="" style="font-size:15px">
                         <span asp-validation-for="Username" class="text text-danger"></span><br />
-
-
                         <input asp-for="Address" type="text" placeholder="Address">
                         <span asp-validation-for="Address" class="text text-danger"></span>
-
                         <div class="post-code">
                             <input asp-for="Country" type="text" placeholder="Country">
-                             <span asp-validation-for="Country" class="text text-danger"></span>
+                            <span asp-validation-for="Country" class="text text-danger"></span>
                             <input asp-for="Region" type="text" placeholder="Region">
                             <span asp-validation-for="Region" class="text text-danger"></span>
-
                         </div>
                         <div class="post-code">
                             <input asp-for="City" type="text" placeholder="City">
-                             <span asp-validation-for="City" class="text text-danger"></span>
+                            <span asp-validation-for="City" class="text text-danger"></span>
                             <input asp-for="Apartment" type="text" placeholder="Apartment">
                             <span asp-validation-for="Apartment" class="text text-danger"></span>
-
                         </div>
-                          <div class="post-code">
+                        <div class="post-code">
                             <input asp-for="PostCode" type="text" placeholder="PostCode">
-                             <span asp-validation-for="PostCode" class="text text-danger"></span>
+                            <span asp-validation-for="PostCode" class="text text-danger"></span>
                             <input asp-for="Phone" type="text" placeholder="Phone">
                             <span asp-validation-for="Phone" class="text text-danger"></span>
-
                         </div>
                     </div>
                     <div class="submit">
@@ -49,8 +40,7 @@
                         <a asp-controller="basket" asp-action="index" style="text-decoration:none;">Return to cart</a>
                     </div>
                 </form>
-            </div>
-            <div class="col-lg-5 right-side">
+            <div class="col-lg-5 right-side d-flex gap-3">
             @foreach (var item in Model.BasketItems)
             {
                        <span style="display:none">@(total += item.Count * item.Product.Price)</span>
@@ -61,7 +51,7 @@
                             if (photo.IsMain)
                             {
 
-                                    <img style="width:100px;" src="~/img/products/@photo.ImageUrl" alt="">
+                                    <img style="width:80px;" src="~/img/products/@photo.ImageUrl" alt="">
                             }
 
                         }
@@ -87,5 +77,11 @@
                     <span>$@total.ToString("f2")</span>
                 </div>
             </div>
+                </div>
+            </div>
         </div>
     </div>
+
+@section Scripts {
+    <link rel="stylesheet" href="~/css/order/order.css">
+}

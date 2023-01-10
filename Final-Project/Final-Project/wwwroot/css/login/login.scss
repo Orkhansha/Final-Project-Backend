@@ -25,6 +25,16 @@ body.show-password {
   --outlineColor: var(--beamColor);
 }
 
+
+.form-gap {
+    padding-top: 70px;
+}
+
+.forgot-password a {
+    text-decoration: none;
+    color: white;
+}
+
 form {
   width: 100%;
   transform: translate3d(0, 0, 0);

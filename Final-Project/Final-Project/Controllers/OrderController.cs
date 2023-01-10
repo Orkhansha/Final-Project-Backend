@@ -60,7 +60,6 @@ namespace Final_Project.Controllers
                 Apartment = orderVM.Apartment,
                 PostCode = orderVM.PostCode,
                 Phone = orderVM.Phone,
-
                 Address = orderVM.Address,
                 TotalPrice = 0,
                 Date = DateTime.Now,

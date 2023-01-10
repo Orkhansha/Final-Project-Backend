@@ -190,6 +190,32 @@ namespace Final_Project.Migrations
                     b.ToTable("Blogs");
                 });
 
+            modelBuilder.Entity("Final_Project.Models.BlogImages", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("BlogId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsMain")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BlogId");
+
+                    b.ToTable("BlogImages");
+                });
+
             modelBuilder.Entity("Final_Project.Models.Brand", b =>
                 {
                     b.Property<int>("Id")
@@ -510,27 +536,6 @@ namespace Final_Project.Migrations
                     b.ToTable("Services");
                 });
 
-            modelBuilder.Entity("Final_Project.Models.Size", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("Count")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Sizes");
-                });
-
             modelBuilder.Entity("Final_Project.Models.Slider", b =>
                 {
                     b.Property<int>("Id")
@@ -782,6 +787,15 @@ namespace Final_Project.Migrations
                     b.HasOne("Final_Project.Models.Product", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Final_Project.Models.BlogImages", b =>
+                {
+                    b.HasOne("Final_Project.Models.Blog", "Blog")
+                        .WithMany()
+                        .HasForeignKey("BlogId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

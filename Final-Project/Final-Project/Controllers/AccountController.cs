@@ -189,7 +189,6 @@ namespace Final_Project.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-
         public IActionResult ForgotPassword()
         {
             return View();
@@ -200,7 +199,6 @@ namespace Final_Project.Controllers
         {
             AppUser user = await _userManager.FindByEmailAsync(account.AppUser.Email);
             if (user == null) return BadRequest();
-            //Elgun8195!
             string token = await _userManager.GeneratePasswordResetTokenAsync(user);
             string link = Url.Action(nameof(ResetPassword), "Account", new { email = user.Email, token }, Request.Scheme, Request.Host.ToString());
             MailMessage mail = new MailMessage();

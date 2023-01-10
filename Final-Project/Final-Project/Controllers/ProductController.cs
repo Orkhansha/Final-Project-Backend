@@ -18,7 +18,7 @@ namespace Final_Project.Controllers
             _context = context;
         }
 
-        public async Task<IActionResult> Index(int sortId, int page = 1, int take=3)
+        public async Task<IActionResult> Index(int sortId, int page = 1)
         {
             ViewBag.Categories = _context.Categories.Where(p => !p.IsDeleted)
                 .Include(p => p.ProductCategories)

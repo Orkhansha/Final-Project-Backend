@@ -16,15 +16,24 @@ body.show-password {
   --outlineColor: var(--beamColor);
 }
 
+.form-gap {
+    padding-top: 70px;
+}
+
+.forgot-password a{
+    text-decoration:none;
+    color:white;
+}
+
 form {
-  width: 100%;
-  transform: translate3d(0, 0, 0);
-  padding: var(--spacer);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transform: translate3d(0, 0, 0);
-  padding: var(--spacer);
+    width: 100%;
+    transform: translate3d(0, 0, 0);
+    padding: var(--spacer);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translate3d(0, 0, 0);
+    padding: var(--spacer);
 }
 
 form > * + * {

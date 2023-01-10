@@ -1,4 +1,4 @@
-﻿
+﻿@model Blog
 @{
     ViewData["Title"] = "BlogDetails";
     Layout = null;
@@ -192,45 +192,38 @@
         <section id="product-detail">
             <div class="container">
                 <div class="row">
+                   
                     <div class="col-lg-6 col-md-12 col-sm-12">
                         <div id="big-photo">
+                               
                             <div id="small-photo">
+                          @foreach (var item in Model.BlogImages)
+                                {
+                                    
                                 <div>
-                                    <img src="~/img/Blogs/Polad1.jpg" />
+                                    <img src="~/img/Blogs/@item.ImageUrl" />
                                 </div>
-                                <div>
-                                    <img src="~/img/Blogs/Polad2.jpg" />
-                                </div>
-                                <div>
-                                    <img src="~/img/Blogs/polad4.jpg" />
-                                </div>
-                                <div>
-                                    <img src="~/img/Blogs/Polad2.jpg" />
-                                </div>
+                                }
+                               
+                                    </div>
+                                
+                            @foreach (var item in Model.BlogImages)
+                            {
+                                if (item.IsMain)
+                                {
+                                <div id="middle-photo">
+                                <img id="photo" src="~/img/Blogs/@item.ImageUrl" />
                             </div>
-                            <div id="middle-photo">
-                                <img id="photo" src="~/img/Blogs/Polad1.jpg" />
-                            </div>
+                                    
+                                }
+                            }
+                       
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-12 col-sm-12 metn">
-                        <h2>General-mayor</h2>
+                        <h2>@Model.Title</h2>
                         <p>
-                            “Əsgərlər çox nadir hallarda öz komandirlərini yadda saxlayırlar, o da çox nadir komandirlərdən idi”.
-                            Bu sözləri jurnalist Seymur Kazımov Tovuz istiqamətində gedən döyüşlərində həlak olmuş general-mayor Polad Həşimov haqqında deyir. Polad Həşimov illər əvvəl N saylı hərbi hissədə jurnalist Seymur Kazımovun qərargah rəisi olub. Jurnalist general-mayoru “çox dəyərli vətəndaş və zabit” olaraq yad edir.
-                            Onun vəfatını “cəmiyyət üçün böyük itki” adlandırır.
-                            Qohumları Polad Həşimovu çox yaxşı insan kimi xatırlayır, onun barəsində “sonuncu loxmasını bölən, sadə insan” deyirlər.
-                            Polad Həşimov kim idi?
-                            1975-ci ildə Sumqayıtda doğulmuş Polad Həşimov əslən Qəbələnin Vəndam kəndindəndir. Elə aldığımız məlumata görə onun nəşi də bu saatlarda o kəndə aparılır. Polad Həşimov Sumqayıtda məktəbi bitirib. Sonra Heydər Əliyev adına ali məktəbdə təhsil alınb və təhsilini Türkiyədə davam etdirib. Onun 3 övladı var, iki oğlu, bir qızı. Qızı onun böyük övladıdır və hələ də orta məktəbi bitirməyib. O, Murov və Daşkəsən kimi bir neçə döyüş bölgəsində xidmət edib.
-                            Polad Həşimov 2016-cı ildə aprel döyüşlərində iştirak edib və xəsarət alıb. Bundan sonra ona vaxtından əvvəl general rütbəsi verilib, bunu qohumları deyir. Bu saatlarda Sumqayıtda onun evinin önünə yüzlərlə vətəndaş toplaşıb və onun nəşini gözləyir. Yerli media yazır ki Polad Həşimov ikinci fəxri xiyabanda dəfn ediləcək.
-                            Əsgərin yanında olan general-mayor
-                            “Cəsur, mərd zabit idi, həm əsgərlər, həm də zabitlər arasında kifayət qədər hörməti var idi. Hər zaman əsgərin yanında idi”, Seymur Kazımov Polad Həşimov haqqında danışır. “O, hər dəfə deyirdi ki, əsgər zabitərinə görə hər zaman ölümə gedir, çünki əsgərlər öndə olurlar və əmr verilən kimi irəli atılırlar. Biz bu gün gördük ki, onun özü ön sırada getdi və şəhid oldu,”- Seymur Kazımov deyir.
-                            Jurnalist deyir ki, general-mayorun ölümü onun üçün çox ağırdır.
-                            “Əsgərləri tənbeh də edərdi, cəzalandırardı da, amma onları təhqir edəcək, alçaldacaq ifadə işlətməzdi, onlara yuxarıdan aşağı baxmazdı. Hərbi nizamnamə nə tələb edirdisə, o cür də davranırdı,” jurnalist deyir.
-                            Seymur Kazımov 2 dəfə general-mayorun cəzasına da məruz qaldığını xatırlayır.
-                            Onun vətənə sonsuz sevgi bəslədiyini, döyüşlərdə qəhrəmanlıq etdiyini, öz evini bir şəhid ailəsinə verdiyini yazanlar var.
-                            Azərbaycan Müdafiə Nazirliyi Tovuz istiqamətində gedən döyüşlərdə 11 şəhid verdiyini bildirir.
-                            Onlar general-mayor Polad Həşimov, polkovnik İlqar Mirzəyev, mayor Namiq Əhmədov, mayor Anar Novruzov, gizir İlqar Zeynallı, gizir Yaşar Babayev, müddətdən artıq həqiqi hərbi xidmət hərbi qulluqçusu əsgər Elçin Mustafazadə, baş leytenant Rəşad Mahmudov, çavuş Vüqar Sadıqov, baş əsgər Elşad Məmmədov, əsgər Xəyyam Daşdəmirovdur.
+                            @Model.Description
                         </p>
                         <br />
 
