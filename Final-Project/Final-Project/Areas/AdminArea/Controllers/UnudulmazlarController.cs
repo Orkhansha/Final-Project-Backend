@@ -1,6 +1,7 @@
 ﻿using Final_Project.Data;
 using Final_Project.Helpers;
 using Final_Project.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ using System.Threading.Tasks;
 namespace Final_Project.Areas.AdminArea.Controllers
 {
     [Area("AdminArea")]
+    [Authorize(Roles = "Admin")]
     public class UnudulmazlarController : Controller
     {
         private readonly AppDbContext _context;

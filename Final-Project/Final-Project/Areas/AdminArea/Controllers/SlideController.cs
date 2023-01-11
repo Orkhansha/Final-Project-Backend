@@ -1,6 +1,7 @@
 ﻿using Final_Project.Data;
 using Final_Project.Helpers;
 using Final_Project.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -11,6 +12,7 @@ using System.Threading.Tasks;
 namespace Final_Project.Areas.AdminArea.Controllers
 {
     [Area("AdminArea")]
+    [Authorize(Roles = "Admin")]
     public class SlideController : Controller
     {
         private readonly AppDbContext _context;
@@ -122,7 +124,6 @@ namespace Final_Project.Areas.AdminArea.Controllers
             Slider db = _context.Sliders.Find(id);
             if (db == null) return NotFound();
             db.IsDeleted = true;
-           // Helper.DeleteImage(_env, "img/Slides", db.Image);
             _context.Sliders.Remove(db);
             _context.SaveChanges();
             return RedirectToAction(nameof(Index));

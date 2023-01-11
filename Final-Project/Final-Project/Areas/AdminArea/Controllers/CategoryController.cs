@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore;
 namespace Final_Project.Areas.AdminArea.Controllers
 {
     [Area("AdminArea")]
-    //[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     public class CategoryController : Controller
     {
         private readonly AppDbContext _context;

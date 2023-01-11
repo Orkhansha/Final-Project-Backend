@@ -197,3 +197,9 @@ D:\My-Project\Backend-Project\Final-Project\Final-Project\obj\Debug\netcoreapp3.
 D:\My-Project\Backend-Project\Final-Project\Final-Project\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Unudulmazlar\Update.cshtml.g.cs
 D:\My-Project\Backend-Project\Final-Project\Final-Project\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Header\Default.cshtml.g.cs
 D:\My-Project\Backend-Project\Final-Project\Final-Project\obj\Debug\netcoreapp3.1\Razor\Views\Product\Detail.cshtml.g.cs
+D:\My-Project\Backend-Project\Final-Project\Final-Project\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Brand\Index.cshtml.g.cs
+D:\My-Project\Backend-Project\Final-Project\Final-Project\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Brand\Create.cshtml.g.cs
+D:\My-Project\Backend-Project\Final-Project\Final-Project\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Brand\Edit.cshtml.g.cs
+D:\My-Project\Backend-Project\Final-Project\Final-Project\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Blog\Index.cshtml.g.cs
+D:\My-Project\Backend-Project\Final-Project\Final-Project\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Blog\Create.cshtml.g.cs
+D:\My-Project\Backend-Project\Final-Project\Final-Project\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Blog\Edit.cshtml.g.cs

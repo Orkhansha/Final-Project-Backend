@@ -1,0 +1,78 @@
+﻿
+@model Paginate<BlogListVM>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/AdminArea/Views/Shared/_AdminLayout.cshtml";
+    int counter = 0;
+    int take = ViewBag.take;
+    int count = (Model.CurrentPage - 1) * take + 1;
+}
+
+
+<div class="container-fluid pt-4 px-4">
+    <div class="row g-4">
+        <div class="col-sm-12 col-xl-12">
+            <div class="bg-secondary rounded h-100 p-4">
+                <h6 class="mb-4">Basic Table</h6>
+                <a asp-area="adminarea" asp-controller="blog" asp-action="create" class="btn btn-success  ">Create</a>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Image</th>
+                            <th scope="col">Blog Title</th>
+                            <th scope="col">Created Date</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Delete</th>
+                            <th scope="col">Update</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Datas)
+                        {
+                            counter++;
+                            <tr>
+                                <th scope="row">@counter</th>
+
+
+                                <td><img style="width:100px;" src="~/img/Blogs/@item.Images" /></td>
+
+
+                                <td>@item.Title</td>
+                                <td>@item.CreatedDate</td>
+                                <td>@item.Description.Substring(0, 20)...</td>
+                                <td><a asp-area="adminarea" asp-controller="blog" asp-action="delete" asp-route-id="@item.Id" class="btn btn-danger  ">Delete</a></td>
+                                <td><a asp-area="adminarea" asp-controller="blog" asp-action="edit" asp-route-id="@item.Id" class="btn btn-warning  ">Edit</a></td>
+
+
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center my-3">
+            <li class="page-item @(Model.HasPrevious == false ? "disabled":"")">
+                <a class="page-link" asp-action="Index" asp-route-page="@(Model.CurrentPage - 1)">Previous</a>
+            </li>
+        @for (int i = 1; i <= Model.TotalPage; i++)
+        {
+                        <li class="page-item @(i==Model.CurrentPage ? "disabled":"")"><a class="page-link" asp-action="Index" asp-route-page="@i">@i</a></li>
+        }
+
+            <li class="page-item @(Model.HasNext == true ? "":"disabled")">
+                <a class="page-link" asp-action="Index" asp-route-page="@(Model.CurrentPage + 1)">Next</a>
+            </li>
+        </ul>
+    </nav>
+
+
+
+

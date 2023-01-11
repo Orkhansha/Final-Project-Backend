@@ -182,23 +182,23 @@ body {
   position: absolute;
 }
 
-#black-area .icons div a i sup {
-  border-radius: 50%;
-  font-size: 10px;
-  padding: 4px;
-  top: -15px;
-  right: 5px;
-  background-color: coral;
-}
+    #black-area .icons div a i sup {
+        border-radius: 50%;
+        font-size: 10px;
+        padding: 4px;
+        top: -15px;
+        right: 5px;
+        background-color: #860507;
+    }
 
-#black-area .icons div a sup {
-  border-radius: 50%;
-  font-size: 10px;
-  padding: 4px;
-  top: -15px;
-  right: 5px;
-  background-color: coral;
-}
+    #black-area .icons div a sup {
+        border-radius: 50%;
+        font-size: 10px;
+        padding: 4px;
+        top: -15px;
+        right: 5px;
+        background-color: #860507;
+    }
 
 #black-area .icons div div:nth-child(1) {
   border-left: none;
@@ -277,7 +277,7 @@ body {
   margin: 0;
 }
 #navbar-area .container .btn .admin {
-  background-color: #ff5722;
+  background-color: #860507;
   width: 125px;
 }
 #navbar-area .container .btn li {
@@ -301,7 +301,7 @@ body {
   height: 3px;
   bottom: -10px;
   left: 0px;
-  background-color: #ff5722;
+  background-color: #860507;
   transition: all 0.2s ease-in-out;
   transform: scale(0, 0);
   visibility: hidden;
@@ -414,7 +414,7 @@ body {
   margin: 0;
 }
 #navbar-area .btn .admin {
-  background-color: #ff5722;
+  background-color: #860507;
   width: 125px;
   height: 60px;
   padding-top: 4px;
@@ -625,7 +625,7 @@ body {
 .inside-page__heading--beach,
 .card-front__text-view--beach {
   padding-top: 20px;
-  color: #fa7f67;
+  color: #860507;
 }
 
 .inside-page__heading--camping,
@@ -707,12 +707,12 @@ body {
 }
 
 .inside-page__btn--beach {
-  border-color: #fa7f67;
-  color: #fa7f67;
+  border-color: #860507;
+  color: #860507;
 }
 
 .inside-page__btn--beach::before {
-  background-color: #fa7f67;
+  background-color: #860507;
 }
 
 .inside-page__btn--camping {
@@ -948,7 +948,7 @@ body {
   margin: 0;
 }
 #scroll-section .btn .admin {
-  background-color: #ff5722;
+  background-color: #860507;
   padding: 4px 10px;
   margin-right: 0;
 }
@@ -972,7 +972,7 @@ body {
   height: 3px;
   bottom: -10px;
   left: 0px;
-  background-color: #ff5722;
+  background-color: #860507;
   transition: all 0.2s ease-in-out;
   transform: scale(0, 0);
   visibility: hidden;

@@ -15,10 +15,12 @@ using System.IO;
 using System.Net.Mail;
 using System.Net;
 using System.Reflection.Metadata;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Final_Project.Areas.AdminArea.Controllers
 {
     [Area("AdminArea")]
+    [Authorize(Roles = "Admin")]
     public class ProductController : Controller
     {
         private readonly AppDbContext _context;

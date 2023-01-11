@@ -391,7 +391,7 @@ h1 {
 }
 
 #qehremanlar .posination .first {
-  background-color: #ff5722;
+  background-color: #860507;
   border-radius: 5px;
   color: white;
 }
@@ -450,7 +450,7 @@ h1 {
 }
 
 #qehremanlar .productFirstInfo h5:hover {
-  color: #ff5722;
+  color: #860507;
 }
 
 #qehremanlar .productFirstInfo span {
@@ -458,7 +458,7 @@ h1 {
   bottom: 15px;
   left: 20px;
   font-size: 20px;
-  color: #ff5722;
+  color: #860507;
 }
 
 #qehremanlar .productFirstInfo .star-icon {
@@ -479,7 +479,7 @@ h1 {
   height: 60px;
   border-radius: 50%;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
-  background-color: #ff5722;
+  background-color: #860507;
   cursor: pointer;
 }
 
@@ -560,7 +560,7 @@ h1 {
   height: 35px;
   border: none;
   border-radius: 5px;
-  background-color: #ff5722;
+  background-color: #860507;
   transition: 0.3s;
 }
 
@@ -577,7 +577,7 @@ h1 {
   height: 40px;
   border: none;
   border-radius: 5px;
-  background-color: #ff5722;
+  background-color: #860507;
   transition: 0.3s;
 }
 
@@ -590,7 +590,7 @@ h1 {
 }
 
 #qehremanlar .categories i {
-  color: #ff5722;
+  color: #860507;
 }
 
 #qehremanlar .categories h5 {

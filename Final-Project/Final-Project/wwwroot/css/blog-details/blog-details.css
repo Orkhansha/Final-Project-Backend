@@ -52,7 +52,7 @@
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
 }
 #product-detail .first {
-  background-color: #ff5722;
+  background-color: #860507;
   color: white;
 }
 #product-detail .second {
@@ -94,7 +94,7 @@
   color: black;
 }
 #product-detail .price {
-  color: #ff5722;
+  color: #860507;
 }
 #product-detail #big-photo {
   display: flex;
@@ -147,7 +147,7 @@
   color: black;
 }
 #new-arriwals .shop-now-btn button:hover {
-  background-color: #ff5722;
+  background-color: #860507;
 }
 #new-arriwals .search {
   width: 100%;
@@ -176,7 +176,7 @@
   cursor: pointer;
 }
 #new-arriwals .posination .first {
-  background-color: #ff5722;
+  background-color: #860507;
   border-radius: 5px;
   color: white;
 }
@@ -225,14 +225,14 @@
   transition: 0.3s;
 }
 #new-arriwals .productFirstInfo h5:hover {
-  color: #ff5722;
+  color: #860507;
 }
 #new-arriwals .productFirstInfo span {
   position: absolute;
   bottom: 15px;
   left: 20px;
   font-size: 20px;
-  color: #ff5722;
+  color: #860507;
 }
 #new-arriwals .productFirstInfo .star-icon {
   position: absolute;
@@ -250,7 +250,7 @@
   height: 60px;
   border-radius: 50%;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
-  background-color: #ff5722;
+  background-color: #860507;
   cursor: pointer;
 }
 #new-arriwals .productFirstInfo .shop-icon i {
@@ -321,7 +321,7 @@
   height: 35px;
   border: none;
   border-radius: 5px;
-  background-color: #ff5722;
+  background-color: #860507;
   transition: 0.3s;
 }
 #new-arriwals .categories .digit .go:hover {
@@ -335,7 +335,7 @@
   height: 40px;
   border: none;
   border-radius: 5px;
-  background-color: #ff5722;
+  background-color: #860507;
   transition: 0.3s;
 }
 #new-arriwals .categories .clearPart:hover {
@@ -345,7 +345,7 @@
   color: white;
 }
 #new-arriwals .categories i {
-  color: #ff5722;
+  color: #860507;
 }
 #new-arriwals .categories h5 {
   font-weight: bold;
@@ -374,7 +374,7 @@
   height: 35px;
   border: none;
   border-radius: 5px;
-  background-color: #ff5722;
+  background-color: #860507;
   transition: 0.3s;
 }
 .categoriesSecond .digit .go:hover {
@@ -388,7 +388,7 @@
   height: 40px;
   border: none;
   border-radius: 5px;
-  background-color: #ff5722;
+  background-color: #860507;
   transition: 0.3s;
 }
 .categoriesSecond .clearPart:hover {
@@ -398,7 +398,7 @@
   color: white;
 }
 .categoriesSecond i {
-  color: #ff5722;
+  color: #860507;
 }
 .categoriesSecond h5 {
   font-weight: bold;
@@ -457,13 +457,13 @@ select {
   transition: 0.3s;
 }
 .product-info h5:hover {
-  color: #ff5722;
+  color: #860507;
 }
 .product-info span {
   bottom: 15px;
   left: 20px;
   font-size: 20px;
-  color: #ff5722;
+  color: #860507;
 }
 .product-info .star-icon {
   bottom: 15px;
@@ -480,7 +480,7 @@ select {
   height: 60px;
   border-radius: 50%;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
-  background-color: #ff5722;
+  background-color: #860507;
   cursor: pointer;
 }
 .product-info .shop-icon i {

@@ -21,13 +21,27 @@ using Final_Project.Models;
 #nullable disable
 #nullable restore
 #line 2 "D:\My-Project\Backend-Project\Final-Project\Final-Project\Areas\AdminArea\Views\_ViewImports.cshtml"
+using Final_Project.Helpers;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 3 "D:\My-Project\Backend-Project\Final-Project\Final-Project\Areas\AdminArea\Views\_ViewImports.cshtml"
 using Final_Project.ViewModels.ProductViewModels;
 
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "D:\My-Project\Backend-Project\Final-Project\Final-Project\Areas\AdminArea\Views\_ViewImports.cshtml"
+using Final_Project.ViewModels.BlogViewModels;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"1159af7a99046c6dba7abf24a4dee3a0a89e166d", @"/Areas/AdminArea/Views/Order/Edit.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"767b4244a7d0e4d78410b42e4cecbcb97efee751", @"/Areas/AdminArea/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f94746d372e5b1c6cc3182058162752a5661f424", @"/Areas/AdminArea/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_AdminArea_Views_Order_Edit : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Order>
     #nullable disable
@@ -126,7 +140,7 @@ using Final_Project.ViewModels.ProductViewModels;
 #line hidden
 #nullable disable
             WriteLiteral("                            <li class=\"list-group-item\">\r\n                                \r\n\r\n                                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "1159af7a99046c6dba7abf24a4dee3a0a89e166d9475", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "1159af7a99046c6dba7abf24a4dee3a0a89e166d9913", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -217,7 +231,7 @@ using Final_Project.ViewModels.ProductViewModels;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n                </li>\r\n            </ul>\r\n\r\n\r\n\r\n        </div>\r\n    </div>\r\n    <div class=\"row\">\r\n        <div class=\"align-items-center ml-5 \">\r\n\r\n\r\n            <h4>Message</h4>\r\n\r\n            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1159af7a99046c6dba7abf24a4dee3a0a89e166d13907", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1159af7a99046c6dba7abf24a4dee3a0a89e166d14345", async() => {
                 WriteLiteral("\r\n                <input class=\"Message\" cols=\"60\" rows=\"10\" />\r\n            ");
             }
             );
@@ -235,7 +249,7 @@ using Final_Project.ViewModels.ProductViewModels;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n            <div>\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1159af7a99046c6dba7abf24a4dee3a0a89e166d15459", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1159af7a99046c6dba7abf24a4dee3a0a89e166d15897", async() => {
                 WriteLiteral("\r\n                    <i class=\"mdi mdi-file-check btn-icon-append\"></i>\r\n                    Qəbul et\r\n                ");
             }
             );
@@ -271,7 +285,7 @@ using Final_Project.ViewModels.ProductViewModels;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1159af7a99046c6dba7abf24a4dee3a0a89e166d18301", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1159af7a99046c6dba7abf24a4dee3a0a89e166d18739", async() => {
                 WriteLiteral("\r\n                    <i class=\"mdi mdi-file-check btn-icon-append\"></i>\r\n                    Rədd et\r\n                ");
             }
             );
