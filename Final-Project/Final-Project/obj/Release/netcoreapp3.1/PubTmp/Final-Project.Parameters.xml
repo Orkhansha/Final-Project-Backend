@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="orxan555-001-site1" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^D:\\My-Project\\Backend-Project\\Final-Project\\Final-Project\\obj\\Release\\netcoreapp3\.1\\PubTmp\\Out\\$" />
+  </parameter>
+  <parameter name="Final_Project.Data.AppDbContext" description="" value="Data Source=sql5108.site4now.net;Initial Catalog=db_a92fb7_orxandb;User Id=db_a92fb7_orxandb_admin;Password=Orxan123;" tags="dbfullsql">
+    <parameterEntry kind="ProviderPath" scope="dbfullsql" match="^D:\\My-Project\\Backend-Project\\Final-Project\\Final-Project\\obj\\Release\\netcoreapp3\.1\\PubTmp\\EFSQLScripts\\Final_Project\.Data\.AppDbContext\.sql$" />
+  </parameter>
+</parameters>

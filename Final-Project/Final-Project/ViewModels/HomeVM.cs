@@ -8,7 +8,6 @@ namespace Final_Project.ViewModels
         public IEnumerable<Slider> Sliders { get; set; }
         public IEnumerable<Blog> Blogs { get; set; }
         public IEnumerable<Aksesuar> Aksesuars { get; set; }
-        public IEnumerable<Banner> Banners { get; set; }
         public IEnumerable<Brand> Brands { get; set; }
         public IEnumerable<Geyim> Geyims { get; set; }
         public IEnumerable<Qarishiq> Qarishiqs { get; set; }

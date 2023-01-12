@@ -97,7 +97,7 @@ namespace Final_Project.Controllers
             smtp.Port = 587;
             smtp.EnableSsl = true;
 
-            smtp.Credentials = new NetworkCredential("orkhansha@code.edu.az", "mfeudepymigpmlij");
+            smtp.Credentials = new NetworkCredential("orkhansha@code.edu.az", "xosqnbhxblkpvxxd");
             smtp.Send(mail);
             TempData["Verify"] = true;
 
@@ -214,13 +214,11 @@ namespace Final_Project.Controllers
             smtp.Port = 587;
             smtp.EnableSsl = true;
 
-            smtp.Credentials = new NetworkCredential("orkhansha@code.edu.az", "mfeudepymigpmlij");
+            smtp.Credentials = new NetworkCredential("orkhansha@code.edu.az", "xosqnbhxblkpvxxd");
             smtp.Send(mail);
             return RedirectToAction("index", "home");
         }
 
-
-         
 
         public async Task<IActionResult> ResetPassword(string Email, string token)
         {

@@ -76,7 +76,7 @@ namespace Final_Project.Areas.AdminArea.Controllers
             smtp.Host = "smtp.gmail.com";
             smtp.Port = 587;
             smtp.EnableSsl = true;
-            smtp.Credentials = new NetworkCredential("orkhansha@code.edu.az", "mfeudepymigpmlij");
+            smtp.Credentials = new NetworkCredential("orkhansha@code.edu.az", "xosqnbhxblkpvxxd");
             smtp.Send(mail);
             return Json(new { status = 200 });
         }
@@ -110,7 +110,7 @@ namespace Final_Project.Areas.AdminArea.Controllers
             smtp.Host = "smtp.gmail.com";
             smtp.Port = 587;
             smtp.EnableSsl = true;
-            smtp.Credentials = new NetworkCredential("orkhansha@code.edu.az", "mfeudepymigpmlij");
+            smtp.Credentials = new NetworkCredential("orkhansha@code.edu.az", "xosqnbhxblkpvxxd");
             smtp.Send(mail);
             return Json(new { status = 200 });
         }

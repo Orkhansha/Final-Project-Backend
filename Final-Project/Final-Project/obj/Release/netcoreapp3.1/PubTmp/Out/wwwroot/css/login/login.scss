@@ -1,0 +1,291 @@
+:root {
+  --bgColor: white;
+  --inputColor: black;
+  --outlineColor: rgba(39, 128, 161, 0.847);
+  --beamColor: yellow;
+  --spacer: 1rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+// html, body {
+//   height: 100%;
+// }
+
+// body {
+//   display: grid;
+//   place-items: center;
+//   background: #180148;
+// }
+body.show-password {
+  --bgColor: black;
+  --inputColor: white;
+  --outlineColor: var(--beamColor);
+}
+
+
+.form-gap {
+    padding-top: 70px;
+}
+
+.forgot-password a {
+    text-decoration: none;
+    color: white;
+}
+
+form {
+  width: 100%;
+  transform: translate3d(0, 0, 0);
+  padding: var(--spacer);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translate3d(0, 0, 0);
+  padding: var(--spacer);
+}
+form > * + * {
+  margin-top: var(--spacer);
+}
+
+.form-item > * + * {
+  margin-top: 0.5rem;
+}
+
+label,
+input
+{
+  font-size: 1.5rem;
+  font-family: monospace;
+  color: white;
+}
+label:focus,
+input:focus
+{
+  outline: 3px solid var(--outlineColor);
+  outline-offset: 2px;
+}
+label::-moz-focus-inner,
+input::-moz-focus-inner
+{
+  border: none;
+}
+label[id=password],
+input[id=password]
+{
+  color: black;
+}
+
+
+[id=submit] {
+  cursor: pointer;
+  margin: calc(var(--spacer) * 2) 0 0 2px;
+  padding: 0.75rem 1.25rem;
+  color: var(--bgColor);
+  background-color: var(--outlineColor);
+  box-shadow: 4px 4px 0 rgba(30, 144, 255, 0.2);
+}
+[id=submit]:active {
+  transform: translateY(1px);
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+input {
+  padding: 0.75rem 4rem 0.75rem 0.75rem;
+  width: 100%;
+  border: 2px solid transparent;
+  border-radius: 0;
+  background-color: transparent;
+  box-shadow: inset 0 0 0 2px black, inset 6px 6px 0 rgba(30, 144, 255, 0.2), 3px 3px 0 rgba(30, 144, 255, 0.2);
+  -webkit-appearance: none;
+}
+input:focus {
+  outline-offset: 1px;
+}
+.show-password input {
+  box-shadow: inset 0 0 0 2px black;
+  border: 2px dashed white;
+}
+.show-password input:focus {
+  outline: none;
+  border-color: var(--beamColor);
+}
+
+[id=eyeball] {
+  --size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  outline: none;
+  position: absolute;
+  top: 50%;
+  right: 0.75rem;
+  border: none;
+  background-color: transparent;
+  transform: translateY(-50%);
+}
+[id=eyeball]:active {
+  transform: translateY(calc(-50% + 1px));
+}
+
+.eye {
+  width: var(--size);
+  height: var(--size);
+  border: 2px solid var(--inputColor);
+  border-radius: calc(var(--size) / 1.5) 0;
+  transform: rotate(45deg);
+}
+.eye:before, .eye:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  border-radius: 100%;
+}
+.eye:before {
+  width: 35%;
+  height: 35%;
+  background-color: var(--inputColor);
+}
+.eye:after {
+  width: 65%;
+  height: 65%;
+  border: 2px solid var(--inputColor);
+  border-radius: 100%;
+}
+
+[id=beam] {
+  position: absolute;
+  top: 50%;
+  right: 1.75rem;
+  -webkit-clip-path: polygon(100% 50%, 100% 50%, 0 0, 0 100%);
+          clip-path: polygon(100% 50%, 100% 50%, 0 0, 0 100%);
+  width: 100vw;
+  height: 25vw;
+  z-index: 1;
+  mix-blend-mode: multiply;
+  transition: transform 200ms ease-out;
+  transform-origin: 100% 50%;
+  transform: translateY(-50%) rotate(var(--beamDegrees, 0));
+  pointer-events: none;
+}
+.show-password [id=beam] {
+  background: var(--beamColor);
+}
+
+
+
+
+.button-64 {
+  align-items: center;
+  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 20px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  min-width: 140px;
+  padding: 3px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+
+
+.button-646 {
+    align-items: center;
+    background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+    border: 0;
+    border-radius: 8px;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    display: flex;
+    font-family: Phantomsans, sans-serif;
+    font-size: 20px;
+    justify-content: center;
+    line-height: 1em;
+    max-width: 100%;
+    min-width: 140px;
+    padding: 3px;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.button-64:active,
+.button-64:hover {
+  outline: 0;
+}
+
+.button-646:active,
+.button-646:hover {
+    outline: 0;
+}
+
+.button-64 a {
+    text-decoration: none;
+    background-color: rgb(5, 6, 45);
+    padding: 16px 24px;
+    border-radius: 6px;
+    width: 100%;
+    height: 100%;
+    transition: 300ms;
+}
+
+.button-646 a {
+    text-decoration: none;
+    background-color: rgb(5, 6, 45);
+    padding: 16px 24px;
+    border-radius: 6px;
+    width: 100%;
+    height: 100%;
+    transition: 300ms;
+}
+
+
+.button-64:hover a {
+    color: black;
+  background: none;
+}
+
+
+.button-646:hover a {
+    color: black;
+    background: none;
+}
+
+@media (min-width: 768px) {
+  .button-64 {
+    font-size: 24px;
+    min-width: 196px;
+  }
+
+    .button-646 {
+        height: 45px;
+        font-size: 30px;
+        min-width: 196px;
+    }
+}
+

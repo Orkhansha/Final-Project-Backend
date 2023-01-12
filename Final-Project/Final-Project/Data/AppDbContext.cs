@@ -11,7 +11,6 @@ namespace Final_Project.Data
         }
 
         public DbSet<Aksesuar> Aksesuars { get; set; }
-        public DbSet<Banner> Banners { get; set; }
         public DbSet<Order> Order { get; set; }
         public DbSet<OrderItem> OrderItems { get; set; }
         public DbSet<Blog> Blogs { get; set; }
@@ -27,12 +26,10 @@ namespace Final_Project.Data
         public DbSet<BasketItem> BasketItems { get; set; }
         public DbSet<AppUser> AppUsers { get; set; }
         public DbSet<Category> Categories { get; set; }
-        public DbSet<Color> Colors { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductCategories> ProductCategories { get; set; }
         public DbSet<BlogImages> BlogImages { get; set; }
 
-        //public DbSet<Size> Sizes { get; set; }
 
 
 

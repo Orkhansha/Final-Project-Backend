@@ -1,0 +1,166 @@
+* {
+  margin-top: 0;
+  margin-left: 0;
+  box-sizing: border-box;
+  font-family: "Lobster", cursive;
+  font-family: "Open Sans", sans-serif;
+}
+
+
+
+#map-area {
+  opacity: 0.8;
+}
+#map-area .mapouter {
+  position: relative;
+  text-align: right;
+  height: 400px;
+  width: 100%;
+}
+#map-area .gmap_canvas {
+  overflow: hidden;
+  background: none !important;
+  height: 400px;
+  width: 100%;
+}
+
+#textes a {
+    color: white !important;
+    text-decoration: none;
+}
+#textes h1, p, span, #textes h2, #textes h3 {
+    color: white !important;
+}
+#textes .text-left h5 {
+    color: white !important;
+    padding: 20px 0 20px;
+}
+#textes .text-left h6 {
+    padding: 10px 0 10px 0;
+    color: white !important;
+}
+#textes .Contact-us {
+  transform: translateY(0);
+  opacity: 1;
+  transition-delay: 0.1s;
+}
+#textes .contact-us-btn {
+  width: 150px;
+  height: 40px;
+  color: white;
+  background: #860507;
+}
+#textes .input-button {
+  padding: 8px 12px;
+  outline: none;
+  border: 0;
+  color: #fff;
+  border-radius: 4px;
+  background: #8c7569;
+  font-family: "Nunito", sans-serif;
+  transition: 0.3s;
+  cursor: pointer;
+}
+#textes .input-button:hover {
+  background: #55311c;
+}
+#textes:focus-within {
+  border-color: #8c7569;
+}
+#textes:focus-within .input-label {
+  color: rgba(140, 117, 105, 0.8);
+}
+
+.form-wrapper {
+  min-width: 300px;
+  padding: 50px 30px 50px 30px;
+  background-color: #ffffff;
+}
+
+.form-group {
+  position: relative;
+}
+.form-group + .form-group {
+  margin-top: 30px;
+}
+
+.form-label {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  color: #999;
+  background-color: #fff;
+  z-index: 10;
+  transition: transform 150ms ease-out, font-size 150ms ease-out;
+}
+
+.focused .form-label {
+  transform: translateY(-125%);
+  font-size: 0.75em;
+}
+
+.form-input {
+  position: relative;
+  padding: 12px 0px 5px 0;
+  width: 100%;
+  outline: 0;
+  border: 0;
+  box-shadow: 0 1px 0 0 #e5e5e5;
+  transition: box-shadow 150ms ease-out;
+}
+.form-input:focus {
+  box-shadow: 0 2px 0 0 blue;
+}
+
+.form-input.filled {
+  box-shadow: 0 2px 0 0 lightgreen;
+}
+
+@media (max-width: 992px) {
+  .btn {
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
+  .home {
+    position: inherit !important;
+    display: none;
+  }
+  .shop {
+    display: none;
+  }
+  .submenu {
+    position: inherit !important;
+  }
+  .nav-a {
+    color: #000 !important;
+    text-align: left !important;
+  }
+  .categori {
+    display: none !important;
+  }
+  #black-area .container .btn li:hover .submenu {
+    height: 100% !important;
+  }
+  #black-area .container .btn li:hover .submenu {
+    overflow: auto !important;
+  }
+  .dropdown-btnn {
+    display: block;
+  }
+  .dropdown-ul {
+    display: none;
+  }
+  .offcanvas-header {
+    justify-content: flex-end !important;
+  }
+}
+@media (max-width: 768px) {
+  .profile-dropdownn {
+    display: none !important;
+  }
+  .logo-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}/*# sourceMappingURL=contact.css.map */

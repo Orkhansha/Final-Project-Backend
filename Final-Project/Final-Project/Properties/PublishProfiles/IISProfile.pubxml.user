@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAESWpKZuAbUSNZchOaiRSLQAAAAACAAAAAAAQZgAAAAEAACAAAABROat1HPdYwpP/O5xscVPf24ryiy45uDPr6mXWOfyonwAAAAAOgAAAAAIAACAAAAD7Zst3/LHFkXthIWLCYjBd2T+udFoH8Ie9wLle233xviAAAAAT61VHiwmiUeQqSqemw+0e2sP+MAiwjCHqSFMYcPQBFUAAAADxaIN0Lr+ScC66GZw0zYSWyzuZriWbd1KebTrs3wMYi9nyLz2KQP/Cs6tg4Jl1W6C2xCnxasvp/WgAqkz/qV0Z</EncryptedPassword>
+    <History>False|2023-01-12T12:05:23.6388628Z;False|2023-01-12T16:04:36.1290076+04:00;True|2023-01-12T02:19:40.5177261+04:00;False|2023-01-12T02:18:28.1279706+04:00;True|2023-01-12T02:03:31.6478808+04:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Data Source=sql5108.site4now.net%3bInitial Catalog=db_a92fb7_orxandb%3bUser Id=db_a92fb7_orxandb_admin%3bPassword=Orxan123%3b</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="Final_Project.Data.AppDbContext">
+      <Value>Data Source=sql5108.site4now.net%3bInitial Catalog=db_a92fb7_orxandb%3bUser Id=db_a92fb7_orxandb_admin%3bPassword=Orxan123%3b</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>
